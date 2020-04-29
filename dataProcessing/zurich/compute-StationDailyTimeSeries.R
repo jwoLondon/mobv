@@ -162,13 +162,13 @@ write_csv(df_bicycle, "../../data/zurich/StationDailyTimeSeries-Bicycle.csv", na
 df_foot %>%
   filter(date >= ymd("2020-01-03") & date <= ymd("2020-02-06")) %>%
   group_by(id) %>%
-  summarise(median = median(count)) %>%
+  summarise(value = median(count)) %>%
   write_csv("../../data/zurich/StationReference-Foot.csv", na="") 
 
 
 df_bicycle %>%
   filter(date >= ymd("2020-01-03") & date <= ymd("2020-02-06")) %>%
   group_by(id) %>%
-  summarise(median = median(count)) %>%
+  summarise(value = median(count)) %>%
   write_csv("../../data/zurich/StationReference-Bicycle.csv", na="") 
 
