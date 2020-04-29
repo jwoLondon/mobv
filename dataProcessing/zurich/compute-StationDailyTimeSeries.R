@@ -151,8 +151,8 @@ names(df_bicycle) <- c("date", "station", "id", "count")
 df_foot <- df_foot[order(df_foot$date),]
 df_bicycle <- df_bicycle[order(df_bicycle$date),]
 
-write_csv(df_foot, "StationDailyTimeSeries-Foot.csv", na="") 
-write_csv(df_bicycle, "StationDailyTimeSeries-Bicycle.csv", na="")
+write_csv(df_foot, "..\..\data\zurichStationDailyTimeSeries-Foot.csv", na="") 
+write_csv(df_bicycle, "..\..\data\zurichStationDailyTimeSeries-Bicycle.csv", na="")
 
 
 # Compute and save baselines:
@@ -163,12 +163,12 @@ df_foot %>%
   filter(date >= ymd("2020-01-03") & date <= ymd("2020-02-06")) %>%
   group_by(id) %>%
   summarise(median = median(count)) %>%
-  write_csv("StationReference-Foot.csv", na="") 
+  write_csv("..\..\data\zurichStationReference-Foot.csv", na="") 
 
 
 df_bicycle %>%
   filter(date >= ymd("2020-01-03") & date <= ymd("2020-02-06")) %>%
   group_by(id) %>%
   summarise(median = median(count)) %>%
-  write_csv("StationReference-Bicycle.csv", na="") 
+  write_csv("..\..\data\zurichStationReference-Bicycle.csv", na="") 
 
