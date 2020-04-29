@@ -1,3 +1,8 @@
+<!-- Scripts to link to the Vega/Vega-Lite runtime -->
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
 # Zurich Active Movement
 
 ## Background
@@ -20,4 +25,5 @@ _Click on a grid cell to select a station. Shift-click for multiple stations. Do
 
 <div id="vis9"></div>
 
+<!-- Script containing the vis specs used above. Must be at end of document. -->
 <script src="js/zurichVisSpecs.js"></script>
