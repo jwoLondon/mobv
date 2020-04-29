@@ -8,18 +8,4 @@ $header-bg-color: #8f4e1d;
 // Text
 $section-headings-color: #3a200c;
 
-body {
-  font-family: Merriweather, serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Fjalla One", sans-serif;
-}
-
-@import url("https://fonts.googleapis.com/css?family=Merriweather:400,900|Fjalla+One");
 @import "{{ site.theme }}";
