@@ -12,12 +12,12 @@ Die Visualisierungen sind konzipiert für unterschiedliche Fortbewegungsarten. B
 ## Visualisierungen
 Die Heatmaps sind dynamisch: Durch Überfahren (Hovern) der Balken mit der Maus werden das Verkehrsaufkommen am betreffenden Tag, der Referenzwert (Median) und die Anomalie (der sogenannte Chi-Wert) angezeigt. Mit einem Mausklick kann man eine Zählstelle selektieren, durch Betätigen der Shift-Taste und Mausklick mehrere gleichzeitig. Die selektierten Zählstellen werden in den begleitenden Visualisierungen – der Liniengrafik und der Karte – hervorgehoben. So können Sie schnell und einfach unterschiedliche Standorte miteinander verglichen.
 
-Die vertikalen Muster in der Heatmap und der Liniengrafik zeigen deutlich, wie die Mobilität in Basel sich nach dem Lockdown Mitte März rasch reduziert – wobei sich aber nicht alle Standorte gleich verhalten. Es sind auch andere Muster sichtbar: wie der Veloverkehr in der Regel am schnell wieder zunimmt oder wie das regnerische Wetter am 28. April zu einem generellen und starken Rückgang des Verkehrs führt.
+Die vertikalen Muster in der Heatmap und der Liniengrafik zeigen deutlich, wie die Mobilität in Basel sich nach dem Lockdown Mitte März rasch reduziert – wobei sich aber nicht alle Standorte gleich verhalten. Es sind auch andere Muster sichtbar: wie der Veloverkehr in der Regel am Wochenende schnell wieder zunimmt oder wie das regnerische Wetter am 28. April zu einem generellen und starken Rückgang des Verkehrs führt.
 
 ## Datenquellen und Umsetzung
-Wir hätten unsere Visualisierungen nicht umsetzen können ohne [Open Government Data (OGD) des Kanton Basel-Stadt](https://www.opendata.bs.ch/). Ein grosses Dankeschön auch an die [OpenStreetMap-Beitragenden](https://www.openstreetmap.org/copyright) für die Kartendaten.
+Wir hätten unsere Visualisierungen nicht umsetzen können ohne [Open Government Data (OGD) des Kantons Basel-Stadt](https://www.opendata.bs.ch/). Ein grosses Dankeschön auch an die [OpenStreetMap-Beitragenden](https://www.openstreetmap.org/copyright) für die Kartendaten.
 
-Analoge Visualisierungen haben wir mit [Open Government Data des Stadt Zürich und der Stadt New York umgesetzt](https://jwolondon.github.io/mobv). Sämtlicher Code für die Analyse der Daten von Zürich, Basel und New York und der Code hinter den jeweiligen Webseiten ist verfügbar auf [GitHub](https://github.com/jwolondon/mobv/). Sämtlicher Code steht [unter einer offenen Lizenz](https://github.com/jwoLondon/mobv/blob/master/LICENSE) zur Weiterverwendung zur Verfügung.
+Analoge Visualisierungen haben wir mit [Open Government Data der Stadt Zürich](https://jwolondon.github.io/mobv/docs/zurich) und der [Stadt New York](https://jwolondon.github.io/mobv) umgesetzt. Sämtlicher Code für die Analyse der Daten von Zürich, Basel und New York und der Code hinter den jeweiligen Webseiten ist verfügbar auf [GitHub](https://github.com/jwolondon/mobv/). Sämtlicher Code steht [unter einer offenen Lizenz](https://github.com/jwoLondon/mobv/blob/master/LICENSE) zur Weiterverwendung zur Verfügung.
 
 ## Team
 Konzeptiert und implementiert von:
