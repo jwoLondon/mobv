@@ -23,11 +23,11 @@ _Click on a grid cell to select a station. Shift-click for multiple stations. Do
 
 ### Bicycle Traffic
 
-<div id="visLinkedBicycle"></div>
+<div class="wide" id="visLinkedBicycle"></div>
 
 ### Foot Traffic
 
-<div id="visLinkedFoot"></div>
+<div class="wide" id="visLinkedFoot"></div>
 
 <!-- Script containing the vis specs used above. Must be at end of document. -->
 <script src="js/zurichVisSpecs.js"></script>
