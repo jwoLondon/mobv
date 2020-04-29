@@ -16,6 +16,8 @@ let bluePolys = path + "geo/baselWater.json";
 let bluePolyFeature = "water";
 let greenPolys = path + "geo/baselGreen.json";
 let greenPolyFeature = "green";
+let greyPolys = path + "geo/baselArea.json";
+let greyPolyFeature = "area";
 
 // CHART SCALING
 
@@ -352,14 +354,12 @@ let vlSpecLinkedBicycle = {
       layer: [
         {
           data: {
-            url: `${blueLines}`,
-            format: { type: "topojson", feature: `${blueLineFeature}` },
+            url: `${greyPolys}`,
+            format: { type: "topojson", feature: `${greyPolyFeature}` },
           },
           mark: {
             type: "geoshape",
-            color: "rgb(226,237,246)",
-            strokeWidth: 4,
-            filled: false,
+            color: "rgb(100,100,100)",
           },
         },
         {
@@ -773,14 +773,12 @@ let vlSpecLinkedFoot = {
       layer: [
         {
           data: {
-            url: `${blueLines}`,
-            format: { type: "topojson", feature: `${blueLineFeature}` },
+            url: `${greyPolys}`,
+            format: { type: "topojson", feature: `${greyPolyFeature}` },
           },
           mark: {
             type: "geoshape",
-            color: "rgb(226,237,246)",
-            strokeWidth: 4,
-            filled: false,
+            color: "rgb(100,100,100)",
           },
         },
         {
