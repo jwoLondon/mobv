@@ -1,5 +1,5 @@
 # File structure
-A file containing metadata for all counting stations.
+A file containing metadata for all counting stations (of a transport mode, if there is more than one).
 
 # Data types
 - `station_id` (string): Counting station ID (primary key).
@@ -9,7 +9,7 @@ A file containing metadata for all counting stations.
 - `lon` (float): Longitude of station location (in [WGS 1984](https://epsg.io/4326), decimal degrees)
 
 # Conventions
-Files pertaining to different transport modes are named accordingly (e.g. StationLocations-Bicycle.csvfor bicycle counting stations or StationLocations-Foot.csv for pedestrian counting stations). Files are comma delineated and UTF-8-encoded. Each station has a unique `station_id`. The `station_name` is only used for labeling purposes in plots and maps.
+Files pertaining to different transport modes are named accordingly (e.g. `StationLocations-Bicycle.csv` for bicycle counting stations or `StationLocations-Foot.csv` for pedestrian counting stations). Files are comma delineated and UTF-8-encoded. Each station has a unique `station_id`. The `station_name` is only used for labeling purposes in plots and maps.
 
 
 # Example
