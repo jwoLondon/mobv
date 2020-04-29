@@ -2,14 +2,15 @@
 A file containing metadata for all counting stations.
 
 # Data types
-- station_id (string): station name (primary key)
-- station_name (string): human-friendly station name
-- description (string; non-mandatory)
-- lat (float): latitude of station location (WGS 1984, decimal degrees)
-- lon (float): longitude of station location (WGS 1984, decimal degrees)
+- `station_id` (string): Counting station ID (primary key).
+- `station_name` (string): Human-friendly counting station name.
+- `description` (string; non-mandatory)
+- `lat` (float): Latitude of station location (in [WGS 1984](https://epsg.io/4326), decimal degrees)
+- `lon` (float): Longitude of station location (in [WGS 1984](https://epsg.io/4326), decimal degrees)
 
 # Conventions
-The file is comma delineated and UTF-8-encoded. Each station has a unique station name.
+Files pertaining to different transport modes are named accordingly (e.g. StationLocations-Bicycle.csvfor bicycle counting stations or StationLocations-Foot.csv for pedestrian counting stations). Files are comma delineated and UTF-8-encoded. Each station has a unique `station_id`. The `station_name` is only used for labeling purposes in plots and maps.
+
 
 # Example
 Sample file structure (whitespace for readability)
