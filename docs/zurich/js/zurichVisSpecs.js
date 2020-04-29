@@ -26,8 +26,6 @@ let bicycleAnomalyMin = -120;
 let footAnomalyMax = 140;
 let footAnomalyMin = -140;
 
-
-
 // -----------------------------------------------------------------------------
 
 // BICYCLE LINKED VIEWS CHART
@@ -59,12 +57,12 @@ let vlSpecLinkedBicycle = {
                   from: {
                     data: { url: `${bicycleReferenceData}` },
                     key: "id",
-                    fields: ["median"],
+                    fields: ["value"],
                   },
                 },
                 {
                   calculate:
-                    "datum.median == 0 ? 0 : (datum.count - datum.median)/sqrt(datum.median)",
+                    "datum.value == 0 ? 0 : (datum.count - datum.value)/sqrt(datum.value)",
                   as: "anomaly",
                 },
                 {
@@ -160,7 +158,7 @@ let vlSpecLinkedBicycle = {
                     type: "quantitative",
                   },
                   {
-                    field: "median",
+                    field: "benchmark",
                     type: "quantitative",
                   },
                   {
@@ -226,12 +224,12 @@ let vlSpecLinkedBicycle = {
                   from: {
                     data: { url: `${bicycleReferenceData}` },
                     key: "id",
-                    fields: ["median"],
+                    fields: ["value"],
                   },
                 },
                 {
                   calculate:
-                    "datum.median == 0 ? 0 : (datum.count - datum.median)/sqrt(datum.median)",
+                    "datum.value == 0 ? 0 : (datum.count - datum.value)/sqrt(datum.value)",
                   as: "anomaly",
                 },
                 {
@@ -480,12 +478,12 @@ let vlSpecLinkedFoot = {
                   from: {
                     data: { url: `${footReferenceData}` },
                     key: "id",
-                    fields: ["median"],
+                    fields: ["value"],
                   },
                 },
                 {
                   calculate:
-                    "datum.median == 0 ? 0 : (datum.count - datum.median)/sqrt(datum.median)",
+                    "datum.value == 0 ? 0 : (datum.count - datum.value)/sqrt(datum.value)",
                   as: "anomaly",
                 },
                 {
@@ -581,7 +579,7 @@ let vlSpecLinkedFoot = {
                     type: "quantitative",
                   },
                   {
-                    field: "median",
+                    field: "benchmark",
                     type: "quantitative",
                   },
                   {
@@ -647,12 +645,12 @@ let vlSpecLinkedFoot = {
                   from: {
                     data: { url: `${footReferenceData}` },
                     key: "id",
-                    fields: ["median"],
+                    fields: ["value"],
                   },
                 },
                 {
                   calculate:
-                    "datum.median == 0 ? 0 : (datum.count - datum.median)/sqrt(datum.median)",
+                    "datum.value == 0 ? 0 : (datum.count - datum.value)/sqrt(datum.value)",
                   as: "anomaly",
                 },
                 {
