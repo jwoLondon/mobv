@@ -69,7 +69,7 @@ df_meta %>%
   summarise(lat = mean(lat), lon = mean(lon)) %>%
   ungroup() %>%
   distinct() %>% 
-  write_csv("StationLocations-Bicycle.csv")
+  write_csv("../../data/zurich/StationLocations-Bicycle.csv")
 
 df_meta %>%
   filter(station_id %in% c("FZS_LETL", "FZS_MYTH", "FZS_ARBO", "FZS_HARD", 
@@ -82,5 +82,5 @@ df_meta %>%
   summarise(lat = mean(lat), lon = mean(lon)) %>%
   ungroup() %>%
   distinct() %>% 
-  write_csv("..\..\data\zurichStationLocations-Foot.csv")
+  write_csv("../../data/zurich/StationLocations-Foot.csv")
 
