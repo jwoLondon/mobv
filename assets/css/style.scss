@@ -22,8 +22,10 @@ h6 {
 }
 
 .wide {
-  width: 100%;
-  max-width: 1800px;
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+  margin-left: 2rem;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap");
