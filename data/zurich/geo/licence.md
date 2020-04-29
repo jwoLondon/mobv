@@ -1,0 +1,1 @@
+All json data were derived from OpenStreetMap data (© OpenStreetMap contributors). The derived data are thus also [licensed](https://www.openstreetmap.org/copyright) under the Open Data Commons Open Database License (ODbL) by the OpenStreetMap Foundation (OSMF).

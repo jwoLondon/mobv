@@ -1,0 +1,2 @@
+New York data were sourced from the open data website of the [New York City](https://opendata.cityofnewyork.us/) under the following [terms of use] 
+(https://opendata.cityofnewyork.us/overview/#termsofuse). Raw counts of stations are available [here](https://data.cityofnewyork.us/Transportation/Bicycle-Counts/uczf-rk3c). Station locations are [here](https://data.cityofnewyork.us/Transportation/Bicycle-Counters/smn3-rzf9). We cleaned up the locations to remove some locations with no coordinates, and shifted the Staten Island counter to improve map readability.
