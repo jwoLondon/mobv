@@ -19,7 +19,7 @@ df$dayofweek <- strftime(df$datetime, "%u")
 
 
 # Read metadata
-df_meta <- read_csv("taz.view_eco_standorte.csv", 
+df_meta <- read_csv("..\..\data\zurich\taz.view_eco_standorte.csv", 
                     col_types = cols_only(abkuerzung = col_character(),
                                           bezeichnung = col_character(), 
                                           id1 = col_character(),
