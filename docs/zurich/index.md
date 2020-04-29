@@ -5,6 +5,10 @@
 
 # Zurich Active Movement
 
+_Ross Purves, [Department of Geography, University of Zurich](https://www.geo.uzh.ch/~rsp/)_
+_Ralph Straumann, [EPB](https://www.ebp.ch/en)_
+_Jo Wood, [giCentre, City, University of London](https://www.gicentre.net/jwo)_
+
 ## Background
 
 During the COVID-19 crisis, information about mobility patterns within cities is an important way of understanding changes in behaviour as a response to public health recommendations and restrictions. Google's [COVID-19 Community Mobility Reports](https://www.google.com/covid19/mobility/) are one source of valuable information. However, the underlying data and detailed methodology are not available. Many cities passively sense flows of pedestrians, cyclists and vehicles, and we were curious as to the extent to which these data reflected changes in behaviour. Since the City of Zurich publishes a range of Open Data with a short temporal lag, we first explored the relationship between these data and Google's COVID-19 Community Mobility Reports. We assumed that the Google data cover the canton, but as is visible in the following figure, the city data are closely related. Furthermore, we note that the pedestrian data more closely follow services with a marked decrease (retail and recreation; transit stations; workplaces) while the bicycle data are more closely linked to services which show a less marked decline and in some cases are accessed more (grocery & pharmacy; parks; residential).
