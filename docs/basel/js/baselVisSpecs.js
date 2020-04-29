@@ -12,12 +12,10 @@ let footReferenceData = path + "StationReference-Foot.csv";
 
 let annotationsData = path + "annotations.csv";
 
-let blueLines = path + "geo/zurichRivers.json";
-let blueLineFeature = "zurichLines";
-let bluePolys = path + "geo/zurichLakes.json";
-let bluePolyFeature = "zurichPolys";
-let greenPolys = path + "geo/zurichGreen.json";
-let greenPolyFeature = "zurichPolys";
+let bluePolys = path + "geo/baselWater.json";
+let bluePolyFeature = "water";
+let greenPolys = path + "geo/baselGreen.json";
+let greenPolyFeature = "green";
 
 // CHART SCALING
 
