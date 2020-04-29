@@ -2,10 +2,24 @@
 ---
 
 // Headers
-$header-bg-color-secondary: #8f4e1d;
-$header-bg-color: #254c82;
+$header-bg-color-secondary: #254c82;
+$header-bg-color: #8f4e1d;
 
 // Text
-$section-headings-color: #8f4e1d;
+$section-headings-color: #3a200c;
 
+body {
+  font-family: Merriweather, serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Fjalla One", sans-serif;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Merriweather:400,900|Fjalla+One");
 @import "{{ site.theme }}";
