@@ -82,5 +82,5 @@ df_meta %>%
   summarise(lat = mean(lat), lon = mean(lon)) %>%
   ungroup() %>%
   distinct() %>% 
-  write_csv("StationLocations-Foot.csv")
+  write_csv("..\..\data\zurichStationLocations-Foot.csv")
 
