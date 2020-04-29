@@ -1,9 +1,9 @@
 ---
 ---
 
-@import "jekyll-theme-cayman";
+@import "{{ site.theme }}";
 
 .page-header {
   color: #ffff;
-  background-color: rgb(37, 41, 46);
+  background-color: #25292e;
 }
