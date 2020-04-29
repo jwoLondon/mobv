@@ -158,8 +158,7 @@ let vlSpecLinkedBicycle = {
                     type: "quantitative",
                   },
                   {
-                    field: "value",
-                    name: "benchmark",
+                    field: "value"
                     type: "quantitative",
                   },
                   {
@@ -581,7 +580,6 @@ let vlSpecLinkedFoot = {
                   },
                   {
                     field: "value",
-                    name: "benchmark",
                     type: "quantitative",
                   },
                   {
