@@ -5,9 +5,9 @@
 
 # Zurich Active Movement
 
-_Ross Purves, [Department of Geography, University of Zurich](https://www.geo.uzh.ch/~rsp/)_
-_Ralph Straumann, [EPB](https://www.ebp.ch/en)_
-_Jo Wood, [giCentre, City, University of London](https://www.gicentre.net/jwo)_
+- _Ross Purves, [Department of Geography, University of Zurich](https://www.geo.uzh.ch/~rsp/)_
+- _Ralph Straumann, [EPB](https://www.ebp.ch/en)_
+- _Jo Wood, [giCentre, City, University of London](https://www.gicentre.net/jwo)_
 
 ## Background
 
