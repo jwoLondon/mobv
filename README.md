@@ -1,3 +1,3 @@
 # Urban Mobility Viewer
 
-Visualization of changes in urban movement.
+Visualizing changes in urban movement.
