@@ -359,7 +359,7 @@ let vlSpecLinkedBicycle = {
           },
           mark: {
             type: "geoshape",
-            color: "rgb(100,100,100)",
+            color: "rgb(235,235,232)",
           },
         },
         {
@@ -778,7 +778,7 @@ let vlSpecLinkedFoot = {
           },
           mark: {
             type: "geoshape",
-            color: "rgb(100,100,100)",
+            color: "rgb(235,235,232)",
           },
         },
         {
