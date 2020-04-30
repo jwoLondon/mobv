@@ -15,8 +15,8 @@ let greenPolyFeature = "parks";
 
 // CHART SCALING
 
-let bicycleAnomalyMax = 100;
-let bicycleAnomalyMin = -100;
+let bicycleAnomalyMax = 80;
+let bicycleAnomalyMin = -80;
 
 // -----------------------------------------------------------------------------
 
@@ -209,7 +209,7 @@ let vlSpecLinkedBicycle = {
         },
         {
           width: 800,
-          height: 350,
+          height: 450,
           layer: [
             {
               data: { url: `${bicycleTimeSeriesData}` },
