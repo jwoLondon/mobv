@@ -17,7 +17,6 @@ station_id,station_name,description,lat,lon
 101057316,50th St & 8th Av In,,40.762348,-73.98612
 101010019,Southbound,,40.720959,-73.96093
 100009429,Manhattan Br 2013 to 2018 Bike Counter,,40.699768,-73.98582
-102009424,Northbound,,40.73971,-73.97954
 102010022,BK - BK-bound,,40.709274,-74.00099
 102057320,87th St & Columbus Out,,40.787745,-73.975021
 101009427,WB - MN-bound,,40.71053,-73.96145
@@ -31,11 +30,9 @@ station_id,station_name,description,lat,lon
 102009429,Manhattan Br 2013 to 2018 Bike Counter Out (BK-bound),,40.699768,-73.98582
 101009429,Manhattan Br 2013 to 2018 Bike Counter In (MN-bound),,40.699768,-73.98582
 101057320,87th St & Columbus In,,40.787745,-73.975021
-101010020,Northbound,,40.73883,-73.977165
 100009425,Prospect Park W,,40.671288,-73.971382
 102009426,MN(P) - BK-bound,,40.714573,-73.99495
 102057319,86th St & Amsterdam Out,,40.787745,-73.975021
-101009424,Southbound,,40.73971,-73.97954
 102010019,Northbound,,40.720959,-73.96093
 100039064,Forsyth Plaza,,40.715623,-73.994744
 101039064,Channel 1 In,,40.715623,-73.994744
@@ -45,6 +42,5 @@ station_id,station_name,description,lat,lon
 101051865,Manhattan Br 2012 to 2019 Bike Counter In,,40.69981,-73.98589
 101010022,BK - MN-bound,,40.709274,-74.00099
 102009427,WB - BK-bound,,40.71053,-73.96145
-102010020,Southbound,,40.73883,-73.977165
 100051865,Manhattan Br 2012 to 2019 Bike Counter,,40.69981,-73.98589
 101009428,QB - MN-bound,,40.751038,-73.94082
