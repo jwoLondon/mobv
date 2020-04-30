@@ -17,42 +17,16 @@ station_id,station_name,lat,lon
 100010022,Brooklyn Bridge Bike Path,40.709274,-74.00099
 101039064,Channel 1 IN,40.715623,-73.994744
 100057320,Columbus Ave at 86th St.,40.787745,-73.975021
-101010017,Departing St. George,40.643387,-74.072075
-102010017,Departing Whitehall,40.643387,-74.072075
 100009428,Ed Koch Queensboro Bridge Shared Path,40.751038,-73.94082
 100039064,Forsyth Plaza,40.715623,-73.994744
 100010019,Kent Avenue Bike Path,40.720959,-73.96093
-100005020,Manhattan Bridge 2012 Test Bike Counter,40.69981,-73.98589
-101005020,Manhattan Bridge 2012 Test Bike Counter IN (Manhattan bound),40.69981,-73.98589
-102005020,Manhattan Bridge 2012 Test Bike Counter OUT (Brooklyn bound),40.69981,-73.98589
-100051865,Manhattan Bridge 2012 to 2019 Bike Counter,40.69981,-73.98589
-101051865,Manhattan Bridge 2012 to 2019 Bike Counter IN,40.69981,-73.98589
-102051865,Manhattan Bridge 2012 to 2019 Bike Counter OUT,40.69981,-73.98589
-100009429,Manhattan Bridge 2013 to 2018 Bike Counter,40.699768,-73.98582
-101009429,Manhattan Bridge 2013 to 2018 Bike Counter IN (MN Bound),40.699768,-73.98582
-102009429,Manhattan Bridge 2013 to 2018 Bike Counter OUT (BK Bound),40.699768,-73.98582
-100047029,Manhattan Bridge Display Bike Counter,40.7156,-73.99475
-101047029,Manhattan Bridge Display Bike Counter IN,40.7156,-73.99475
 102047029,Manhattan Bridge Display Bike Counter OUT,40.7156,-73.99475
-100048744,Manhattan Bridge Interference Calibration 2018 Bike Counter,0,0
-103048744,Manhattan Bridge Interference Calibration 2018 Bike Counter IN,0,0
-101048744,Manhattan Bridge Interference Calibration 2018 Bike Counter IN,0,0
-104048744,Manhattan Bridge Interference Calibration 2018 Bike Counter OUT,0,0
-102048744,Manhattan Bridge Interference Calibration 2018 Bike Counter OUT,0,0
-100055175,Manhattan Bridge Interference Calibration 2019 Bike Counter,0,0
-101055175,Manhattan Bridge Interference Calibration 2019 Bike Counter IN,0,0
-103055175,Manhattan Bridge Interference Calibration 2019 Bike Counter IN,0,0
-104055175,Manhattan Bridge Interference Calibration 2019 Bike Counter OUT,0,0
-102055175,Manhattan Bridge Interference Calibration 2019 Bike Counter OUT,0,0
 100009426,Manhattan Bridge Ped Path,40.714573,-73.99495
 102009426,MN(P) - BK Bound,40.714573,-73.99495
 101009426,MN(P) - MN Bound,40.714573,-73.99495
 101010020,Northbound,40.73883,-73.977165
 102009424,Northbound,40.73971,-73.97954
 102010019,Northbound,40.720959,-73.96093
-100009425,Prospect Park West,40.671288,-73.971382
-101009425,Prospect Park West  Cyclists Northbound,40.671288,-73.971382
-102009425,Prospect Park West  Cyclists Southbound,40.671288,-73.971382
 100010018,Pulaski Bridge,40.742563,-73.951492
 102010018,Pulaski Bridge  Cyclists BK bound / SB,40.742563,-73.951492
 101010018,Pulaski Bridge  Cyclists Q bound / NB,40.742563,-73.951492
@@ -61,7 +35,7 @@ station_id,station_name,lat,lon
 101010019,Southbound,40.720959,-73.96093
 101009424,Southbound,40.73971,-73.97954
 102010020,Southbound,40.73883,-73.977165
-100010017,Staten Island Ferry,40.643387,-74.072075
+100010017,Staten Island Ferry,40.702,-74.023
 102009427,WB - BK Bound,40.71053,-73.96145
 101009427,WB - MN Bound,40.71053,-73.96145
 100009427,Williamsburg Bridge Bike Path,40.71053,-73.96145
