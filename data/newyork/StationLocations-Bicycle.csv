@@ -28,7 +28,6 @@ station_id,station_name,description,lat,lon
 102051865,Manhattan Br 2012 to 2019 Bike Counter Out,,40.69981,-73.98589
 100010019,Kent Av Bike Path,,40.720959,-73.96093
 101005020,Manhattan Br 2012 Test Bike Counter In (Manhattan-bound),,40.69981,-73.98589
-102010017,Whitehall Departure,,40.643387,-74.072075
 102009429,Manhattan Br 2013 to 2018 Bike Counter Out (BK-bound),,40.699768,-73.98582
 101009429,Manhattan Br 2013 to 2018 Bike Counter In (MN-bound),,40.699768,-73.98582
 101057320,87th St & Columbus In,,40.787745,-73.975021
@@ -46,7 +45,6 @@ station_id,station_name,description,lat,lon
 101051865,Manhattan Br 2012 to 2019 Bike Counter In,,40.69981,-73.98589
 101010022,BK - MN-bound,,40.709274,-74.00099
 102009427,WB - BK-bound,,40.71053,-73.96145
-101010017,St George Departure,,40.643387,-74.072075
 102010020,Southbound,,40.73883,-73.977165
 100051865,Manhattan Br 2012 to 2019 Bike Counter,,40.69981,-73.98589
 101009428,QB - MN-bound,,40.751038,-73.94082
