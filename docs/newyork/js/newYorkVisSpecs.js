@@ -65,6 +65,9 @@ let vlSpecLinkedBicycle = {
                     fields: ["station_name"],
                   },
                 },
+                {
+                  filter: "datum.station_name != null",
+                },
               ],
               selection: {
                 brush: {
@@ -231,6 +234,9 @@ let vlSpecLinkedBicycle = {
                     key: "station_id",
                     fields: ["station_name"],
                   },
+                },
+                {
+                  filter: "datum.station_name != null",
                 },
               ],
               selection: {
@@ -427,7 +433,6 @@ let vlSpecLinkedBicycle = {
 };
 
 // -----------------------------------------------------------------------------
-
 
 // -----------------------------------------------------------------------------
 // Reference each of the specs with an ID that can be used in the main HTML.
