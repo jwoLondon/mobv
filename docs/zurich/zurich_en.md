@@ -4,7 +4,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
 # Movement during the Corona Pandemic 
-How can we understand and compare patterns of human movement? Are individuals moving more or less than normal at the moment? And where are people moving? The following linked visualizations - heatmaps, charts and maps - are designed to help decision makers and other interested parties gain an overview and allow simple comparisons between locations in New York over time.
+How can we understand and compare patterns of human movement? Are individuals moving more or less than normal at the moment? And where are people moving? The following linked visualizations - heatmaps, charts and maps - are designed to help decision makers and other interested parties gain an overview and allow simple comparisons between locations in Zurich over time.
 
 ## Visualisations
 
