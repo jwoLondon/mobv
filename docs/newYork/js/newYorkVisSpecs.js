@@ -1,6 +1,6 @@
 // DATA SOURCES
 
-let path = "https://jwolondon.github.io/mobv/data/zurich/";
+let path = "https://jwolondon.github.io/mobv/data/newyork/";
 
 let bicycleStationData = path + "StationLocations-Bicycle.csv";
 let bicycleTimeSeriesData = path + "StationDailyTimeSeries-Bicycle.csv";
