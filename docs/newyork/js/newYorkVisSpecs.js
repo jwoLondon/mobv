@@ -15,8 +15,8 @@ let greenPolyFeature = "parks";
 
 // CHART SCALING
 
-let bicycleAnomalyMax = 120;
-let bicycleAnomalyMin = -120;
+let bicycleAnomalyMax = 100;
+let bicycleAnomalyMin = -100;
 
 // -----------------------------------------------------------------------------
 
@@ -281,8 +281,8 @@ let vlSpecLinkedBicycle = {
                     type: "nominal",
                     legend: {
                       title: null,
-                      columns: 2,
-                      orient: "top-left",
+                      columns: 4,
+                      orient: "bottom-left",
                     },
                     sort: {
                       field: "count",
