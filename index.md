@@ -1,9 +1,7 @@
 # Mobility Viewer
 
-Some content to add here.
+How have people been moving around cities before and during the Covid-19 crisis?
 
-## Example Cities
-
-- [Zurich](https://jwolondon.github.io/mobv/docs/zurich)
-- [Basel](https://jwolondon.github.io/mobv/docs/basel/)
-- New York
+- [Zurich](docs/zurich/)
+- [Basel](docs/basel/)
+- [New York](docs/newyork/)
