@@ -61,14 +61,14 @@ df_daily %>%
   filter(type == "Velo") %>%
   filter(date >= ymd("2020-01-03") & date <= ymd("2020-02-06")) %>%
   group_by(id) %>%
-  summarise(median = median(count)) %>%
+  summarise(value = median(count)) %>%
   write_csv("StationReference-Bicycle.csv", na="") 
 
 df_daily %>%
   filter(type == "Fussgänger") %>%
   filter(date >= ymd("2020-01-03") & date <= ymd("2020-02-06")) %>%
   group_by(id) %>%
-  summarise(median = median(count)) %>%
+  summarise(value = median(count)) %>%
   write_csv("StationReference-Foot.csv", na="") 
 
 # Derive locations

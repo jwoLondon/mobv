@@ -15,10 +15,9 @@ The heatmaps are dynamic to enable comparison between stations: through mouseove
 The vertical patterns in the heatmap and the charts show clearly how mobility in New York after the lockdown changed, but also that not all stations behave in the same ways. Other patterns, for example weekend movement are clearly visible.
 
 ## Data sources and implementation
-We wouldn't have been able to implement these visualisations without the [Open Data of the City of New York](https://opendata.cityofnewyork.us/). Many thanks to them, and to [OpenStreetMap contributors] (https://www.openstreetmap.org/copyright) for the mapping data.
+We wouldn't have been able to implement these visualisations without the [Open Data of the City of New York](https://opendata.cityofnewyork.us/). Many thanks to them, and to [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) for the mapping data.
 
-We have created similar visualisations for the cities of [Zurich and Basle in Switzerland] (https://jwolondon.github.io/mobv). 
-All of the code for our analysis of Basel, Zurich and New York are available [under an open licence](https://github.com/jwoLondon/mobv/blob/master/LICENSE) for futher applications.
+We have created similar visualisations for the cities of [Zurich](https://jwolondon.github.io/mobv/docs/zurich/) and [Basel](https://jwolondon.github.io/mobv/docs/basel) in Switzerland. All of the code for our analysis of Basel, Zurich and New York is available [under an open licence](https://github.com/jwoLondon/mobv/blob/master/LICENSE) for further applications.
 
 ## Team
 Conceived and implemented by

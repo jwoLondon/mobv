@@ -15,8 +15,8 @@ let greenPolyFeature = "parks";
 
 // CHART SCALING
 
-let bicycleAnomalyMax = 120;
-let bicycleAnomalyMin = -120;
+let bicycleAnomalyMax = 80;
+let bicycleAnomalyMin = -80;
 
 // -----------------------------------------------------------------------------
 
@@ -30,7 +30,12 @@ let vlSpecLinkedBicycle = {
     },
   },
   spacing: 0,
-  center: false,
+  padding: {
+    left: 10,
+    top: 0,
+    right: 0,
+    bottom: 0,
+  },
   concat: [
     {
       columns: 1,
@@ -64,6 +69,9 @@ let vlSpecLinkedBicycle = {
                     key: "station_id",
                     fields: ["station_name"],
                   },
+                },
+                {
+                  filter: "datum.station_name != null",
                 },
               ],
               selection: {
@@ -206,7 +214,7 @@ let vlSpecLinkedBicycle = {
         },
         {
           width: 800,
-          height: 350,
+          height: 450,
           layer: [
             {
               data: { url: `${bicycleTimeSeriesData}` },
@@ -231,6 +239,9 @@ let vlSpecLinkedBicycle = {
                     key: "station_id",
                     fields: ["station_name"],
                   },
+                },
+                {
+                  filter: "datum.station_name != null",
                 },
               ],
               selection: {
@@ -275,8 +286,8 @@ let vlSpecLinkedBicycle = {
                     type: "nominal",
                     legend: {
                       title: null,
-                      columns: 2,
-                      orient: "top-left",
+                      columns: 4,
+                      orient: "bottom-left",
                     },
                     sort: {
                       field: "count",
@@ -427,7 +438,6 @@ let vlSpecLinkedBicycle = {
 };
 
 // -----------------------------------------------------------------------------
-
 
 // -----------------------------------------------------------------------------
 // Reference each of the specs with an ID that can be used in the main HTML.

@@ -38,7 +38,12 @@ let vlSpecLinkedBicycle = {
     },
   },
   spacing: 0,
-  center: false,
+  padding: {
+    left: 10,
+    top: 0,
+    right: 0,
+    bottom: 0,
+  },
   concat: [
     {
       columns: 1,
@@ -72,6 +77,9 @@ let vlSpecLinkedBicycle = {
                     key: "station_id",
                     fields: ["station_name"],
                   },
+                },
+                {
+                  filter: "datum.station_name != null",
                 },
               ],
               selection: {
@@ -239,6 +247,9 @@ let vlSpecLinkedBicycle = {
                     key: "station_id",
                     fields: ["station_name"],
                   },
+                },
+                {
+                  filter: "datum.station_name != null",
                 },
               ],
               selection: {
@@ -494,6 +505,9 @@ let vlSpecLinkedFoot = {
                     fields: ["station_name"],
                   },
                 },
+                {
+                  filter: "datum.station_name != null",
+                },
               ],
               selection: {
                 brush: {
@@ -660,6 +674,9 @@ let vlSpecLinkedFoot = {
                     key: "station_id",
                     fields: ["station_name"],
                   },
+                },
+                {
+                  filter: "datum.station_name != null",
                 },
               ],
               selection: {
