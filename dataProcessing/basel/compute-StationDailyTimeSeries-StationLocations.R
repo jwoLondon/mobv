@@ -4,18 +4,21 @@ library(jsonlite)
 
 
 # Read input data
-df_v <- read_csv("https://data.bs.ch/explore/dataset/100013/download/?format=csv&q=year%3D2020&refine.traffictype=Velo&timezone=Europe/Zurich&lang=en&use_labels_for_header=true&csv_separator=,")
-df_f <- read_csv("https://data.bs.ch/explore/dataset/100013/download/?format=csv&q=year%3D2020&refine.traffictype=Fussgänger&timezone=Europe/Zurich&lang=en&use_labels_for_header=true&csv_separator=,")
+#df_v <- read_csv("https://data.bs.ch/explore/dataset/100013/download/?format=csv&q=year%3D2020&refine.traffictype=Velo&timezone=Europe/Zurich&lang=en&use_labels_for_header=true&csv_separator=,")
+#df_f <- read_csv("https://data.bs.ch/explore/dataset/100013/download/?format=csv&q=year%3D2020&refine.traffictype=Fussgänger&timezone=Europe/Zurich&lang=en&use_labels_for_header=true&csv_separator=,")
+#df <- rbind(df_f, df_v)
 
-df <- rbind(df_f, df_v)
+#guess_encoding("https://data-bs.ch/mobilitaet/Velo_Fuss_Count.csv")
+df <- read_delim("https://data-bs.ch/mobilitaet/Velo_Fuss_Count.csv", delim=";",
+                 locale = locale(encoding = "ISO-8859-1"))
 
-df_meta <- df %>%
-  select(ZST_NR, SiteName, TrafficType, "Geo Point") %>%
-  distinct()
-names(df_meta) <- c("station_id", "station_name", "type", "location")
+#df_meta <- df %>%
+#  select(SiteCode, SiteName, TrafficType, "Geo Point") %>%
+#  distinct()
+#names(df_meta) <- c("station_id", "station_name", "type", "location")
 
 df <- df %>%
-  select(ZST_NR, Date, TrafficType, Total)
+  select(SiteCode, Date, TrafficType, Total)
 names(df) <- c("station", "date", "type", "count")
 
 
@@ -72,34 +75,34 @@ df_daily %>%
   write_csv("../../data/basel/StationReference-Foot.csv", na="") 
 
 # Derive locations
-df_meta$station_name <- str_replace_all(df_meta$station_name, coll("Strasse"), "Str.")
-df_meta$station_name <- str_replace_all(df_meta$station_name, coll("strasse"), "str.")
-df_meta$station_name <- str_replace_all(df_meta$station_name, coll(" (Kraftwerk)"), "")
-df_meta$station_name <- str_replace_all(df_meta$station_name, coll(" (Riehen)"), "")
-df_meta$station_name <- str_replace_all(df_meta$station_name, coll(", Grenze CH-F"), "")
-df_meta$station_name <- str_replace_all(df_meta$station_name, coll(" lokal (mit Ein-/Ausfahrten)"), "")
-df_meta$station_name <- str_replace_all(df_meta$station_name, coll(" (Rialto)"), "")
-df_meta$station_name <- str_replace_all(df_meta$station_name, coll(" (DB-Brücke)"), "")
-df_meta$station_name <- str_replace_all(df_meta$station_name, coll("Zoll CH-D, "), "")
-df_meta$station_name <- str_replace_all(df_meta$station_name, coll("/Kirche"), "")
-df_meta$station_name <- str_replace_all(df_meta$station_name, coll(" (von F)"), "")
-df_meta$station_name <- str_replace_all(df_meta$station_name, coll("Elisabethenstr. 46*"), "Elisabethenstr. 46")
-df_meta$station_name <- str_replace_all(df_meta$station_name, str_c(df_meta$station_id, " "), "")
-
-df_meta <- separate(df_meta, location, c("lat", "lon"), ",")
-df_meta$lat <- as.numeric(df_meta$lat)
-df_meta$lon <- as.numeric(df_meta$lon)
-df_meta$description <- ""
-
-df_meta <- df_meta[order(df_meta$station_id),]
-
-df_meta %>%
-  filter(type == "Fussgänger") %>%
-  select(station_id, station_name, description, lat, lon) %>%
-  write_csv("../../data/basel/StationLocations-Foot.csv")
-
-df_meta %>%
-  filter(type == "Velo") %>%
-  select(station_id, station_name, description, lat, lon) %>%
-  write_csv("../../data/basel/StationLocations-Bicycle.csv")
+# df_meta$station_name <- str_replace_all(df_meta$station_name, coll("Strasse"), "Str.")
+# df_meta$station_name <- str_replace_all(df_meta$station_name, coll("strasse"), "str.")
+# df_meta$station_name <- str_replace_all(df_meta$station_name, coll(" (Kraftwerk)"), "")
+# df_meta$station_name <- str_replace_all(df_meta$station_name, coll(" (Riehen)"), "")
+# df_meta$station_name <- str_replace_all(df_meta$station_name, coll(", Grenze CH-F"), "")
+# df_meta$station_name <- str_replace_all(df_meta$station_name, coll(" lokal (mit Ein-/Ausfahrten)"), "")
+# df_meta$station_name <- str_replace_all(df_meta$station_name, coll(" (Rialto)"), "")
+# df_meta$station_name <- str_replace_all(df_meta$station_name, coll(" (DB-Brücke)"), "")
+# df_meta$station_name <- str_replace_all(df_meta$station_name, coll("Zoll CH-D, "), "")
+# df_meta$station_name <- str_replace_all(df_meta$station_name, coll("/Kirche"), "")
+# df_meta$station_name <- str_replace_all(df_meta$station_name, coll(" (von F)"), "")
+# df_meta$station_name <- str_replace_all(df_meta$station_name, coll("Elisabethenstr. 46*"), "Elisabethenstr. 46")
+# df_meta$station_name <- str_replace_all(df_meta$station_name, str_c(df_meta$station_id, " "), "")
+# 
+# df_meta <- separate(df_meta, location, c("lat", "lon"), ",")
+# df_meta$lat <- as.numeric(df_meta$lat)
+# df_meta$lon <- as.numeric(df_meta$lon)
+# df_meta$description <- ""
+# 
+# df_meta <- df_meta[order(df_meta$station_id),]
+# 
+# df_meta %>%
+#   filter(type == "Fussgänger") %>%
+#   select(station_id, station_name, description, lat, lon) %>%
+#   write_csv("../../data/basel/StationLocations-Foot.csv")
+# 
+# df_meta %>%
+#   filter(type == "Velo") %>%
+#   select(station_id, station_name, description, lat, lon) %>%
+#   write_csv("../../data/basel/StationLocations-Bicycle.csv")
 
