@@ -46,12 +46,12 @@ df_daily$date <- strftime(df_daily$date, "%Y-%m-%d")
 df_daily %>%
   filter(type == "Velo") %>%
   select(date, station, id, count) %>%
-  write_csv("StationDailyTimeSeries-Bicycle.csv", na="") 
+  write_csv("../../data/basel/StationDailyTimeSeries-Bicycle.csv", na="") 
 
 df_daily %>%
   filter(type == "Fussgänger") %>%
   select(date, station, id, count) %>%
-  write_csv("StationDailyTimeSeries-Foot.csv", na="") 
+  write_csv("../../data/basel/StationDailyTimeSeries-Foot.csv", na="") 
 
 # Compute and save baselines:
 # Google: "The baseline is the median value, for the corresponding day of the 
@@ -62,14 +62,14 @@ df_daily %>%
   filter(date >= ymd("2020-01-03") & date <= ymd("2020-02-06")) %>%
   group_by(id) %>%
   summarise(value = median(count)) %>%
-  write_csv("StationReference-Bicycle.csv", na="") 
+  write_csv("../../data/basel/StationReference-Bicycle.csv", na="") 
 
 df_daily %>%
   filter(type == "Fussgänger") %>%
   filter(date >= ymd("2020-01-03") & date <= ymd("2020-02-06")) %>%
   group_by(id) %>%
   summarise(value = median(count)) %>%
-  write_csv("StationReference-Foot.csv", na="") 
+  write_csv("../../data/basel/StationReference-Foot.csv", na="") 
 
 # Derive locations
 df_meta$station_name <- str_replace_all(df_meta$station_name, coll("Strasse"), "Str.")
@@ -91,13 +91,15 @@ df_meta$lat <- as.numeric(df_meta$lat)
 df_meta$lon <- as.numeric(df_meta$lon)
 df_meta$description <- ""
 
+df_meta <- df_meta[order(df_meta$station_id),]
+
 df_meta %>%
   filter(type == "Fussgänger") %>%
   select(station_id, station_name, description, lat, lon) %>%
-  write_csv("StationLocations-Foot.csv")
+  write_csv("../../data/basel/StationLocations-Foot.csv")
 
 df_meta %>%
   filter(type == "Velo") %>%
   select(station_id, station_name, description, lat, lon) %>%
-  write_csv("StationLocations-Bicycle.csv")
+  write_csv("../../data/basel/StationLocations-Bicycle.csv")
 
