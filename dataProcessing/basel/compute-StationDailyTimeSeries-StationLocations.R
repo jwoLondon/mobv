@@ -45,6 +45,9 @@ df_daily$id <- str_c(df_daily$station, "_", df_daily$dayofweek)
 df_daily <- df_daily[order(df_daily$date),]
 
 df_daily$date <- strftime(df_daily$date, "%Y-%m-%d")
+df_daily <- df_daily %>%
+  filter(date >= ymd("2020-01-01"))
+
 
 df_daily %>%
   filter(type == "Velo") %>%
