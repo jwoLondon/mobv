@@ -147,23 +147,27 @@ let vlSpecLinkedBicycle = {
                   {
                     field: "station_name",
                     type: "nominal",
+                    title: "locality",
                   },
                   {
                     field: "date",
                     type: "temporal",
-                    format: "%a %e %b %Y",
-                  },
-                  {
-                    field: "count",
-                    type: "quantitative",
+                    format: "%a %e %b",
                   },
                   {
                     field: "value",
                     type: "quantitative",
+                    title: "expected",
+                  },
+                  {
+                    field: "count",
+                    type: "quantitative",
+                    title: "observed",
                   },
                   {
                     field: "anomaly",
                     type: "quantitative",
+                    format: ".1f",
                   },
                 ],
               },
