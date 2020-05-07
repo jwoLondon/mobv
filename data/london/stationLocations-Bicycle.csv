@@ -1,0 +1,85 @@
+station_id,station_name,description,lat,lon
+Aldgate,Aldgate,,51.513172,-0.07504325
+Angel,Angel,,51.5332392,-0.1065227
+Avondale,Avondale,,51.51164167,-0.217321
+Bank,Bank,,51.51357391,-0.089809364
+Bankside,Bankside,,51.50617514,-0.098242286
+Barbican,Barbican,,51.51979971,-0.094207143
+Battersea,Battersea,,51.47146893,-0.1641328
+Battersea Park,Battersea Park,,51.47764991,-0.152206273
+Bayswater,Bayswater,,51.51500409,-0.186468
+Bermondsey,Bermondsey,,51.500913,-0.080924857
+Bethnal Green,Bethnal Green,,51.52743729,-0.057394357
+Blackwall,Blackwall,,51.50719933,-0.005897667
+Bloomsbury,Bloomsbury,,51.52293243,-0.1263695
+Borough,Borough,,51.50003592,-0.09276125
+Bow,Bow,,51.52546145,-0.023154727
+Brixton,Brixton,,51.46349433,-0.114778333
+Camden Town,Camden Town,,51.53780692,-0.141159167
+Canary Wharf,Canary Wharf,,51.50413986,-0.020397571
+Chelsea,Chelsea,,51.48862373,-0.167227182
+Clapham,Clapham,,51.46321218,-0.167883545
+Clerkenwell,Clerkenwell,,51.52620833,-0.109615889
+Covent Garden,Covent Garden,,51.5149365,-0.1226225
+Cubitt Town,Cubitt Town,,51.492923,-0.010485286
+Earl's Court,Earl's Court,,51.49161,-0.192091875
+Elephant & Castle,Elephant & Castle,,51.49688178,-0.102740111
+Euston,Euston,,51.5270886,-0.1343637
+Finsbury,Finsbury,,51.5268688,-0.102349
+Fitzrovia,Fitzrovia,,51.519862,-0.13866925
+Fulham,Fulham,,51.47633842,-0.211271417
+Haggerston,Haggerston,,51.53593409,-0.070631182
+Hammersmith,Hammersmith,,51.49040392,-0.223003154
+Holborn,Holborn,,51.51769252,-0.112385238
+Hoxton,Hoxton,,51.53132208,-0.086396231
+Hyde Park,Hyde Park,,51.50574642,-0.16928475
+Kennington,Kennington,,51.48677425,-0.10974325
+Kensington,Kensington,,51.50040419,-0.193507438
+King's Cross,King's Cross,,51.53366617,-0.12209
+Knightsbridge,Knightsbridge,,51.49775976,-0.163636471
+Ladbroke Grove,Ladbroke Grove,,51.509078,-0.207352333
+Limehouse,Limehouse,,51.512025,-0.031109
+Liverpool Street,Liverpool Street,,51.51893256,-0.081832889
+Marylebone,Marylebone,,51.51969215,-0.158054333
+Mayfair,Mayfair,,51.50983094,-0.148225765
+Mile End,Mile End,,51.52326633,-0.036194222
+Millwall,Millwall,,51.4942502,-0.0205206
+Notting Hill,Notting Hill,,51.5103455,-0.198184333
+Old Ford,Old Ford,,51.5342302,-0.0316496
+Olympia,Olympia,,51.497733,-0.2091414
+Olympic Park,Olympic Park,,51.54439167,-0.014709444
+Paddington,Paddington,,51.51831578,-0.173057667
+Parson's Green,Parson's Green,,51.4720436,-0.2005072
+Pimlico,Pimlico,,51.48810407,-0.138785533
+Poplar,Poplar,,51.51387557,-0.014525571
+Portobello,Portobello,,51.5182604,-0.2062274
+Putney,Putney,,51.46244989,-0.213652444
+Regent's Park,Regent's Park,,51.53037,-0.15447625
+Sands End,Sands End,,51.47049167,-0.189147167
+Shadwell,Shadwell,,51.51053575,-0.05563775
+Shepherd's Bush,Shepherd's Bush,,51.50318757,-0.218464
+Shoreditch,Shoreditch,,51.52415825,-0.076183833
+Soho,Soho,,51.51368438,-0.134842375
+South Bank,South Bank,,51.5058025,-0.1128777
+South Kensington,South Kensington,,51.49431545,-0.178471455
+Southwark,Southwark,,51.50475175,-0.1050805
+St John's Wood,St John's Wood,,51.52884155,-0.175201091
+St Luke's,St Luke's,,51.5261715,-0.092708
+St Paul's,St Paul's,,51.513283,-0.1007265
+Stepney,Stepney,,51.5170234,-0.0493724
+Stockwell,Stockwell,,51.47408223,-0.120097692
+Strand,Strand,,51.510388,-0.119936583
+Vauxhall,Vauxhall,,51.49004869,-0.118428688
+Victoria,Victoria,,51.49382188,-0.14284725
+Victoria Park,Victoria Park,,51.53731733,-0.044231333
+Walham Green,Walham Green,,51.4773082,-0.192832
+Walworth,Walworth,,51.491947,-0.095053
+Wandsworth,Wandsworth,,51.45940892,-0.191408615
+Wandsworth Road,Wandsworth Road,,51.4720715,-0.13628025
+Wapping,Wapping,,51.50656925,-0.064793125
+Waterloo,Waterloo,,51.50094889,-0.113420333
+West Chelsea,West Chelsea,,51.482195,-0.18043875
+West End,West End,,51.5081665,-0.131710167
+West Kensington,West Kensington,,51.48760188,-0.2061695
+Westminster,Westminster,,51.4967605,-0.133012938
+Whitechapel,Whitechapel,,51.517561,-0.065593778
