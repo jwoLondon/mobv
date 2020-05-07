@@ -284,11 +284,7 @@ let vlSpecLinkedBicycle = {
                     selection: "brush",
                     field: "station_name",
                     type: "nominal",
-                    legend: {
-                      title: null,
-                      columns: 4,
-                      orient: "bottom-left",
-                    },
+                    legend: null,
                     sort: {
                       field: "count",
                       op: "sum",
