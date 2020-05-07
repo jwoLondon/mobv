@@ -2,6 +2,7 @@
 
 How have people been moving around cities before and during the Covid-19 crisis?
 
-- [Zurich](docs/zurich/)
 - [Basel](docs/basel/)
+- [London](docs/london/)
 - [New York](docs/newyork/)
+- [Zurich](docs/zurich/)
