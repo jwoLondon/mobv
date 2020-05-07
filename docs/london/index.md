@@ -15,7 +15,11 @@ By comparing daily use with that expected during January 2020 ("anomaly" calcula
 
 The visualizations are dynamic to enable comparison between local regions: through mouseover the values for an individual day, the expected value and the anomaly are shown. With a mouse click on a cell a single area can be selected and is highlighted in all three visualisations. Shift-click allows selection of multiple areas, and double-click reselects all stations.
 
+Stations are sorted vertically by the overall volume of activity with busier areas towards the top.
+
 The vertical patterns in the charts show clearly how mobility in London after the lockdown changed and that weekday and weekend changes differ. Not all regions in London show similar behaviour, for example regions associated with likely leisure activity (often near parks) have seen an increase in use.
+
+<div class="wide" id="visLinkedBicycle"></div>
 
 ## Team
 
@@ -24,8 +28,6 @@ Conceived and implemented by
 - _[Ross Purves](https://twitter.com/GCUZH) – [Department of Geography, University of Zurich](https://www.geo.uzh.ch/~rsp/)_
 - _[Ralph Straumann](https://twitter.com/rastrau) – [EBP, Data Science Team, Zurich](https://www.ebp.ch)_
 - _[Jo Wood](https://twitter.com/jwolondon) – [giCentre, City University London](https://www.gicentre.net/jwo)_
-
-<div class="wide" id="visLinkedBicycle"></div>
 
 <!-- Script containing the vis specs used above. Must be at end of document. -->
 <script src="js/londonVisSpecs.js"></script>
