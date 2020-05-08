@@ -8,12 +8,8 @@ let footReferenceData = path + "StationReference.csv";
 
 let annotationsData = path + "annotations.csv";
 
-let blueLines = path + "geo/zurichRivers.json";
-let blueLineFeature = "zurichLines";
-let bluePolys = path + "geo/zurichLakes.json";
-let bluePolyFeature = "zurichPolys";
-let greenPolys = path + "geo/zurichGreen.json";
-let greenPolyFeature = "zurichPolys";
+let boundaries = path + "geo/bundeslaender.json";
+let boundaryFeature = "bundeslaender";
 
 // CHART SCALING
 
@@ -357,37 +353,14 @@ let vlSpecLinkedFoot = {
       layer: [
         {
           data: {
-            url: `${blueLines}`,
-            format: { type: "topojson", feature: `${blueLineFeature}` },
+            url: `${boundaries}`,
+            format: { type: "topojson", feature: `${boundaryFeature}` },
           },
           mark: {
             type: "geoshape",
-            color: "rgb(226,237,246)",
-            strokeWidth: 4,
-            filled: false,
-          },
-        },
-        {
-          data: {
-            url: `${bluePolys}`,
-            format: { type: "topojson", feature: `${bluePolyFeature}` },
-          },
-          mark: {
-            type: "geoshape",
-            color: "rgb(226,237,246)",
-          },
-        },
-        {
-          data: {
-            url: `${greenPolys}`,
-            format: {
-              type: "topojson",
-              feature: `${greenPolyFeature}`,
-            },
-          },
-          mark: {
-            type: "geoshape",
-            color: "rgb(239,244,225)",
+            stroke: "rgb(30,20,20)",
+            fill: "rgb(252,246,229)",
+            strokeWidth: 1,
           },
         },
         {
