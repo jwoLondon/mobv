@@ -1,18 +1,15 @@
 station_name,station_id,lat,lon
 "Adalbertstraße West, Aachen",170,50.77,6.09
 "Bürgermeister-Fischer-Straße, Augsburg",102,48.37,10.9
-"Annastraße, Augsburg",251,48.37,10.9
 "Grüner Markt, Bamberg",118,49.89,10.89
 "Hauptstraße, Bergisch-Gladbach",171,50.99,7.13
 "Kurfürstendamm Nordseite Ost, Berlin",94,52.5,13.33
 "Bürgerturmstraße, Biberach an der Riss",218,48.1,9.79
 "Bahnhofstraße Süd, Bielefeld",163,52.02,8.53
-"Neustraße, Bocholt",253,51.84,6.62
 "Poststraße, Bonn",87,50.73,7.1
 "Damm, Braunschweig",130,52.26,10.52
 "Obernstraße, Bremen",172,53.08,8.81
 "Bahnhofstraße West, Brilon",248,51.4,8.57
-"Zöllnerstraße, Celle",254,52.62,10.08
 "Schuchardstraße, Darmstadt",103,49.87,8.65
 "Prager Straße Nord, Dresden",164,51.05,13.74
 "Flinger Straße, Düsseldorf",55,51.23,6.78
@@ -30,7 +27,6 @@ station_name,station_id,lat,lon
 "Ludwigstraße, Ingolstadt",123,48.76,11.43
 "Löbderstraße, Jena",247,50.93,11.59
 "Kaiserstraße Mitte, Karlsruhe",67,49.01,8.4
-"Löhrstraße Mitte, Koblenz",86,50.36,7.59
 "Schildergasse West, Köln",47,50.94,6.95
 "Hochstraße Mitte, Krefeld",144,51.33,6.56
 "Hainstraße, Leipzig",69,51.34,12.37
