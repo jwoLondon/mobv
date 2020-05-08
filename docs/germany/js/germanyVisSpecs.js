@@ -6,7 +6,7 @@ let footStationData = path + "StationLocations.csv";
 let footTimeSeriesData = path + "StationDailyTimeSeries.csv";
 let footReferenceData = path + "StationReference.csv";
 
-//let annotationsData = path + "annotations.csv";
+let annotationsData = path + "annotations.csv";
 
 let blueLines = path + "geo/zurichRivers.json";
 let blueLineFeature = "zurichLines";
