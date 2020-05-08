@@ -349,7 +349,7 @@ let vlSpecLinkedFoot = {
       ],
     },
     {
-      height: 900,
+      height: 1000,
       layer: [
         {
           data: {
