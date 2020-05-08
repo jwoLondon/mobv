@@ -1,0 +1,121 @@
+station_name,station_id,lat,lon
+"Krahnstraße Mitte,  Altstadt, Osnabrueck",109,8.043,109
+"Adalbertstraße West, Aachen",170,6.09,170
+"Bürgermeister-Fischer-Straße, Augsburg",102,48.367,10.897
+"Annastraße, Augsburg",251,48.369,10.896
+"Grüner Markt, Bamberg",118,49.893,10.889
+"Hauptstraße, Bergisch-Gladbach",171,50.991,7.128
+"Kurfürstendamm Südseite Ost, Berlin",97,52.504,13.333
+"Kurfürstendamm Nordseite Ost, Berlin",94,52.504,13.329
+"Tauentzienstraße Südseite West, Berlin",98,52.504,13.338
+"Bürgerturmstraße, Biberach an der Riss",218,48.099,9.789
+"Bahnhofstraße Süd, Bielefeld",163,52.024,8.532
+"Stresemannstraße, Bielefeld",161,52.025,8.533
+"Bahnhofstraße, Bielefeld",162,52.026,8.531
+"Neustraße, Bocholt",253,51.838,6.615
+"Remigiusstraße, Bonn",51,50.734,7.101
+"Sternstraße, Bonn",52,50.736,7.1
+"Poststraße, Bonn",87,50.734,7.098
+"Poststraße, Braunschweig",127,52.263,10.519
+"Hutfiltern, Braunschweig",128,52.262,10.522
+"Schuhstraße, Braunschweig",129,52.263,10.521
+"Langer Hof, Braunschweig",132,52.264,10.526
+"Damm, Braunschweig",130,52.262,10.525
+"Sack, Braunschweig",131,52.265,10.522
+"Neue Straße, Braunschweig",126,52.264,10.52
+"Obernstraße, Bremen",172,53.077,8.805
+"Bahnhofstraße West, Brilon",248,51.396,8.569
+"Bahnhofstraße Mitte, Brilon",249,51.396,8.571
+"Zöllnerstraße, Celle",254,52.624,10.083
+"Schuchardstraße, Darmstadt",103,49.872,8.653
+"Ernst-Ludwig-Straße, Darmstadt",104,49.871,8.654
+"Westenhellweg Mitte, Dortmund",49,51.514,7.463
+"Westenhellweg Ost, Dortmund",246,51.514,7.465
+"Prager Straße Nord, Dresden",164,51.046,13.736
+"Mittelstraße, Duesseldorf",157,51.224,6.774
+"Schadowstraße West, Düsseldorf",53,51.226,6.781
+"Schadowstraße Ost, Düsseldorf",54,51.227,6.785
+"Flinger Straße, Düsseldorf",55,51.225,6.775
+"Königsallee Ostseite, Düsseldorf",56,51.221,6.779
+"Schlösserstraße, Erfurt",57,50.977,11.032
+"Hauptstraße Süd, Erlangen",142,49.596,11.004
+"Kettwiger Straße, Essen",125,51.456,7.013
+"Holm, Flensburg",252,54.785,9.435
+"Zeil Mitte, Frankfurt",150,50.115,8.685
+"Große Bockenheimer Straße, Frankfurt a.M.",58,50.115,8.674
+"Goethestraße, Frankfurt a.M.",59,50.114,8.674
+"Rathausgasse, Freiburg",84,47.996,7.849
+"Kaiser-Joseph-Straße Mitte, Freiburg",143,47.994,7.849
+"Seltersweg, Giessen",122,50.584,8.673
+"Weender Straße, Göttingen",244,51.534,9.935
+"Groner Straße, Göttingen",243,51.532,9.934
+"Spitalerstraße, Hamburg",81,53.552,10.003
+"Neuer Wall, Hamburg",91,53.552,9.992
+"Jungfernstieg, Hamburg",92,53.553,9.992
+"Große Bleichen, Hamburg",93,53.553,9.989
+"Große Packhofstraße, Hannover",64,52.374,9.737
+"Karmarschstraße, Hannover",65,52.374,9.738
+"Georgstraße, Hannover",63,52.375,9.737
+"Hauptstraße West, Heidelberg",141,49.41,8.695
+"Fleiner Straße, Heilbronn",139,49.14,9.219
+"Hoher Weg, Hildesheim",208,52.152,9.951
+"Ludwigstraße, Ingolstadt",123,48.764,11.426
+"Löbderstraße, Jena",247,50.928,11.586
+"Kaiserstraße Mitte, Karlsruhe",67,49.01,8.399
+"Löhrstraße Mitte, Koblenz",86,50.358,7.593
+"Hohe Straße Mitte, Köln",48,50.938,6.956
+"Ehrenstraße Ost, Köln",50,50.938,6.944
+"Hohe Straße Süd, Köln",158,50.937,6.956
+"Hohe Straße Nord, Köln",167,50.94,6.956
+"Schildergasse Mitte, Köln",159,50.936,6.954
+"Ehrenstraße Mitte, Köln",205,50.938,6.941
+"Schildergasse West, Köln",47,50.936,6.951
+"Schildergasse Ost, Köln",160,50.937,6.956
+"Zeppelinstraße, Köln",168,50.937,6.949
+"Hochstraße Mitte, Krefeld",144,51.331,6.563
+"Rheinstraße West, Krefeld",145,51.333,6.563
+"Hainstraße, Leipzig",69,51.342,12.374
+"Petersstraße, Leipzig",68,51.339,12.375
+"Werner-Senger-Straße, Limburg",148,50.386,8.062
+"Breite Straße Mitte, Lübeck",207,53.869,10.687
+"Am Brand, Mainz",85,50,8.274
+"Schusterstraße, Mainz",71,50,8.273
+"Stadthausstraße, Mainz",72,50.001,8.27
+"Planken Ost, Mannheim",95,49.486,8.471
+"Planken West, Mannheim",96,49.487,8.468
+"Hindenburgstraße, Mönchengladbach",245,51.195,6.441
+"Rothenburg, Muenster",100,51.961,7.627
+"Ludgeristraße, Muenster",117,51.96,7.628
+"Neuhauser Straße, München",73,48.138,11.57
+"Schützenstraße, München",74,48.14,11.563
+"Kaufingerstraße, München",165,48.138,11.573
+"Maximilianstraße Mitte, München",166,48.139,11.583
+"Breite Gasse, Nürnberg",88,49.45,11.075
+"Kaiserstraße, Nürnberg",89,49.452,11.077
+"Karolinenstraße, Nürnberg",90,49.451,11.074
+"Achternstraße, Oldenburg",210,53.141,8.214
+"Lange Straße, Oldenburg",209,53.141,8.213
+"Große Straße Süd, Osnabrück",153,52.274,8.048
+"Große Straße Mitte, Osnabrueck",108,52.275,8.047
+"Johannisstraße Nord, Osnabrueck",110,52.272,8.049
+"Jürgensort, Osnabrueck",111,52.274,8.046
+"Herrenteichsstraße Ost, Osnabrueck",114,52.276,8.046
+"Herrenteichsstraße West, Osnabrueck",116,52.276,8.045
+"Westernstraße, Paderborn",169,51.717,8.75
+"Ludwigstraße, Passau",147,48.574,13.459
+"Wilhelmstraße, Reutlingen",134,48.493,9.211
+"Kröpeliner Straße West, Rostock",206,54.088,12.131
+"Bahnhofstraße, Saarbrücken",75,49.237,6.992
+"Stiftstraße, Stuttgart",151,48.776,9.177
+"Königstraße Süd, Stuttgart",76,48.775,9.175
+"Königstraße Mitte, Stuttgart",77,48.777,9.177
+"Brotstraße, Trier",138,49.755,6.641
+"Fleischstraße, Trier",140,49.756,6.639
+"Simeonstraße, Trier",255,49.758,6.643
+"Hirschstraße, Ulm",146,48.398,9.989
+"Münsterplatz, Ulm",146,48.398,9.989
+"Kirchgasse, Wiesbaden",79,50.081,8.238
+"Kirchgasse Mitte, Wiesbaden",79,50.081,8.238
+"Kirchgasse Nord, Wiesbaden",256,50.082,8.239
+"Poststraße, Wuppertal",154,51.258,7.148
+"Schönbornstraße, Würzburg",135,49.795,9.931
