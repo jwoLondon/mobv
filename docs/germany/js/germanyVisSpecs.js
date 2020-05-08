@@ -2,7 +2,7 @@
 
 let path = "https://jwolondon.github.io/mobv/data/germany/";
 
-let footStationData = path + "StationLocations.csv";
+let footStationData = path + "StationLocationsSelection.csv";
 let footTimeSeriesData = path + "StationDailyTimeSeries.csv";
 let footReferenceData = path + "StationReference.csv";
 
