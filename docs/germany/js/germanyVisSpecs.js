@@ -17,8 +17,8 @@ let greenPolyFeature = "zurichPolys";
 
 // CHART SCALING
 
-let footAnomalyMax = 200;
-let footAnomalyMin = -200;
+let footAnomalyMax = 350;
+let footAnomalyMin = -350;
 
 // -----------------------------------------------------------------------------
 
@@ -288,11 +288,7 @@ let vlSpecLinkedFoot = {
                     selection: "brush",
                     field: "station_name",
                     type: "nominal",
-                    legend: {
-                      title: null,
-                      columns: 2,
-                      orient: "top-left",
-                    },
+                    legend: null,
                     sort: {
                       field: "count",
                       op: "sum",
