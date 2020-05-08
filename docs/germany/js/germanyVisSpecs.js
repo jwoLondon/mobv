@@ -349,69 +349,50 @@ let vlSpecLinkedFoot = {
       ],
     },
     {
-      height: 700,
+      height: 900,
       layer: [
         {
           data: {
-            url: `${boundaries}`,
-            format: { type: "topojson", feature: `${boundaryFeature}` },
+            url:
+              "https://jwolondon.github.io/mobv/data/germany/geo/bundeslaender.json",
+            format: { type: "topojson", feature: "bundeslaender" },
           },
           mark: {
             type: "geoshape",
-            stroke: "rgb(30,20,20)",
+            stroke: "white",
             fill: "rgb(252,246,229)",
-            strokeWidth: 1,
+            fillOpacity: 0.8,
+            strokeWidth: 4,
           },
         },
         {
-          data: { url: `${footStationData}` },
-          encoding: {
-            longitude: {
-              field: "lon",
-              type: "quantitative",
-            },
-            latitude: {
-              field: "lat",
-              type: "quantitative",
-            },
+          data: {
+            url:
+              "https://jwolondon.github.io/mobv/data/germany/StationLocationsSelection.csv",
           },
-          transform: [
-            {
-              filter: {
-                selection: "brush",
-              },
-            },
-          ],
+          encoding: {
+            longitude: { field: "lon", type: "quantitative" },
+            latitude: { field: "lat", type: "quantitative" },
+          },
+          transform: [{ filter: { selection: "brush" } }],
           mark: "circle",
         },
         {
-          data: { url: `${footStationData}` },
-          transform: [
-            {
-              filter: {
-                selection: "brush",
-              },
-            },
-          ],
+          data: {
+            url:
+              "https://jwolondon.github.io/mobv/data/germany/StationLocationsSelection.csv",
+          },
+          transform: [{ filter: { selection: "brush" } }],
           encoding: {
-            longitude: {
-              field: "lon",
-              type: "quantitative",
-            },
-            latitude: {
-              field: "lat",
-              type: "quantitative",
-            },
-            text: {
-              field: "station_name",
-              type: "nominal",
-            },
+            longitude: { field: "lon", type: "quantitative" },
+            latitude: { field: "lat", type: "quantitative" },
+            text: { field: "station_name", type: "nominal" },
           },
           mark: {
             type: "text",
             align: "left",
             dx: 4,
-            opacity: 0.3,
+            opacity: 0.6,
             fontSize: 8,
           },
         },
