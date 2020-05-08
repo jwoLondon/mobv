@@ -17,10 +17,9 @@ let greenPolyFeature = "zurichPolys";
 
 // CHART SCALING
 
-let bicycleAnomalyMax = 120;
-let bicycleAnomalyMin = -120;
-let footAnomalyMax = 140;
-let footAnomalyMin = -140;
+
+let footAnomalyMax = 200;
+let footAnomalyMin = -200;
 
 // -----------------------------------------------------------------------------
 
