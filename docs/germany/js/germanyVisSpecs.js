@@ -42,7 +42,7 @@ let vlSpecLinkedFoot = {
         {
           width: 800,
           height: {
-            step: 15,
+            step: 12,
           },
           layer: [
             {
