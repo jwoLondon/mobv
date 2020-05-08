@@ -17,13 +17,10 @@ let greenPolyFeature = "zurichPolys";
 
 // CHART SCALING
 
-
 let footAnomalyMax = 200;
 let footAnomalyMin = -200;
 
 // -----------------------------------------------------------------------------
-
-
 
 // -----------------------------------------------------------------------------
 
@@ -149,23 +146,28 @@ let vlSpecLinkedFoot = {
                   {
                     field: "station_name",
                     type: "nominal",
+                    title: "locality",
                   },
                   {
                     field: "date",
                     type: "temporal",
-                    format: "%a %e %b %Y",
-                  },
-                  {
-                    field: "count",
-                    type: "quantitative",
+                    format: "%a %e %b",
                   },
                   {
                     field: "value",
                     type: "quantitative",
+                    format: ".0f",
+                    title: "expected",
+                  },
+                  {
+                    field: "count",
+                    type: "quantitative",
+                    title: "observed",
                   },
                   {
                     field: "anomaly",
                     type: "quantitative",
+                    format: ".1f",
                   },
                 ],
               },
