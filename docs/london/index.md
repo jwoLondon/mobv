@@ -3,7 +3,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-# Active Movement during the Covid-19 Pandemic
+# Active Movement During the Covid-19 Pandemic
 
 How can we understand and compare patterns of human movement? Are individuals moving more or less than normal at the moment? And where in London are people moving?
 
