@@ -15,6 +15,12 @@ Die Visualisierungen sind konzipiert für unterschiedliche Fortbewegungsarten. S
 
 Die Heatmaps sind dynamisch: Durch Überfahren (Hovern) der Balken mit der Maus werden das Verkehrsaufkommen am betreffenden Tag, der Referenzwert (Median) und die Anomalie (der sogenannte Chi-Wert) angezeigt. Mit einem Mausklick kann man eine Zählstelle selektieren, durch Betätigen der Shift-Taste und Mausklick mehrere gleichzeitig. Die selektierten Zählstellen werden in den begleitenden Visualisierungen – der Liniengrafik und der Karte – hervorgehoben. So können Sie schnell und einfach unterschiedliche Städte miteinander verglichen.
 
+## Datenquellen und Umsetzung
+Wir hätten unsere Visualisierungen nicht umsetzen können ohne [HyStreet Daten](https://hystreet.com/) und die HyStreet R-Wrapper(https://cran.r-project.org/web/packages/hystReet/index.html). Ein grosses Dankeschön auch an die [OpenStreetMap-Beitragenden](https://www.openstreetmap.org/copyright) für die Kartendaten.
+
+Analoge Visualisierungen haben wir mit [Open Government Data des Stadt Zürich](https://jwolondon.github.io/mobv/docs/zurich/), (Basel)[https://jwolondon.github.io/mobv/docs/basel/] und der [Stadt New York](https://jwolondon.github.io/mobv) umgesetzt. Sämtlicher Code für die Analyse der Daten von Zürich, Basel und New York und der Code hinter den jeweiligen Webseiten ist verfügbar auf [GitHub](https://github.com/jwolondon/mobv/). Sämtlicher Code steht [unter einer offenen Lizenz](https://github.com/jwoLondon/mobv/blob/master/LICENSE) zur Weiterverwendung zur Verfügung.
+
+
 <div class="wide" id="visLinkedFoot"></div>
 
 <!-- ## Datenquellen und Umsetzung
