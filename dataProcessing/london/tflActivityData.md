@@ -273,7 +273,7 @@ Download the current month from remote database, and add to usage:
 
 ```sql
 .mode csv
-.import useageSinceMay05.csv usage
+.import myUpdatedData.csv usage
 ```
 
 ### Join locality to usage
@@ -424,9 +424,7 @@ londonExample =
 
         cellSpec =
             asSpec
-                [ timeSeriesData
-                , trans []
-                , sel []
+                [ sel []
                 , gridEnc []
                 , square []
                 ]
@@ -486,7 +484,6 @@ londonExample =
                         [ mName "station_name"
                         , mNominal
                         , mLegend []
-                        , mSort [ soByField "count" opSum, soDescending ]
                         ]
                         [ mStr "black" ]
                     ]
@@ -495,9 +492,7 @@ londonExample =
 
         lineSpec =
             asSpec
-                [ timeSeriesData
-                , trans []
-                , sel []
+                [ sel []
                 , encTimeline []
                 , line [ maInterpolate miMonotone, maClip True ]
                 ]
@@ -527,39 +522,44 @@ londonExample =
             asSpec [ columns 1, concat [ specGrid, timelineSpec ] ]
 
         -- Map
-        transStations =
-            transform
-                << filter (fiExpr "datum.lon != 0 || datum.lat != 0")
-                << filter (fiSelection "brush")
-
         encStations =
             encoding
                 << position Longitude [ pName "lon", pQuant ]
                 << position Latitude [ pName "lat", pQuant ]
+                << color [ mName "station_name", mNominal, mLegend [] ]
+                << opacity [ mSelectionCondition (selectionName "brush") [ mNum 1 ] [ mNum 0.1 ] ]
+
+        transStations =
+            transform
+                << aggregate [ opAs opCount "station_name" "numReadings" ] [ "station_name" ]
+                << lookup "station_name" localityData "station_name" (luFields [ "lon", "lat" ])
 
         specStations =
-            asSpec [ localityData, encStations [], transStations [], circle [] ]
+            asSpec [ encStations [], square [ maSize 80 ] ]
 
         encStationLabels =
-            encStations
+            encoding
+                << position Longitude [ pName "lon", pQuant ]
+                << position Latitude [ pName "lat", pQuant ]
                 << text [ tName "station_name", tNominal ]
+                << opacity [ mSelectionCondition (selectionName "brush") [ mNum 1 ] [ mNum 0.1 ] ]
 
         specStationLabels =
             asSpec
-                [ localityData
-                , transStations []
-                , encStationLabels []
-                , textMark [ maAlign haLeft, maDx 4, maOpacity 0.3, maFontSize 8 ]
+                [ encStationLabels []
+                , textMark [ maDy 10, maFontSize 10 ]
                 ]
     in
     toVegaLite
         [ cfg []
         , spacing 0
         , padding (paEdges 10 0 0 0)
+        , timeSeriesData
+        , trans []
         , vConcat
             [ specGrid
             , timelineSpec
-            , asSpec [ width 800, height 650, layer (specMap ++ [ specStations, specStationLabels ]) ]
+            , asSpec [ width 800, height 650, transStations [], layer (specMap ++ [ specStations, specStationLabels ]) ]
             ]
         ]
 ```
