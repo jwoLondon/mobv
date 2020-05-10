@@ -38,8 +38,8 @@ specMap =
     ]
 
 
-stationMap : String -> Spec
-stationMap stationFile =
+stationMap : String -> Bool -> Spec
+stationMap stationFile showRegions =
     let
         cfg =
             configure
@@ -47,6 +47,9 @@ stationMap stationFile =
 
         stationData =
             dataFromUrl (path ++ stationFile) []
+
+        localityData =
+            dataFromUrl (path ++ "geo/localities.json?") [ topojsonFeature "localities" ]
 
         sel =
             selection
@@ -80,6 +83,9 @@ stationMap stationFile =
                     , [ tName "id", tQuant ]
                     ]
 
+        specLocalities =
+            asSpec [ localityData, geoshape [ maStroke "black", maOpacity 0.3, maFilled False ] ]
+
         specStation =
             asSpec [ sel [], enc [], circle [ maSize 48, maStroke "black", maStrokeWidth 0.6 ] ]
     in
@@ -88,11 +94,19 @@ stationMap stationFile =
         , stationData
         , width 800
         , height 550
-        , layer (specMap ++ [ specStation ])
+        , layer
+            (specMap
+                ++ (if showRegions then
+                        [ specLocalities, specStation ]
+
+                    else
+                        [ specStation ]
+                   )
+            )
         ]
 ```
 
-^^^elm {v=(stationMap "tflBicycleStations.csv") interactive}^^^
+^^^elm {v=(stationMap "tflBicycleStations.csv" False) interactive}^^^
 
 Groupings vary considerably in size and there is some inconsistency in geographic placement and in naming, so to reduce the number of localities, the following changes were made:
 
@@ -124,6 +138,7 @@ Groupings vary considerably in size and there is some inconsistency in geographi
 | 79  | Arundel Street              | Temple             | Strand            |
 | 80  | Webber Street               | Southwark          | Elephant & Castle |
 | 104 | Crosswall                   | Tower              | Aldgate           |
+| 107 | Finsbury Leisure Centre     | St Luke's          | Finsbury          |
 | 116 | Little Argyll Street        | West End           | Soho              |
 | 120 | The Guildhall               | Guildhall          | Bank              |
 | 124 | Eaton Square                | Belgravia          | Knightsbridge     |
@@ -133,15 +148,17 @@ Groupings vary considerably in size and there is some inconsistency in geographi
 | 149 | Kennington Road Post Office | Oval               | Kennington        |
 | 160 | Waterloo Place              | St James's         | West End          |
 | 181 | Belgrave Square             | Belgravia          | Knightsbridge     |
-| 183 | Riverlight North            | Nine Elms          | Pimlico           |
+| 183 | Riverlight North            | Nine Elms          | Battersea Park    |
 | 199 | Great Tower Street          | Monument           | Bank              |
 | 203 | West Smithfield Rotunda     | Farringdon         | Barbican          |
 | 207 | Grosvenor Crescent          | Belgravia          | Knightsbridge     |
 | 215 | Moorfields                  | Moorgate           | Barbican          |
 | 224 | Queensway                   | Kensington Gardens | Hyde Park         |
 | 228 | St. James's Square          | St James's         | West End          |
+| 247 | St. John's Wood Church      | Regent's Park      | St John's Wood    |
 | 255 | Clifton Road                | Maida Vale         | St John's Wood    |
 | 259 | Bourne Street               | Belgravia          | Pimlico           |
+| 267 | Regency Street              | Westminster        | Pimlico           |
 | 276 | Lower Thames Street         | Monument           | Bank              |
 | 298 | Curlew Street               | Shad Thames        | Bermondsey        |
 | 302 | Putney Pier                 | Wandsworth         | Putney            |
@@ -153,8 +170,11 @@ Groupings vary considerably in size and there is some inconsistency in geographi
 | 423 | Eaton Square (South)        | Belgravia          | Knightsbridge     |
 | 440 | Kennington Oval             | Oval               | Kennington        |
 | 452 | St. Katharine's Way         | Tower              | Wapping           |
+| 459 | Gunmakers Lane              | Old Ford           | Victoria Park     |
+| 467 | Southern Grove              | Bow                | Mile End          |
 | 487 | Canton Street               | Poplar             | Limehouse         |
 | 509 | Fore Street                 | Guildhall          | Bank              |
+| 521 | Driffield Road              | Old Ford           | Victoria Park     |
 | 527 | Hansard Mews                | Holland Park       | Shepherd's Bush   |
 | 559 | Abbotsbury Road             | Holland Park       | Kensington        |
 | 566 | Westfield Ariel Way         | White City         | Avondale          |
@@ -166,33 +186,39 @@ Groupings vary considerably in size and there is some inconsistency in geographi
 | 631 | Battersea Park Road         | Nine Elms          | Battersea Park    |
 | 634 | Brook Green South           | Brook Green        | Hammersmith       |
 | 637 | Spencer Park                | Wandsworth Common  | Clapham           |
+| 648 | Peterborough Road           | Sands End          | Parson's Green    |
 | 650 | St. Mark's Road             | North Kensington   | Portobello        |
 | 653 | Simpson Street              | Clapham            | Battersea         |
 | 654 | Ashmole Estate              | Oval               | Kennington        |
+| 673 | Hibbert Street              | Battersea          | Wandsworth        |
 | 675 | Usk Road                    | Clapham Junction   | Wandsworth        |
 | 689 | Spanish Road                | Clapham Junction   | Wandsworth        |
 | 704 | Mexfield Road               | East Putney        | Wandsworth        |
 | 706 | Snowsfields                 | London Bridge      | Bermondsey        |
+| 707 | Barons Court Station        | West Kensington    | Hammersmith       |
 | 718 | Ada Street                  | Hackney Central    | Haggerston        |
 | 719 | Victoria Park Road          | Hackney Central    | Victoria Park     |
 | 728 | Putney Bridge Road          | East Putney        | Putney            |
 | 732 | Duke Street Hill            | London Bridge      | Borough           |
 | 739 | Hortensia Road              | West Brompton      | West Chelsea      |
 | 748 | Hertford Road               | De Beauvoir Town   | Haggerston        |
+| 742 | Blenheim Crescent           | Ladbroke Grove     | Portobello        |
 | 757 | Harcourt Terrace            | West Brompton      | Earl's Court      |
 | 768 | Clapham Common North Side   | Clapham Common     | Clapham           |
+| 769 | Sandilands Road             | Walham Green       | Sands End         |
 | 773 | Tallis Street               | Temple             | St Paul's         |
 | 775 | Little Brook Green          | Brook Green        | Hammersmith       |
 | 783 | Monier Road                 | Hackney Wick       | Olympic Park      |
 | 790 | Stratford Station           | Olympic Park       | Olympic Park      |
+| 793 | Cromer Street               | Bloomsbury         | Clerkenwell       |
 | 797 | Ossulston Street            | Somers Town        | Euston            |
 | 807 | Bevington Road West         | North Kensington   | Portobello        |
-| 817 | Riverlight South            | Nine Elms          | Pimlico           |
+| 817 | Riverlight South            | Nine Elms          | Battersea Park    |
 | 838 | Fore Street Avenue          | Guildhall          | Bank              |
 
-This reduces the number of localities to 85:
+This reduces the number of localities to 84:
 
-^^^elm {v=(stationMap "tflBicycleStationsWithLocalities.csv") interactive}^^^
+^^^elm {v=(stationMap "tflBicycleStationsWithLocalities.csv" True) interactive}^^^
 
 The table of modified station localities is stored in an SQLite database:
 
@@ -205,6 +231,7 @@ CREATE TABLE stations(id INTEGER NOT NULL, name TEXT, village TEXT, lon REAL, la
 From these we can create a set of locality centroids that we use as the basis of activity mapping, where each locality is associated with the bicycle activity of all the docking stations within it (noting the names `station_id` and `station_name` are used for consistency with other city data even though each is a collection of docking stations):
 
 ```sql
+CREATE TABLE villages AS
 SELECT village AS station_id, village AS station_name, AVG(lat) AS lat, AVG(lon) AS lon
 FROM stations
 GROUP BY village;
@@ -218,8 +245,11 @@ localityMap =
             configure
                 << configuration (coView [ vicoStroke Nothing ])
 
-        localityData =
+        centroidData =
             dataFromUrl (path ++ "stationLocations-Bicycle.csv") []
+
+        localityData =
+            dataFromUrl (path ++ "geo/localities.json") [ topojsonFeature "localities" ]
 
         enc =
             encoding
@@ -238,13 +268,16 @@ localityMap =
 
         specLabels =
             asSpec [ encLabels [], textMark [ maDy 10, maFontSize 10 ] ]
+
+        specLocalities =
+            asSpec [ localityData, geoshape [ maStroke "black", maOpacity 0.1, maFilled False ] ]
     in
     toVegaLite
         [ cfg []
-        , localityData
+        , centroidData
         , width 800
         , height 550
-        , layer (specMap ++ [ specStation, specLabels ])
+        , layer (specMap ++ [ specLocalities, specStation, specLabels ])
         ]
 ```
 
@@ -372,7 +405,8 @@ londonExample =
         -- Grid View
         sel =
             selection
-                << select "brush" seMulti [ seEncodings [ chY ] ]
+                --<< select "brush" seMulti [ seEncodings [ chY ] ]
+                << select "brush" seMulti [ seFields [ "station_name" ] ]
 
         trans =
             transform
@@ -487,8 +521,8 @@ londonExample =
                         ]
                         [ mStr "black" ]
                     ]
-                << opacity [ mSelectionCondition (selectionName "brush") [ mNum 1 ] [ mNum 0.2 ] ]
-                << size [ mSelectionCondition (selectionName "brush") [ mNum 1 ] [ mNum 0.3 ] ]
+                << opacity [ mSelectionCondition (selectionName "brush") [ mNum 1 ] [ mNum 0.1 ] ]
+                << size [ mSelectionCondition (selectionName "brush") [ mNum 2 ] [ mNum 0.2 ] ]
 
         lineSpec =
             asSpec
@@ -535,7 +569,7 @@ londonExample =
                 << lookup "station_name" localityData "station_name" (luFields [ "lon", "lat" ])
 
         specStations =
-            asSpec [ encStations [], square [ maSize 80 ] ]
+            asSpec [ sel [], encStations [], square [ maSize 80 ] ]
 
         encStationLabels =
             encoding
@@ -545,10 +579,7 @@ londonExample =
                 << opacity [ mSelectionCondition (selectionName "brush") [ mNum 1 ] [ mNum 0.1 ] ]
 
         specStationLabels =
-            asSpec
-                [ encStationLabels []
-                , textMark [ maDy 10, maFontSize 10 ]
-                ]
+            asSpec [ encStationLabels [], textMark [ maDy 10, maFontSize 10 ] ]
     in
     toVegaLite
         [ cfg []
