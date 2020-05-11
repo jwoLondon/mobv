@@ -7,11 +7,9 @@
 
 Wie können wir Bewegung verstehen und vergleichen? Bewegen wir uns in der aktuellen Situation mehr oder weniger als üblich? Und wo sind wir unterwegs? Die folgenden Visualisierungen – Heatmaps, Liniengrafiken und Karten – sollen Entscheidungsträgerinnen und Entscheidungsträgern eine Übersicht geben und es ihnen erlauben, auf einfache Art Vergleiche zwischen Städten und über die Zeit anzustellen.
 
-## Idee
+## Visualisierungen
 
 Die Visualisierungen sind für unterschiedliche Fortbewegungsarten konzipiert. Für Deutschland stehen uns aktuell Daten zum Fußverkehr zur Verfügung. Statt absoluten Zahlen zeigen wir das Verhältnis aktueller Zahlen zu einem für jeden Standort einzeln berechneten Referenzwert. Der Referenzwert entspricht dem mittleren (Median) täglichen Verkehr zwischen dem 3. Januar und dem 6. Februar 2020 und wird pro Wochentag einzeln berechnet. In den Visualisierungen ist das Verhältnis aktueller Tageswerte zu diesen Referenzwerten dargestellt: in blauen Kästchen in der sogenannten Heatmap fällt das tägliche Fußverkehrsaufkommen tiefer aus als anhand der Referenz erwartet, in orangen höher. Die Zählstellen sind in der Visualisierung anhand ihres Verkehrsaufkommens sortiert: Zählstellen mit viel Verkehr sind zuoberst, Zählstellen mit tieferen Verkehrszahlen weiter unten.
-
-## Visualisierungen
 
 Die Heatmaps sind dynamisch: Durch Überfahren (Hovern) der Balken mit der Maus werden das Verkehrsaufkommen am betreffenden Tag, der Referenzwert (Median) und die Anomalie (der sogenannte Chi-Wert) angezeigt. Mit einem Mausklick kann man eine Zählstelle selektieren, durch Betätigen der Umschalt-Taste und Mausklick mehrere gleichzeitig. Die selektierten Zählstellen werden in den begleitenden Visualisierungen – der Liniengrafik und der Karte – hervorgehoben. So können Sie schnell und einfach unterschiedliche Städte miteinander verglichen.
 
