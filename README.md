@@ -4,11 +4,11 @@
 How are we moving around our cities while facing a global pandemic? How have lockdowns affected movement? How do we accommodate urban travel that requires social distancing? Using sensors from open data sources, we visualize movement of people. Visualization reveals the role of weather, day of week, leisure, exercise and utility travel needs and compliance in lockdown measures. It helps to anticipate transport planning needs for a safe, sustainable urban travel future.
 
 ## Locations
-- Bicycle traffic in [New York City](docs/newyork/)
-- Public bicycle hire use across [London](docs/london/)
-- Pedestrian traffic in city centres across [Germany](docs/germany/) (and in [English](docs/germany/index_en))
-- Pedestrian and bicycle travel in [Zurich](docs/zurich/) (and in [English](docs/zurich/zurich_en))
-- Pedestrian and bicycle travel in [Basel](docs/basel/)
+- Bicycle traffic in [New York City](https://jwolondon.github.io/mobv/docs/newyork/)
+- Public bicycle hire use across [London](https://jwolondon.github.io/mobv/docs/london/)
+- Pedestrian traffic in city centres across [Germany](https://jwolondon.github.io/mobv/docs/germany/) (and in [English](https://jwolondon.github.io/mobv/docs/germany/index_en))
+- Pedestrian and bicycle travel in [Zurich](https://jwolondon.github.io/mobv/docs/zurich/) (and in [English](https://jwolondon.github.io/mobv/docs/zurich/zurich_en))
+- Pedestrian and bicycle travel in [Basel](https://jwolondon.github.io/mobv/docs/basel/)
 
 ## Visualizations
 The visualizations encompass dynamic heatmaps displaying traffic counts for an individual day. The heatmap is linked to a geographic map displaying the counter locations as well as to a line graph showing anomalies (the so-called Chi values) in traffic volume over time. We wouldn't have been able to implement our visualisations without the Open Data. Many thanks to administrative bodies for providing data and documentation and to [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) for mapping data.
