@@ -354,7 +354,7 @@ To calculate expected activity for each locality we take the mean activity for J
 
 ```sql
 CREATE TABLE station_reference_bicycle AS
-  SELECT id,AVG(count) AS count
+  SELECT id,AVG(count) AS value
   FROM station_daily_time_series
   WHERE date < '2020-02-01'
   GROUP BY id;
@@ -405,7 +405,6 @@ londonExample =
         -- Grid View
         sel =
             selection
-                --<< select "brush" seMulti [ seEncodings [ chY ] ]
                 << select "brush" seMulti [ seFields [ "station_name" ] ]
 
         trans =
