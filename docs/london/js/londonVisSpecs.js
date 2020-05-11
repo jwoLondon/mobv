@@ -15,8 +15,8 @@ let greenPolyFeature = "parks";
 
 // CHART SCALING
 
-let bicycleAnomalyMax = 50;
-let bicycleAnomalyMin = -50;
+let bicycleAnomalyMax = 40;
+let bicycleAnomalyMin = -40;
 
 // -----------------------------------------------------------------------------
 
@@ -36,44 +36,45 @@ let vlSpecLinkedBicycle = {
     right: 0,
     bottom: 0,
   },
-  columns: 1,
-  concat: [
+  data: { url: `${bicycleTimeSeriesData}` },
+  transform: [
+    {
+      lookup: "id",
+      from: {
+        data: { url: `${bicycleReferenceData}` },
+        key: "id",
+        fields: ["value"],
+      },
+    },
+    {
+      calculate:
+        "datum.value == 0 ? 0 : (datum.count - datum.value)/sqrt(datum.value)",
+      as: "anomaly",
+    },
+    {
+      lookup: "station",
+      from: {
+        data: { url: `${bicycleStationData}` },
+        key: "station_id",
+        fields: ["station_name"],
+      },
+    },
+    {
+      filter: "datum.station_name != null",
+    },
+  ],
+  vconcat: [
     {
       width: 800,
-      height: { step: 12 },
+      height: {
+        step: 12,
+      },
       layer: [
         {
-          data: { url: `${bicycleTimeSeriesData}` },
-          transform: [
-            {
-              lookup: "id",
-              from: {
-                data: { url: `${bicycleReferenceData}` },
-                key: "id",
-                fields: ["value"],
-              },
-            },
-            {
-              calculate:
-                "datum.value == 0 ? 0 : (datum.count - datum.value)/sqrt(datum.value)",
-              as: "anomaly",
-            },
-            {
-              lookup: "station",
-              from: {
-                data: { url: `${bicycleStationData}` },
-                key: "station_id",
-                fields: ["station_name"],
-              },
-            },
-            {
-              filter: "datum.station_name != null",
-            },
-          ],
           selection: {
             brush: {
               type: "multi",
-              encodings: ["y"],
+              fields: ["station_name"],
             },
           },
           encoding: {
@@ -153,7 +154,6 @@ let vlSpecLinkedBicycle = {
               {
                 field: "value",
                 type: "quantitative",
-                format: ".0f",
                 title: "expected",
               },
               {
@@ -215,40 +215,13 @@ let vlSpecLinkedBicycle = {
     },
     {
       width: 800,
-      height: 450,
+      height: 400,
       layer: [
         {
-          data: { url: `${bicycleTimeSeriesData}` },
-          transform: [
-            {
-              lookup: "id",
-              from: {
-                data: { url: `${bicycleReferenceData}` },
-                key: "id",
-                fields: ["value"],
-              },
-            },
-            {
-              calculate:
-                "datum.value == 0 ? 0 : (datum.count - datum.value)/sqrt(datum.value)",
-              as: "anomaly",
-            },
-            {
-              lookup: "station",
-              from: {
-                data: { url: `${bicycleStationData}` },
-                key: "station_id",
-                fields: ["station_name"],
-              },
-            },
-            {
-              filter: "datum.station_name != null",
-            },
-          ],
           selection: {
             brush: {
               type: "multi",
-              encodings: ["y"],
+              fields: ["station_name"],
             },
           },
           encoding: {
@@ -286,11 +259,6 @@ let vlSpecLinkedBicycle = {
                 field: "station_name",
                 type: "nominal",
                 legend: null,
-                sort: {
-                  field: "count",
-                  op: "sum",
-                  order: "descending",
-                },
               },
               value: "black",
             },
@@ -299,14 +267,14 @@ let vlSpecLinkedBicycle = {
                 selection: "brush",
                 value: 1,
               },
-              value: 0.2,
+              value: 0.1,
             },
             size: {
               condition: {
                 selection: "brush",
-                value: 1.5,
+                value: 2,
               },
-              value: 0.3,
+              value: 0.2,
             },
           },
           mark: {
@@ -349,7 +317,27 @@ let vlSpecLinkedBicycle = {
     },
     {
       width: 800,
-      height: 550,
+      height: 650,
+      transform: [
+        {
+          aggregate: [
+            {
+              op: "count",
+              field: "station_name",
+              as: "numReadings",
+            },
+          ],
+          groupby: ["station_name"],
+        },
+        {
+          lookup: "station_name",
+          from: {
+            data: { url: `${bicycleStationData}` },
+            key: "station_name",
+            fields: ["lon", "lat"],
+          },
+        },
+      ],
       layer: [
         {
           data: {
@@ -375,7 +363,12 @@ let vlSpecLinkedBicycle = {
           },
         },
         {
-          data: { url: `${bicycleStationData}` },
+          selection: {
+            brush: {
+              type: "multi",
+              fields: ["station_name"],
+            },
+          },
           encoding: {
             longitude: {
               field: "lon",
@@ -385,25 +378,25 @@ let vlSpecLinkedBicycle = {
               field: "lat",
               type: "quantitative",
             },
-          },
-          transform: [
-            {
-              filter: {
-                selection: "brush",
-              },
+            color: {
+              field: "station_name",
+              type: "nominal",
+              legend: null,
             },
-          ],
-          mark: "circle",
+            opacity: {
+              condition: {
+                selection: "brush",
+                value: 1,
+              },
+              value: 0.1,
+            },
+          },
+          mark: {
+            type: "square",
+            size: 80,
+          },
         },
         {
-          data: { url: `${bicycleStationData}` },
-          transform: [
-            {
-              filter: {
-                selection: "brush",
-              },
-            },
-          ],
           encoding: {
             longitude: {
               field: "lon",
@@ -417,13 +410,18 @@ let vlSpecLinkedBicycle = {
               field: "station_name",
               type: "nominal",
             },
+            opacity: {
+              condition: {
+                selection: "brush",
+                value: 1,
+              },
+              value: 0.1,
+            },
           },
           mark: {
             type: "text",
-            align: "left",
-            dx: 4,
-            opacity: 0.3,
-            fontSize: 8,
+            dy: 10,
+            fontSize: 10,
           },
         },
       ],
