@@ -16,9 +16,10 @@ The visualizations encompass dynamic heatmaps displaying traffic counts for an i
 ## Build your own
 This repository contains:
 - [data specifications](https://github.com/jwoLondon/mobv/tree/master/dataSpecifications)
-- [data analysis code](https://github.com/jwoLondon/mobv/tree/master/dataProcessing) as well as
+- [data analysis code](https://github.com/jwoLondon/mobv/tree/master/dataProcessing)
+- [data](https://github.com/jwoLondon/mobv/tree/master/data) as well as
 - [visualization and front-end code](https://github.com/jwoLondon/mobv/tree/master/docs)
-... necessary for you to build your own Urban Mobility Viewer. All code is open under the GNU General Public License v3.0.
+... necessary for you to build your own Urban Mobility Viewer. All code is open under the GNU General Public License v3.0. Data sources are listed in each directory. Zurich, Basel, New York and London data are all available as Open Data. German data are available from [hyStreet](hystreet.com) using their API. 
 
 ## Team
 Conceived and implemented by
