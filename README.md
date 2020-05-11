@@ -13,7 +13,7 @@ How are we moving around our cities while facing a global pandemic? How have loc
 ## Visualizations
 The visualizations encompass dynamic heatmaps displaying traffic counts for an individual day. The heatmap is linked to a geographic map displaying the counter locations as well as to a line graph showing anomalies (the so-called Chi values) in traffic volume over time. We wouldn't have been able to implement our visualisations without the Open Data. Many thanks to administrative bodies for providing data and documentation and to [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) for mapping data.
 
-![Urban Mobility Viewer Zurich](assets\gifs\mobv-Zurich2.gif)
+![Urban Mobility Viewer Zurich](blob/master/assets/gifs/mobv-Zurich2.gif)
 
 ## Build your own
 This repository contains:
