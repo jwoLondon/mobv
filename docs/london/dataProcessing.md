@@ -1,16 +1,7 @@
----
-id: litvis
-
-elm:
-  dependencies:
-    gicentre/elm-vegalite: latest
-    gicentre/tidy: latest
----
-
-```elm {l=hidden}
-import Tidy exposing (..)
-import VegaLite exposing (..)
-```
+<!-- Scripts to link to the Vega/Vega-Lite runtime -->
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
 # Generating London Locality Data
 
@@ -18,95 +9,7 @@ Using the [TfL Santander public bicycle hire scheme](https://tfl.gov.uk/modes/cy
 
 TfL release live data on the status of approximately 800 docking stations around London. Each station belongs to a 'village' describing its local neighbourhood (click on station to see others in the same village; double-click to see all stations):
 
-```elm {l=hidden}
-path : String
-path =
-    "https://jwolondon.github.io/mobv/data/london/"
-
-
-specMap : List Spec
-specMap =
-    let
-        riversData =
-            dataFromUrl (path ++ "geo/thames.json") [ topojsonFeature "thames" ]
-
-        parksData =
-            dataFromUrl (path ++ "geo/parks.json") [ topojsonFeature "parks" ]
-    in
-    [ asSpec [ riversData, geoshape [ maColor "rgb(228,236,246)" ] ]
-    , asSpec [ parksData, geoshape [ maColor "rgb(239,244,225)" ] ]
-    ]
-
-
-stationMap : String -> Bool -> Spec
-stationMap stationFile showRegions =
-    let
-        cfg =
-            configure
-                << configuration (coView [ vicoStroke Nothing ])
-
-        stationData =
-            dataFromUrl (path ++ stationFile) []
-
-        localityData =
-            dataFromUrl (path ++ "geo/localities.json?") [ topojsonFeature "localities" ]
-
-        sel =
-            selection
-                << select "legSel" seMulti [ seNearest True, seFields [ "village" ] ]
-
-        enc =
-            encoding
-                << position Longitude [ pName "lon", pQuant ]
-                << position Latitude [ pName "lat", pQuant ]
-                << color
-                    [ mSelectionCondition (selectionName "legSel")
-                        [ mName "village"
-                        , mNominal
-                        , mLegend []
-                        ]
-                        [ mStr "grey" ]
-                    ]
-                << opacity
-                    [ mSelectionCondition (selectionName "legSel")
-                        [ mNum 0.8 ]
-                        [ mNum 0.3 ]
-                    ]
-                << size
-                    [ mSelectionCondition (selectionName "legSel")
-                        [ mNum 48 ]
-                        [ mNum 24 ]
-                    ]
-                << tooltips
-                    [ [ tName "village", tNominal ]
-                    , [ tName "name", tNominal ]
-                    , [ tName "id", tQuant ]
-                    ]
-
-        specLocalities =
-            asSpec [ localityData, geoshape [ maStroke "black", maOpacity 0.3, maFilled False ] ]
-
-        specStation =
-            asSpec [ sel [], enc [], circle [ maSize 48, maStroke "black", maStrokeWidth 0.6 ] ]
-    in
-    toVegaLite
-        [ cfg []
-        , stationData
-        , width 800
-        , height 550
-        , layer
-            (specMap
-                ++ (if showRegions then
-                        [ specLocalities, specStation ]
-
-                    else
-                        [ specStation ]
-                   )
-            )
-        ]
-```
-
-^^^elm {v=(stationMap "tflBicycleStations.csv" False) interactive}^^^
+<div class="wide" id="visTfLStations"></div>
 
 Groupings vary considerably in size and there is some inconsistency in geographic placement and in naming, so to reduce the number of localities, the following changes were made:
 
@@ -218,7 +121,7 @@ Groupings vary considerably in size and there is some inconsistency in geographi
 
 This reduces the number of localities to 84:
 
-^^^elm {v=(stationMap "tflBicycleStationsWithLocalities.csv" True) interactive}^^^
+<div class="wide" id="visTfLModifiedStations"></div>
 
 The table of modified station localities is stored in an SQLite database:
 
@@ -237,49 +140,7 @@ FROM stations
 GROUP BY village;
 ```
 
-```elm {v interactive siding}
-localityMap : Spec
-localityMap =
-    let
-        cfg =
-            configure
-                << configuration (coView [ vicoStroke Nothing ])
-
-        centroidData =
-            dataFromUrl (path ++ "stationLocations-Bicycle.csv") []
-
-        localityData =
-            dataFromUrl (path ++ "geo/localities.json") [ topojsonFeature "localities" ]
-
-        enc =
-            encoding
-                << position Longitude [ pName "lon", pQuant ]
-                << position Latitude [ pName "lat", pQuant ]
-                << color [ mName "station_name", mNominal, mLegend [] ]
-
-        specStation =
-            asSpec [ enc [], square [ maSize 60, maStroke "black", maStrokeWidth 0.6 ] ]
-
-        encLabels =
-            encoding
-                << position Longitude [ pName "lon", pQuant ]
-                << position Latitude [ pName "lat", pQuant ]
-                << text [ tName "station_name", tNominal ]
-
-        specLabels =
-            asSpec [ encLabels [], textMark [ maDy 10, maFontSize 10 ] ]
-
-        specLocalities =
-            asSpec [ localityData, geoshape [ maStroke "black", maOpacity 0.1, maFilled False ] ]
-    in
-    toVegaLite
-        [ cfg []
-        , centroidData
-        , width 800
-        , height 550
-        , layer (specMap ++ [ specLocalities, specStation, specLabels ])
-        ]
-```
+<div class="wide" id="visLocalities"></div>
 
 ## Generating Locality Activity Values with SQLite
 
@@ -380,224 +241,11 @@ SELECT date,station,id,count FROM station_daily_time_series ORDER BY date,id;
 .quit
 ```
 
-# Visualization
+## Visualization
 
 We can now use the generated files in the visualization specification just as we would for more direct sensor measurements.
 
-```elm {v interactive}
-londonExample : Spec
-londonExample =
-    let
-        localityData =
-            dataFromUrl (path ++ "stationLocations-Bicycle.csv") []
+<div class="wide" id="visLinkedBicycle"></div>
 
-        timeSeriesData =
-            dataFromUrl (path ++ "StationDailyTimeSeries-Bicycle.csv") []
-
-        referenceData =
-            dataFromUrl (path ++ "StationReference-Bicycle.csv") []
-
-        annotationData =
-            dataFromUrl (path ++ "annotations.csv") []
-
-        anomalyMax =
-            40
-
-        anomalyMin =
-            -40
-
-        cfg =
-            configure
-                << configuration (coView [ vicoStroke Nothing ])
-
-        -- Grid View
-        sel =
-            selection
-                << select "brush" seMulti [ seFields [ "station_name" ] ]
-
-        trans =
-            transform
-                << lookup "id" referenceData "id" (luFields [ "value" ])
-                << calculateAs "datum.value == 0 ? 0 : (datum.count - datum.value)/sqrt(datum.value)" "anomaly"
-                << lookup "station" localityData "station_id" (luFields [ "station_name" ])
-                << filter (fiExpr "datum.station_name != null")
-
-        gridEnc =
-            encoding
-                << position X
-                    [ pName "date"
-                    , pTemporal
-                    , pAxis
-                        [ axDataCondition (expr "day(datum.value) == 6 || day(datum.value) == 0") (cAxGridOpacity 1 0)
-                        , axTickCount 100
-                        , axGridWidth 8
-                        , axGridColor "#f6f6f6"
-                        , axLabelExpr "timeFormat(datum.value, '%a') == 'Mon' ? timeFormat(datum.value, '%e %b') : ''"
-                        , axTitle ""
-                        ]
-                    ]
-                << position Y
-                    [ pName "station_name"
-                    , pNominal
-                    , pSort [ soByField "count" opSum, soDescending ]
-                    , pAxis [ axTitle "", axOffset 7, axDomain False, axTicks False ]
-                    ]
-                << color
-                    [ mName "anomaly"
-                    , mQuant
-                    , mScale [ scScheme "blueOrange" [], scDomainMid 0 ]
-                    , mLegend
-                        [ leTitle "Anomaly"
-                        , leDirection moHorizontal
-                        , leOrient loTop
-                        , leGradientThickness 8
-                        ]
-                    ]
-                << opacity [ mSelectionCondition (selectionName "brush") [ mNum 1 ] [ mNum 0.5 ] ]
-                << size [ mSelectionCondition (selectionName "brush") [ mNum 90 ] [ mNum 40 ] ]
-                << tooltips
-                    [ [ tName "station_name", tNominal, tTitle "locality" ]
-                    , [ tName "date", tTemporal, tFormat "%a %e %b" ]
-                    , [ tName "value", tQuant, tTitle "expected" ]
-                    , [ tName "count", tQuant, tTitle "observed" ]
-                    , [ tName "anomaly", tQuant, tFormat ".1f" ]
-                    ]
-
-        cellSpec =
-            asSpec
-                [ sel []
-                , gridEnc []
-                , square []
-                ]
-
-        leaderEnc =
-            encoding
-                << position X [ pName "date", pTemporal ]
-
-        leaderSpec =
-            asSpec [ leaderEnc [], rule [ maStrokeDash [ 4, 2 ], maOpacity 0.5 ] ]
-
-        labelEnc =
-            encoding
-                << position X [ pName "date", pTemporal ]
-                << position Y [ pNum 0 ]
-                << text [ tName "notes", tNominal ]
-
-        labelSpec =
-            asSpec
-                [ labelEnc []
-                , textMark [ maAngle -50, maAlign haLeft, maOpacity 0.5, maFontSize 8, maDx 2 ]
-                ]
-
-        annotationSpec =
-            asSpec [ annotationData, layer [ leaderSpec, labelSpec ] ]
-
-        specGrid =
-            asSpec
-                [ width 800
-                , heightStep 12
-                , layer [ cellSpec, annotationSpec ]
-                ]
-
-        -- Time lines
-        encTimeline =
-            encoding
-                << position X
-                    [ pName "date"
-                    , pTemporal
-                    , pAxis
-                        [ axDataCondition (expr "day(datum.value) == 6 || day(datum.value) == 0") (cAxGridOpacity 1 0)
-                        , axTickCount 100
-                        , axGridWidth 8
-                        , axGridColor "#f6f6f6"
-                        , axLabelExpr "timeFormat(datum.value, '%a') == 'Mon' ? timeFormat(datum.value, '%e %b') : ''"
-                        , axTitle ""
-                        ]
-                    ]
-                << position Y
-                    [ pName "anomaly"
-                    , pQuant
-                    , pScale [ scDomain (doNums [ anomalyMin, anomalyMax ]), scNice niFalse ]
-                    , pTitle "Anomaly"
-                    ]
-                << color
-                    [ mSelectionCondition (selectionName "brush")
-                        [ mName "station_name"
-                        , mNominal
-                        , mLegend []
-                        ]
-                        [ mStr "black" ]
-                    ]
-                << opacity [ mSelectionCondition (selectionName "brush") [ mNum 1 ] [ mNum 0.1 ] ]
-                << size [ mSelectionCondition (selectionName "brush") [ mNum 2 ] [ mNum 0.2 ] ]
-
-        lineSpec =
-            asSpec
-                [ sel []
-                , encTimeline []
-                , line [ maInterpolate miMonotone, maClip True ]
-                ]
-
-        ruleData =
-            dataFromColumns []
-                << dataColumn "origin" (nums [ 0 ])
-
-        ruleEnc =
-            encoding
-                << position Y [ pName "origin", pQuant ]
-
-        ruleSpec =
-            asSpec [ ruleData [], ruleEnc [], rule [] ]
-
-        leader2Spec =
-            asSpec [ annotationData, leaderEnc [], rule [ maStrokeDash [ 4, 2 ], maOpacity 0.5 ] ]
-
-        timelineSpec =
-            asSpec
-                [ width 800
-                , height 400
-                , layer [ lineSpec, ruleSpec, leader2Spec ]
-                ]
-
-        specTimeCharts =
-            asSpec [ columns 1, concat [ specGrid, timelineSpec ] ]
-
-        -- Map
-        encStations =
-            encoding
-                << position Longitude [ pName "lon", pQuant ]
-                << position Latitude [ pName "lat", pQuant ]
-                << color [ mName "station_name", mNominal, mLegend [] ]
-                << opacity [ mSelectionCondition (selectionName "brush") [ mNum 1 ] [ mNum 0.1 ] ]
-
-        transStations =
-            transform
-                << aggregate [ opAs opCount "station_name" "numReadings" ] [ "station_name" ]
-                << lookup "station_name" localityData "station_name" (luFields [ "lon", "lat" ])
-
-        specStations =
-            asSpec [ sel [], encStations [], square [ maSize 80 ] ]
-
-        encStationLabels =
-            encoding
-                << position Longitude [ pName "lon", pQuant ]
-                << position Latitude [ pName "lat", pQuant ]
-                << text [ tName "station_name", tNominal ]
-                << opacity [ mSelectionCondition (selectionName "brush") [ mNum 1 ] [ mNum 0.1 ] ]
-
-        specStationLabels =
-            asSpec [ encStationLabels [], textMark [ maDy 10, maFontSize 10 ] ]
-    in
-    toVegaLite
-        [ cfg []
-        , spacing 0
-        , padding (paEdges 10 0 0 0)
-        , timeSeriesData
-        , trans []
-        , vConcat
-            [ specGrid
-            , timelineSpec
-            , asSpec [ width 800, height 650, transStations [], layer (specMap ++ [ specStations, specStationLabels ]) ]
-            ]
-        ]
-```
+<!-- Script containing the vis specs used above. Must be at end of document. -->
+<script src="js/londonDataProcessing.js"></script>
