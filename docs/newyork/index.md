@@ -3,7 +3,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.5.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-# Movement during the Corona Pandemic
+# Bicycle Travel In New York City
 
 How can we understand and compare patterns of human movement? Are individuals moving more or less than normal at the moment? And where are people moving? The following linked visualizations - heatmaps, charts and maps - are designed to help interested parties gain an overview and allow simple comparisons between locations in New York over time.
 

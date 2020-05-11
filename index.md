@@ -1,6 +1,6 @@
 # Active Travel In Covid-19 World
 
-How are we moving around our cities while facing a global pandemic? How have lockdowns affected movement? How do we accommodate urban movement that requires social distancing?
+How are we moving around our cities while facing a global pandemic? How have lockdowns affected movement? How do we accommodate urban travel that requires social distancing?
 
 Using sensors from open data sources, we visualize movement of people on foot and by bicycle. Visualization reveals the role of weather, day of week, leisure, exercise and utility travel needs and compliance in lockdown measures. It helps to anticipate transport planning needs for a safe, sustainable urban travel future.
 
