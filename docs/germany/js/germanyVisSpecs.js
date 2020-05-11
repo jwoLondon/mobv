@@ -18,9 +18,7 @@ let footAnomalyMin = -350;
 
 // -----------------------------------------------------------------------------
 
-// -----------------------------------------------------------------------------
-
-// FOOT LINKED VIEWS CHART
+// PEDESTRIAN LINKED VIEWS CHART
 
 let vlSpecLinkedFoot = {
   $schema: "https://vega.github.io/schema/vega-lite/v4.json",
@@ -30,49 +28,53 @@ let vlSpecLinkedFoot = {
     },
   },
   spacing: 0,
-  center: false,
-  concat: [
+  padding: {
+    left: 10,
+    top: 0,
+    right: 0,
+    bottom: 0,
+  },
+  data: { url: `${footTimeSeriesData}` },
+  transform: [
     {
-      columns: 1,
-      concat: [
+      lookup: "id",
+      from: {
+        data: { url: `${footReferenceData}` },
+        key: "id",
+        fields: ["value"],
+      },
+    },
+    {
+      calculate:
+        "datum.value == 0 ? 0 : (datum.count - datum.value)/sqrt(datum.value)",
+      as: "anomaly",
+    },
+    {
+      lookup: "station",
+      from: {
+        data: { url: `${footStationData}` },
+        key: "station_id",
+        fields: ["station_name"],
+      },
+    },
+    {
+      filter: "datum.station_name != null",
+    },
+  ],
+  hconcat: [
+    {
+      vconcat: [
         {
           width: 800,
           height: {
-            step: 12,
+            step: 11,
           },
           layer: [
             {
-              data: { url: `${footTimeSeriesData}` },
-              transform: [
-                {
-                  lookup: "id",
-                  from: {
-                    data: { url: `${footReferenceData}` },
-                    key: "id",
-                    fields: ["value"],
-                  },
-                },
-                {
-                  calculate:
-                    "datum.value == 0 ? 0 : (datum.count - datum.value)/sqrt(datum.value)",
-                  as: "anomaly",
-                },
-                {
-                  lookup: "station",
-                  from: {
-                    data: { url: `${footStationData}` },
-                    key: "station_id",
-                    fields: ["station_name"],
-                  },
-                },
-                {
-                  filter: "datum.station_name != null",
-                },
-              ],
               selection: {
                 brush: {
                   type: "multi",
-                  encodings: ["y"],
+                  fields: ["station_name"],
                 },
               },
               encoding: {
@@ -152,7 +154,6 @@ let vlSpecLinkedFoot = {
                   {
                     field: "value",
                     type: "quantitative",
-                    format: ".0f",
                     title: "expected",
                   },
                   {
@@ -214,40 +215,13 @@ let vlSpecLinkedFoot = {
         },
         {
           width: 800,
-          height: 350,
+          height: 400,
           layer: [
             {
-              data: { url: `${footTimeSeriesData}` },
-              transform: [
-                {
-                  lookup: "id",
-                  from: {
-                    data: { url: `${footReferenceData}` },
-                    key: "id",
-                    fields: ["value"],
-                  },
-                },
-                {
-                  calculate:
-                    "datum.value == 0 ? 0 : (datum.count - datum.value)/sqrt(datum.value)",
-                  as: "anomaly",
-                },
-                {
-                  lookup: "station",
-                  from: {
-                    data: { url: `${footStationData}` },
-                    key: "station_id",
-                    fields: ["station_name"],
-                  },
-                },
-                {
-                  filter: "datum.station_name != null",
-                },
-              ],
               selection: {
                 brush: {
                   type: "multi",
-                  encodings: ["y"],
+                  fields: ["station_name"],
                 },
               },
               encoding: {
@@ -285,11 +259,6 @@ let vlSpecLinkedFoot = {
                     field: "station_name",
                     type: "nominal",
                     legend: null,
-                    sort: {
-                      field: "count",
-                      op: "sum",
-                      order: "descending",
-                    },
                   },
                   value: "black",
                 },
@@ -298,14 +267,14 @@ let vlSpecLinkedFoot = {
                     selection: "brush",
                     value: 1,
                   },
-                  value: 0.2,
+                  value: 0.1,
                 },
                 size: {
                   condition: {
                     selection: "brush",
-                    value: 1.5,
+                    value: 2,
                   },
-                  value: 0.3,
+                  value: 0.2,
                 },
               },
               mark: {
@@ -349,51 +318,105 @@ let vlSpecLinkedFoot = {
       ],
     },
     {
+      width: 800,
       height: 1000,
+      transform: [
+        {
+          aggregate: [
+            {
+              op: "count",
+              field: "station_name",
+              as: "numReadings",
+            },
+          ],
+          groupby: ["station_name"],
+        },
+        {
+          lookup: "station_name",
+          from: {
+            data: { url: `${footStationData}` },
+            key: "station_name",
+            fields: ["lon", "lat"],
+          },
+        },
+      ],
       layer: [
         {
           data: {
-            url:
-              "https://jwolondon.github.io/mobv/data/germany/geo/bundeslaender.json",
-            format: { type: "topojson", feature: "bundeslaender" },
+            url: `${boundaries}`,
+            format: {
+              type: "topojson",
+              feature: `${boundaryFeature}`,
+            },
           },
           mark: {
             type: "geoshape",
-            stroke: "white",
             fill: "rgb(252,246,229)",
+            stroke: "white",
             fillOpacity: 0.8,
             strokeWidth: 4,
           },
         },
         {
-          data: {
-            url:
-              "https://jwolondon.github.io/mobv/data/germany/StationLocationsSelection.csv",
+          selection: {
+            brush: {
+              type: "multi",
+              fields: ["station_name"],
+            },
           },
           encoding: {
-            longitude: { field: "lon", type: "quantitative" },
-            latitude: { field: "lat", type: "quantitative" },
+            longitude: {
+              field: "lon",
+              type: "quantitative",
+            },
+            latitude: {
+              field: "lat",
+              type: "quantitative",
+            },
+            color: {
+              field: "station_name",
+              type: "nominal",
+              legend: null,
+            },
+            opacity: {
+              condition: {
+                selection: "brush",
+                value: 1,
+              },
+              value: 0.1,
+            },
           },
-          transform: [{ filter: { selection: "brush" } }],
-          mark: "circle",
+          mark: {
+            type: "square",
+            size: 80,
+          },
         },
         {
-          data: {
-            url:
-              "https://jwolondon.github.io/mobv/data/germany/StationLocationsSelection.csv",
-          },
-          transform: [{ filter: { selection: "brush" } }],
           encoding: {
-            longitude: { field: "lon", type: "quantitative" },
-            latitude: { field: "lat", type: "quantitative" },
-            text: { field: "station_name", type: "nominal" },
+            longitude: {
+              field: "lon",
+              type: "quantitative",
+            },
+            latitude: {
+              field: "lat",
+              type: "quantitative",
+            },
+            text: {
+              field: "station_name",
+              type: "nominal",
+            },
+            opacity: {
+              condition: {
+                selection: "brush",
+                value: 1,
+              },
+              value: 0.1,
+            },
           },
           mark: {
             type: "text",
-            align: "left",
-            dx: 4,
-            opacity: 0.6,
-            fontSize: 8,
+            dy: 10,
+            fontSize: 6,
           },
         },
       ],
