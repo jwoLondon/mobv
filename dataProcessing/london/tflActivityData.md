@@ -429,6 +429,7 @@ londonExample =
                     , pTemporal
                     , pAxis
                         [ axDataCondition (expr "day(datum.value) == 6 || day(datum.value) == 0") (cAxGridOpacity 1 0)
+                        , axDataCondition (expr "day(datum.value) == 1") (cAxTickSize 6 3)
                         , axTickCount 100
                         , axGridWidth 8
                         , axGridColor "#f6f6f6"
@@ -507,6 +508,7 @@ londonExample =
                     , pTemporal
                     , pAxis
                         [ axDataCondition (expr "day(datum.value) == 6 || day(datum.value) == 0") (cAxGridOpacity 1 0)
+                        , axDataCondition (expr "day(datum.value) == 1") (cAxTickSize 6 3)
                         , axTickCount 100
                         , axGridWidth 8
                         , axGridColor "#f6f6f6"

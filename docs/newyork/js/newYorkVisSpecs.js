@@ -91,6 +91,13 @@ let vlSpecLinkedBicycle = {
                       },
                       value: 0,
                     },
+                    tickSize: {
+                      condition: {
+                        test: "day(datum.value) == 1",
+                        value: 6,
+                      },
+                      value: 3,
+                    },
                     tickCount: 100,
                     gridWidth: 8,
                     gridColor: "#f6f6f6",
@@ -237,6 +244,13 @@ let vlSpecLinkedBicycle = {
                         value: 1,
                       },
                       value: 0,
+                    },
+                    tickSize: {
+                      condition: {
+                        test: "day(datum.value) == 1",
+                        value: 6,
+                      },
+                      value: 3,
                     },
                     tickCount: 100,
                     gridWidth: 8,
