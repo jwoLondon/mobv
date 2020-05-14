@@ -14,10 +14,10 @@ Die Visualisierungen sind für unterschiedliche Fortbewegungsarten konzipiert. F
 Die Heatmaps sind dynamisch: Durch Überfahren (Hovern) der Balken mit der Maus werden das Verkehrsaufkommen am betreffenden Tag, der Referenzwert (Median) und die Anomalie (der sogenannte Chi-Wert) angezeigt. Mit einem Mausklick kann man eine Zählstelle selektieren, durch Betätigen der Umschalt-Taste und Mausklick mehrere gleichzeitig. Die selektierten Zählstellen werden in den begleitenden Visualisierungen – der Liniengrafik und der Karte – hervorgehoben. So können Sie schnell und einfach unterschiedliche Städte miteinander verglichen.
 
 ## Datenquellen und Umsetzung
+
 Wir hätten unsere Visualisierungen nicht umsetzen können ohne die [Daten von HyStreet](https://hystreet.com/) und den [HyStreet R-Wrapper](https://cran.r-project.org/web/packages/hystReet/index.html). Vielen Dank!
 
 Analoge Visualisierungen haben wir mit Open Government Data (OGD) der [Stadt Zürich](https://jwolondon.github.io/mobv/docs/zurich/), [des Kantons Basel Stadt](https://jwolondon.github.io/mobv/docs/basel), [von TfL Santander in London](https://jwolondon.github.io/mobv/docs/london/) und der [Stadt New York](https://jwolondon.github.io/mobv) umgesetzt. Sämtlicher Code für die Analyse der Daten von Deutschland, Zürich, Basel, London und New York sowie der Code hinter den jeweiligen Webseiten ist verfügbar auf [GitHub](https://github.com/jwolondon/mobv/). Sämtlicher Code steht [unter einer offenen Lizenz](https://github.com/jwoLondon/mobv/blob/master/LICENSE) zur Weiterverwendung zur Verfügung.
-
 
 <div class="wide" id="visLinkedFoot"></div>
 
@@ -32,7 +32,7 @@ Konzeptiert und implementiert von:
 
 - _[Ross Purves](https://twitter.com/GCUZH) – [Department of Geography, University of Zurich](https://www.geo.uzh.ch/~rsp/)_
 - _[Ralph Straumann](https://twitter.com/rastrau) – [EBP, Data Science Team, Zurich](https://www.ebp.ch)_
-- _[Jo Wood](https://twitter.com/jwolondon) – [giCentre, City University London](https://www.gicentre.net/jwo)_
+- _[Jo Wood](https://twitter.com/jwolondon) – [giCentre, City, University of London](https://www.gicentre.net/jwo)_
 
 <!-- Script containing the vis specs used above. Must be at end of document. -->
 <script src="js/germanyVisSpecs.js"></script>
