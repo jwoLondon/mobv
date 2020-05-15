@@ -1,0 +1,33 @@
+name: Update Basel data
+
+on:
+  schedule:
+  - cron:  '*/10 * * * *'
+
+jobs:
+  update_data:
+    runs-on: macos-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+    
+    # Setup R and its depedencies
+    - uses: r-lib/actions/setup-r@master
+    - name: Install R dependencies
+      run: |
+        install.packages("tidyverse")
+        install.packages("lubridate")
+        install.packages("magrittr")
+      shell: Rscript {0}
+      
+    # Prepare data
+    - name: Prepare data with compute-StationDailyTimeSeries-StationLocations.R
+      run: Rscript dataProcessing/basel/compute-StationDailyTimeSeries-StationLocations.R
+
+    # Commit to repo with updated file
+    - uses: stefanzweifel/git-auto-commit-action@v4.1.1
+      with:
+        commit_message: Update time-series data, reference data and location data for Basel, Switzerland
+        branch: ${{ github.head_ref }}
