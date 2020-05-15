@@ -23,8 +23,8 @@ jobs:
       shell: Rscript {0}
       
     # Prepare data
-    - name: Prepare data with compute-StationDailyTimeSeries.R
-      run: Rscript dataProcessing/zurich/compute-StationDailyTimeSeries.R
+    - name: Prepare data with compute-StationDailyTimeSeries-GitHubAction.R
+      run: Rscript dataProcessing/zurich/compute-StationDailyTimeSeries-GitHubAction.R
 
     # Commit to repo with updated file
     - uses: stefanzweifel/git-auto-commit-action@v4.1.1
