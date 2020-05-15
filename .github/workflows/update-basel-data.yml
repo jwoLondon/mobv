@@ -19,7 +19,7 @@ jobs:
       run: |
         install.packages("tidyverse")
         install.packages("lubridate")
-        install.packages("magrittr")
+        install.packages("jsonlite")
       shell: Rscript {0}
       
     # Prepare data
