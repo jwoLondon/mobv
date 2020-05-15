@@ -6,7 +6,7 @@ on:
 
 jobs:
   update_data:
-    runs-on: macos
+    runs-on: macos-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
