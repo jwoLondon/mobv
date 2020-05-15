@@ -455,7 +455,7 @@ londonExample =
                         ]
                     ]
                 << opacity [ mSelectionCondition (selectionName "brush") [ mNum 1 ] [ mNum 0.5 ] ]
-                << size [ mSelectionCondition (selectionName "brush") [ mNum 90 ] [ mNum 40 ] ]
+                << size [ mSelectionCondition (selectionName "brush") [ mNum 60 ] [ mNum 50 ] ]
                 << tooltips
                     [ [ tName "station_name", tNominal, tTitle "locality" ]
                     , [ tName "date", tTemporal, tFormat "%a %e %b" ]
@@ -495,8 +495,8 @@ londonExample =
 
         specGrid =
             asSpec
-                [ width 800
-                , heightStep 12
+                [ width 1000
+                , heightStep 11
                 , layer [ cellSpec, annotationSpec ]
                 ]
 
@@ -556,7 +556,7 @@ londonExample =
 
         timelineSpec =
             asSpec
-                [ width 800
+                [ width 1000
                 , height 400
                 , layer [ lineSpec, ruleSpec, leader2Spec ]
                 ]
@@ -599,7 +599,7 @@ londonExample =
         , vConcat
             [ specGrid
             , timelineSpec
-            , asSpec [ width 800, height 650, transStations [], layer (specMap ++ [ specStations, specStationLabels ]) ]
+            , asSpec [ width 1000, height 810, transStations [], layer (specMap ++ [ specStations, specStationLabels ]) ]
             ]
         ]
 ```

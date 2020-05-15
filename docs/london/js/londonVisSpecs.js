@@ -65,9 +65,9 @@ let vlSpecLinkedBicycle = {
   ],
   vconcat: [
     {
-      width: 800,
+      width: 1000,
       height: {
-        step: 12,
+        step: 11,
       },
       layer: [
         {
@@ -143,9 +143,9 @@ let vlSpecLinkedBicycle = {
             size: {
               condition: {
                 selection: "brush",
-                value: 90,
+                value: 60,
               },
-              value: 40,
+              value: 60,
             },
             tooltip: [
               {
@@ -221,7 +221,7 @@ let vlSpecLinkedBicycle = {
       ],
     },
     {
-      width: 800,
+      width: 1000,
       height: 400,
       layer: [
         {
@@ -330,8 +330,8 @@ let vlSpecLinkedBicycle = {
       ],
     },
     {
-      width: 800,
-      height: 650,
+      width: 1000,
+      height: 810,
       transform: [
         {
           aggregate: [
