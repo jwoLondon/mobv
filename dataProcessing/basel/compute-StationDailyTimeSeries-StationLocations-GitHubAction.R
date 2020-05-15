@@ -28,9 +28,9 @@ df$dayofweek <- strftime(df$date, "%u", tz = "Europe/Berlin")
 df <- df[order(df$date),]
 
 # Quick Q/A
-df %>%
-  group_by(station, type) %>%
-  summarise(number_of_records = n()) %>% View()
+#df %>%
+#  group_by(station, type) %>%
+#  summarise(number_of_records = n()) %>% View()
 
 # Compute daily values
 df %>%
