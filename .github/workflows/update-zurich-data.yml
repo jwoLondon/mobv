@@ -2,7 +2,7 @@ name: Update Zurich data
 
 on:
   schedule:
-    - cron:  '*/10 * * * *'
+    - cron:  '0 7-9 * * *'
 
 jobs:
   update_data:
