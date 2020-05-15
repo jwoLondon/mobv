@@ -1,6 +1,6 @@
 library(tidyverse)
 library(lubridate)
-library(jsonlite)
+library(magrittr)
 
 
 # Read input data
