@@ -423,7 +423,7 @@ let vlSpecLinkedBicycle = {
               type: "nominal",
               sort: {
                 field: "count",
-                op: "sum",
+                op: "mean",
                 order: "descending",
               },
               axis: {
