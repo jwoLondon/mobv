@@ -1,589 +1,589 @@
 id,value
-Aldgate_0,370.0
-Aldgate_1,632.75
-Aldgate_2,627.5
-Aldgate_3,571.8
-Aldgate_4,635.8
-Aldgate_5,569.8
-Aldgate_6,333.25
-Angel_0,374.0
-Angel_1,548.0
-Angel_2,565.5
-Angel_3,523.2
-Angel_4,581.6
-Angel_5,544.2
-Angel_6,422.5
-Avondale_0,185.75
-Avondale_1,196.5
-Avondale_2,192.0
-Avondale_3,206.0
-Avondale_4,212.2
-Avondale_5,180.2
-Avondale_6,186.0
-Bank_0,286.75
-Bank_1,991.0
-Bank_2,1015.25
-Bank_3,845.8
-Bank_4,1031.4
-Bank_5,1043.4
-Bank_6,358.0
-Bankside_0,239.0
-Bankside_1,441.75
-Bankside_2,435.5
-Bankside_3,395.2
-Bankside_4,449.0
-Bankside_5,401.4
-Bankside_6,270.5
-Barbican_0,223.5
-Barbican_1,620.0
-Barbican_2,681.0
-Barbican_3,559.4
-Barbican_4,609.6
-Barbican_5,547.4
-Barbican_6,226.25
-"Battersea Park_0",602.0
-"Battersea Park_1",570.75
-"Battersea Park_2",592.75
-"Battersea Park_3",606.6
-"Battersea Park_4",620.2
-"Battersea Park_5",598.2
-"Battersea Park_6",673.25
-Battersea_0,376.75
-Battersea_1,472.75
-Battersea_2,523.0
-Battersea_3,465.2
-Battersea_4,488.8
-Battersea_5,467.8
-Battersea_6,414.5
-Bayswater_0,411.75
-Bayswater_1,459.0
-Bayswater_2,469.0
-Bayswater_3,444.4
-Bayswater_4,447.2
-Bayswater_5,439.4
-Bayswater_6,456.0
-Bermondsey_0,346.75
-Bermondsey_1,486.75
-Bermondsey_2,473.0
-Bermondsey_3,451.6
-Bermondsey_4,483.4
-Bermondsey_5,493.6
-Bermondsey_6,419.5
-"Bethnal Green_0",540.75
-"Bethnal Green_1",617.5
-"Bethnal Green_2",693.5
-"Bethnal Green_3",599.4
-"Bethnal Green_4",652.4
-"Bethnal Green_5",606.0
-"Bethnal Green_6",549.25
-Blackwall_0,42.25
-Blackwall_1,42.5
-Blackwall_2,44.5
-Blackwall_3,41.2
-Blackwall_4,52.6
-Blackwall_5,38.6
-Blackwall_6,55.75
-Bloomsbury_0,420.0
-Bloomsbury_1,893.0
-Bloomsbury_2,985.5
-Bloomsbury_3,804.4
-Bloomsbury_4,861.0
-Bloomsbury_5,841.6
-Bloomsbury_6,491.0
-Borough_0,498.0
-Borough_1,762.25
-Borough_2,785.5
-Borough_3,685.0
-Borough_4,762.4
-Borough_5,770.2
-Borough_6,603.75
-Bow_0,288.5
-Bow_1,268.25
-Bow_2,288.75
-Bow_3,267.4
-Bow_4,266.2
-Bow_5,257.8
-Bow_6,288.0
-Brixton_0,93.5
-Brixton_1,88.5
-Brixton_2,93.25
-Brixton_3,97.6
-Brixton_4,89.2
-Brixton_5,103.2
-Brixton_6,107.75
-"Camden Town_0",325.25
-"Camden Town_1",467.0
-"Camden Town_2",495.0
-"Camden Town_3",462.4
-"Camden Town_4",476.8
-"Camden Town_5",484.4
-"Camden Town_6",446.25
-"Canary Wharf_0",158.0
-"Canary Wharf_1",264.5
-"Canary Wharf_2",289.5
-"Canary Wharf_3",251.2
-"Canary Wharf_4",284.8
-"Canary Wharf_5",254.6
-"Canary Wharf_6",185.5
-Chelsea_0,374.75
-Chelsea_1,430.75
-Chelsea_2,477.75
-Chelsea_3,442.2
-Chelsea_4,458.8
-Chelsea_5,439.0
-Chelsea_6,468.0
-Clapham_0,256.0
-Clapham_1,313.0
-Clapham_2,347.5
-Clapham_3,305.2
-Clapham_4,311.8
-Clapham_5,322.2
-Clapham_6,305.5
-Clerkenwell_0,267.5
-Clerkenwell_1,537.0
-Clerkenwell_2,583.0
-Clerkenwell_3,480.4
-Clerkenwell_4,540.6
-Clerkenwell_5,522.6
-Clerkenwell_6,322.25
-"Covent Garden_0",165.5
-"Covent Garden_1",364.5
-"Covent Garden_2",387.25
-"Covent Garden_3",297.6
-"Covent Garden_4",346.8
-"Covent Garden_5",356.6
-"Covent Garden_6",240.5
-"Cubitt Town_0",123.0
-"Cubitt Town_1",75.0
-"Cubitt Town_2",72.75
-"Cubitt Town_3",68.0
-"Cubitt Town_4",84.0
-"Cubitt Town_5",69.4
-"Cubitt Town_6",141.75
-"Earl's Court_0",274.25
-"Earl's Court_1",310.75
-"Earl's Court_2",322.75
-"Earl's Court_3",292.0
-"Earl's Court_4",297.6
-"Earl's Court_5",323.2
-"Earl's Court_6",313.5
-"Elephant & Castle_0",247.25
-"Elephant & Castle_1",413.25
-"Elephant & Castle_2",415.25
-"Elephant & Castle_3",390.8
-"Elephant & Castle_4",410.6
-"Elephant & Castle_5",422.8
-"Elephant & Castle_6",283.25
-Euston_0,296.75
-Euston_1,754.25
-Euston_2,781.0
-Euston_3,650.6
-Euston_4,718.8
-Euston_5,685.0
-Euston_6,257.75
-Finsbury_0,171.5
-Finsbury_1,321.75
-Finsbury_2,333.75
-Finsbury_3,305.8
-Finsbury_4,336.6
-Finsbury_5,322.0
-Finsbury_6,185.0
-Fitzrovia_0,202.75
-Fitzrovia_1,530.25
-Fitzrovia_2,523.25
-Fitzrovia_3,465.6
-Fitzrovia_4,497.6
-Fitzrovia_5,462.4
-Fitzrovia_6,235.0
-Fulham_0,366.5
-Fulham_1,430.5
-Fulham_2,448.5
-Fulham_3,441.4
-Fulham_4,430.2
-Fulham_5,451.2
-Fulham_6,478.25
-Haggerston_0,548.75
-Haggerston_1,571.25
-Haggerston_2,640.5
-Haggerston_3,547.8
-Haggerston_4,580.4
-Haggerston_5,596.2
-Haggerston_6,584.75
-Hammersmith_0,434.5
-Hammersmith_1,531.0
-Hammersmith_2,593.75
-Hammersmith_3,530.4
-Hammersmith_4,561.4
-Hammersmith_5,529.2
-Hammersmith_6,486.0
-Holborn_0,404.75
-Holborn_1,1710.25
-Holborn_2,1785.75
-Holborn_3,1500.6
-Holborn_4,1699.0
-Holborn_5,1647.6
-Holborn_6,519.0
-Hoxton_0,489.5
-Hoxton_1,664.5
-Hoxton_2,716.25
-Hoxton_3,591.0
-Hoxton_4,665.6
-Hoxton_5,651.6
-Hoxton_6,489.75
-"Hyde Park_0",896.0
-"Hyde Park_1",654.25
-"Hyde Park_2",639.25
-"Hyde Park_3",779.6
-"Hyde Park_4",735.0
-"Hyde Park_5",796.2
-"Hyde Park_6",1049.75
-Kennington_0,249.25
-Kennington_1,344.25
-Kennington_2,374.5
-Kennington_3,344.6
-Kennington_4,335.8
-Kennington_5,334.6
-Kennington_6,274.5
-Kensington_0,505.0
-Kensington_1,613.25
-Kensington_2,646.5
-Kensington_3,588.6
-Kensington_4,634.2
-Kensington_5,635.0
-Kensington_6,590.25
-"King's Cross_0",349.25
-"King's Cross_1",879.0
-"King's Cross_2",890.75
-"King's Cross_3",777.0
-"King's Cross_4",815.0
-"King's Cross_5",774.6
-"King's Cross_6",425.75
-Knightsbridge_0,589.5
-Knightsbridge_1,813.75
-Knightsbridge_2,889.0
-Knightsbridge_3,783.6
-Knightsbridge_4,797.2
-Knightsbridge_5,820.4
-Knightsbridge_6,646.75
-"Ladbroke Grove_0",102.5
-"Ladbroke Grove_1",118.5
-"Ladbroke Grove_2",126.75
-"Ladbroke Grove_3",115.8
-"Ladbroke Grove_4",116.6
-"Ladbroke Grove_5",110.2
-"Ladbroke Grove_6",122.5
-Limehouse_0,161.0
-Limehouse_1,169.0
-Limehouse_2,165.0
-Limehouse_3,168.2
-Limehouse_4,176.8
-Limehouse_5,171.4
-Limehouse_6,168.25
-"Liverpool Street_0",328.75
-"Liverpool Street_1",851.25
-"Liverpool Street_2",907.5
-"Liverpool Street_3",708.8
-"Liverpool Street_4",826.6
-"Liverpool Street_5",800.0
-"Liverpool Street_6",322.0
-Marylebone_0,764.25
-Marylebone_1,1296.75
-Marylebone_2,1401.5
-Marylebone_3,1239.8
-Marylebone_4,1345.4
-Marylebone_5,1313.8
-Marylebone_6,795.5
-Mayfair_0,410.25
-Mayfair_1,736.25
-Mayfair_2,806.75
-Mayfair_3,698.2
-Mayfair_4,788.8
-Mayfair_5,756.0
-Mayfair_6,482.25
-"Mile End_0",409.75
-"Mile End_1",420.0
-"Mile End_2",437.5
-"Mile End_3",401.6
-"Mile End_4",431.8
-"Mile End_5",415.2
-"Mile End_6",439.0
-Millwall_0,64.0
-Millwall_1,59.5
-Millwall_2,69.75
-Millwall_3,62.0
-Millwall_4,74.8
-Millwall_5,56.2
-Millwall_6,61.0
-"Notting Hill_0",258.0
-"Notting Hill_1",251.5
-"Notting Hill_2",281.75
-"Notting Hill_3",240.2
-"Notting Hill_4",255.8
-"Notting Hill_5",241.0
-"Notting Hill_6",315.0
-"Old Ford_0",84.75
-"Old Ford_1",94.25
-"Old Ford_2",91.75
-"Old Ford_3",87.8
-"Old Ford_4",87.0
-"Old Ford_5",97.2
-"Old Ford_6",101.0
-Olympia_0,128.5
-Olympia_1,168.75
-Olympia_2,178.0
-Olympia_3,160.8
-Olympia_4,169.0
-Olympia_5,169.4
-Olympia_6,137.25
-"Olympic Park_0",412.75
-"Olympic Park_1",259.5
-"Olympic Park_2",303.25
-"Olympic Park_3",308.6
-"Olympic Park_4",321.8
-"Olympic Park_5",352.0
-"Olympic Park_6",495.5
-Paddington_0,239.5
-Paddington_1,459.0
-Paddington_2,511.5
-Paddington_3,452.4
-Paddington_4,473.4
-Paddington_5,428.4
-Paddington_6,255.5
-"Parson's Green_0",163.75
-"Parson's Green_1",193.0
-"Parson's Green_2",223.5
-"Parson's Green_3",185.4
-"Parson's Green_4",223.8
-"Parson's Green_5",226.6
-"Parson's Green_6",205.0
-Pimlico_0,511.25
-Pimlico_1,602.75
-Pimlico_2,688.5
-Pimlico_3,632.6
-Pimlico_4,633.2
-Pimlico_5,645.6
-Pimlico_6,530.75
-Poplar_0,107.75
-Poplar_1,119.25
-Poplar_2,126.0
-Poplar_3,132.8
-Poplar_4,125.2
-Poplar_5,127.2
-Poplar_6,109.0
-Portobello_0,205.25
-Portobello_1,234.25
-Portobello_2,242.75
-Portobello_3,223.2
-Portobello_4,223.0
-Portobello_5,234.2
-Portobello_6,252.25
-Putney_0,158.0
-Putney_1,142.5
-Putney_2,147.25
-Putney_3,143.0
-Putney_4,155.8
-Putney_5,160.8
-Putney_6,192.25
-"Regent's Park_0",220.25
-"Regent's Park_1",224.0
-"Regent's Park_2",237.0
-"Regent's Park_3",239.6
-"Regent's Park_4",239.2
-"Regent's Park_5",235.6
-"Regent's Park_6",237.0
-"Sands End_0",218.75
-"Sands End_1",281.5
-"Sands End_2",319.75
-"Sands End_3",287.4
-"Sands End_4",310.8
-"Sands End_5",276.6
-"Sands End_6",251.5
-Shadwell_0,157.75
-Shadwell_1,199.25
-Shadwell_2,200.25
-Shadwell_3,174.4
-Shadwell_4,190.2
-Shadwell_5,192.2
-Shadwell_6,164.25
-"Shepherd's Bush_0",203.25
-"Shepherd's Bush_1",217.5
-"Shepherd's Bush_2",220.25
-"Shepherd's Bush_3",222.6
-"Shepherd's Bush_4",237.0
-"Shepherd's Bush_5",239.6
-"Shepherd's Bush_6",243.0
-Shoreditch_0,546.75
-Shoreditch_1,777.25
-Shoreditch_2,835.5
-Shoreditch_3,747.0
-Shoreditch_4,799.8
-Shoreditch_5,746.4
-Shoreditch_6,601.5
-Soho_0,439.25
-Soho_1,664.5
-Soho_2,677.0
-Soho_3,593.8
-Soho_4,697.2
-Soho_5,707.2
-Soho_6,511.25
-"South Bank_0",320.25
-"South Bank_1",743.75
-"South Bank_2",760.25
-"South Bank_3",631.8
-"South Bank_4",686.0
-"South Bank_5",678.6
-"South Bank_6",376.0
-"South Kensington_0",486.75
-"South Kensington_1",564.75
-"South Kensington_2",567.0
-"South Kensington_3",551.4
-"South Kensington_4",575.2
-"South Kensington_5",570.0
-"South Kensington_6",533.75
-Southwark_0,73.0
-Southwark_1,169.0
-Southwark_2,173.75
-Southwark_3,155.0
-Southwark_4,194.2
-Southwark_5,159.0
-Southwark_6,93.75
-"St John's Wood_0",319.25
-"St John's Wood_1",345.75
-"St John's Wood_2",401.5
-"St John's Wood_3",377.0
-"St John's Wood_4",369.0
-"St John's Wood_5",396.4
-"St John's Wood_6",324.0
-"St Luke's_0",190.5
-"St Luke's_1",348.75
-"St Luke's_2",378.5
-"St Luke's_3",303.8
-"St Luke's_4",359.8
-"St Luke's_5",336.2
-"St Luke's_6",222.5
-"St Paul's_0",164.0
-"St Paul's_1",616.25
-"St Paul's_2",611.75
-"St Paul's_3",493.8
-"St Paul's_4",590.6
-"St Paul's_5",562.0
-"St Paul's_6",167.0
-Stepney_0,369.5
-Stepney_1,436.25
-Stepney_2,449.25
-Stepney_3,406.6
-Stepney_4,452.4
-Stepney_5,399.8
-Stepney_6,401.5
-Stockwell_0,332.5
-Stockwell_1,423.5
-Stockwell_2,450.25
-Stockwell_3,425.2
-Stockwell_4,449.8
-Stockwell_5,436.4
-Stockwell_6,388.25
-Strand_0,524.5
-Strand_1,790.25
-Strand_2,865.5
-Strand_3,792.6
-Strand_4,840.4
-Strand_5,783.6
-Strand_6,649.0
-Vauxhall_0,551.25
-Vauxhall_1,783.5
-Vauxhall_2,841.0
-Vauxhall_3,763.8
-Vauxhall_4,768.8
-Vauxhall_5,763.0
-Vauxhall_6,626.25
-"Victoria Park_0",247.25
-"Victoria Park_1",198.75
-"Victoria Park_2",189.5
-"Victoria Park_3",216.0
-"Victoria Park_4",213.8
-"Victoria Park_5",204.4
-"Victoria Park_6",247.0
-Victoria_0,304.75
-Victoria_1,510.25
-Victoria_2,578.25
-Victoria_3,480.6
-Victoria_4,513.6
-Victoria_5,494.6
-Victoria_6,367.0
-"Walham Green_0",193.25
-"Walham Green_1",198.25
-"Walham Green_2",235.5
-"Walham Green_3",185.4
-"Walham Green_4",214.8
-"Walham Green_5",208.0
-"Walham Green_6",222.0
-Walworth_0,159.0
-Walworth_1,182.25
-Walworth_2,189.25
-Walworth_3,202.4
-Walworth_4,189.8
-Walworth_5,200.0
-Walworth_6,153.75
-"Wandsworth Road_0",125.75
-"Wandsworth Road_1",149.75
-"Wandsworth Road_2",172.0
-"Wandsworth Road_3",173.0
-"Wandsworth Road_4",153.8
-"Wandsworth Road_5",143.6
-"Wandsworth Road_6",119.5
-Wandsworth_0,319.75
-Wandsworth_1,324.5
-Wandsworth_2,350.0
-Wandsworth_3,326.8
-Wandsworth_4,332.2
-Wandsworth_5,349.4
-Wandsworth_6,360.0
-Wapping_0,282.25
-Wapping_1,365.5
-Wapping_2,376.5
-Wapping_3,343.4
-Wapping_4,365.0
-Wapping_5,356.8
-Wapping_6,330.5
-Waterloo_0,284.25
-Waterloo_1,1072.75
-Waterloo_2,1061.25
-Waterloo_3,896.2
-Waterloo_4,1048.2
-Waterloo_5,1096.2
-Waterloo_6,352.75
-"West Chelsea_0",266.25
-"West Chelsea_1",304.25
-"West Chelsea_2",348.25
-"West Chelsea_3",322.6
-"West Chelsea_4",317.2
-"West Chelsea_5",318.2
-"West Chelsea_6",321.25
-"West End_0",308.0
-"West End_1",424.25
-"West End_2",440.5
-"West End_3",454.8
-"West End_4",423.0
-"West End_5",439.0
-"West End_6",348.5
-"West Kensington_0",251.0
-"West Kensington_1",270.75
-"West Kensington_2",280.75
-"West Kensington_3",263.0
-"West Kensington_4",289.2
-"West Kensington_5",269.6
-"West Kensington_6",306.25
-Westminster_0,490.5
-Westminster_1,1108.0
-Westminster_2,1157.25
-Westminster_3,1013.0
-Westminster_4,1100.0
-Westminster_5,1034.4
-Westminster_6,519.25
-Whitechapel_0,405.0
-Whitechapel_1,484.75
-Whitechapel_2,499.0
-Whitechapel_3,436.8
-Whitechapel_4,496.2
-Whitechapel_5,463.0
-Whitechapel_6,442.75
+Aldgate_0,324.875
+Aldgate_1,625.714285714286
+Aldgate_2,632.0
+Aldgate_3,628.625
+Aldgate_4,638.0
+Aldgate_5,582.5
+Aldgate_6,356.5
+Angel_0,341.875
+Angel_1,545.428571428571
+Angel_2,561.75
+Angel_3,587.875
+Angel_4,560.5
+Angel_5,551.75
+Angel_6,399.0
+Avondale_0,168.625
+Avondale_1,179.285714285714
+Avondale_2,194.0
+Avondale_3,232.75
+Avondale_4,201.875
+Avondale_5,183.625
+Avondale_6,166.375
+Bank_0,273.625
+Bank_1,1000.42857142857
+Bank_2,994.25
+Bank_3,1019.25
+Bank_4,1024.875
+Bank_5,1033.5
+Bank_6,361.25
+Bankside_0,229.5
+Bankside_1,453.857142857143
+Bankside_2,451.75
+Bankside_3,462.75
+Bankside_4,466.375
+Bankside_5,418.75
+Bankside_6,265.5
+Barbican_0,214.75
+Barbican_1,614.428571428571
+Barbican_2,648.25
+Barbican_3,671.0
+Barbican_4,630.125
+Barbican_5,573.625
+Barbican_6,249.375
+"Battersea Park_0",518.625
+"Battersea Park_1",581.285714285714
+"Battersea Park_2",612.5
+"Battersea Park_3",655.875
+"Battersea Park_4",628.25
+"Battersea Park_5",604.625
+"Battersea Park_6",628.5
+Battersea_0,324.375
+Battersea_1,483.285714285714
+Battersea_2,526.875
+Battersea_3,530.875
+Battersea_4,490.875
+Battersea_5,485.0
+Battersea_6,401.25
+Bayswater_0,382.0
+Bayswater_1,446.714285714286
+Bayswater_2,452.75
+Bayswater_3,480.25
+Bayswater_4,426.0
+Bayswater_5,447.875
+Bayswater_6,444.875
+Bermondsey_0,296.125
+Bermondsey_1,469.857142857143
+Bermondsey_2,477.125
+Bermondsey_3,486.125
+Bermondsey_4,478.5
+Bermondsey_5,491.0
+Bermondsey_6,393.75
+"Bethnal Green_0",491.5
+"Bethnal Green_1",615.428571428571
+"Bethnal Green_2",670.5
+"Bethnal Green_3",677.25
+"Bethnal Green_4",653.375
+"Bethnal Green_5",626.375
+"Bethnal Green_6",540.25
+Blackwall_0,40.0
+Blackwall_1,42.1428571428571
+Blackwall_2,42.0
+Blackwall_3,42.625
+Blackwall_4,46.0
+Blackwall_5,36.75
+Blackwall_6,48.375
+Bloomsbury_0,405.125
+Bloomsbury_1,896.714285714286
+Bloomsbury_2,963.375
+Bloomsbury_3,930.25
+Bloomsbury_4,886.625
+Bloomsbury_5,861.625
+Bloomsbury_6,487.25
+Borough_0,477.75
+Borough_1,774.285714285714
+Borough_2,786.5
+Borough_3,770.375
+Borough_4,771.5
+Borough_5,783.875
+Borough_6,596.75
+Bow_0,262.25
+Bow_1,272.285714285714
+Bow_2,298.25
+Bow_3,300.5
+Bow_4,283.75
+Bow_5,270.875
+Bow_6,278.75
+Brixton_0,81.75
+Brixton_1,86.5714285714286
+Brixton_2,96.875
+Brixton_3,97.75
+Brixton_4,94.0
+Brixton_5,99.0
+Brixton_6,97.875
+"Camden Town_0",329.25
+"Camden Town_1",470.571428571429
+"Camden Town_2",492.75
+"Camden Town_3",519.625
+"Camden Town_4",454.875
+"Camden Town_5",500.5
+"Camden Town_6",435.75
+"Canary Wharf_0",127.625
+"Canary Wharf_1",249.571428571429
+"Canary Wharf_2",289.75
+"Canary Wharf_3",280.125
+"Canary Wharf_4",269.125
+"Canary Wharf_5",257.875
+"Canary Wharf_6",173.75
+Chelsea_0,317.5
+Chelsea_1,427.571428571429
+Chelsea_2,487.625
+Chelsea_3,482.25
+Chelsea_4,461.375
+Chelsea_5,454.5
+Chelsea_6,433.75
+Clapham_0,238.5
+Clapham_1,313.714285714286
+Clapham_2,342.0
+Clapham_3,344.5
+Clapham_4,313.125
+Clapham_5,314.875
+Clapham_6,309.125
+Clerkenwell_0,256.125
+Clerkenwell_1,553.285714285714
+Clerkenwell_2,571.5
+Clerkenwell_3,561.5
+Clerkenwell_4,563.5
+Clerkenwell_5,544.75
+Clerkenwell_6,329.125
+"Covent Garden_0",165.0
+"Covent Garden_1",346.714285714286
+"Covent Garden_2",377.25
+"Covent Garden_3",372.625
+"Covent Garden_4",368.25
+"Covent Garden_5",357.25
+"Covent Garden_6",233.625
+"Cubitt Town_0",97.625
+"Cubitt Town_1",80.7142857142857
+"Cubitt Town_2",74.0
+"Cubitt Town_3",69.25
+"Cubitt Town_4",74.375
+"Cubitt Town_5",77.125
+"Cubitt Town_6",123.75
+"Earl's Court_0",254.5
+"Earl's Court_1",292.285714285714
+"Earl's Court_2",328.75
+"Earl's Court_3",312.125
+"Earl's Court_4",287.0
+"Earl's Court_5",323.625
+"Earl's Court_6",315.125
+"Elephant & Castle_0",225.125
+"Elephant & Castle_1",416.857142857143
+"Elephant & Castle_2",412.5
+"Elephant & Castle_3",431.75
+"Elephant & Castle_4",405.125
+"Elephant & Castle_5",419.5
+"Elephant & Castle_6",307.875
+Euston_0,269.5
+Euston_1,775.142857142857
+Euston_2,773.0
+Euston_3,788.875
+Euston_4,762.875
+Euston_5,719.625
+Euston_6,292.125
+Finsbury_0,149.875
+Finsbury_1,325.428571428571
+Finsbury_2,325.5
+Finsbury_3,342.875
+Finsbury_4,347.375
+Finsbury_5,340.5
+Finsbury_6,178.25
+Fitzrovia_0,179.25
+Fitzrovia_1,513.857142857143
+Fitzrovia_2,532.125
+Fitzrovia_3,562.25
+Fitzrovia_4,523.0
+Fitzrovia_5,498.75
+Fitzrovia_6,237.625
+Fulham_0,348.5
+Fulham_1,433.571428571429
+Fulham_2,445.0
+Fulham_3,453.625
+Fulham_4,430.125
+Fulham_5,444.25
+Fulham_6,432.625
+Haggerston_0,455.5
+Haggerston_1,575.571428571429
+Haggerston_2,649.625
+Haggerston_3,629.25
+Haggerston_4,607.25
+Haggerston_5,601.625
+Haggerston_6,557.625
+Hammersmith_0,380.25
+Hammersmith_1,538.142857142857
+Hammersmith_2,595.375
+Hammersmith_3,568.25
+Hammersmith_4,566.625
+Hammersmith_5,545.75
+Hammersmith_6,487.25
+Holborn_0,377.625
+Holborn_1,1728.0
+Holborn_2,1825.25
+Holborn_3,1802.875
+Holborn_4,1750.25
+Holborn_5,1692.25
+Holborn_6,493.375
+Hoxton_0,441.5
+Hoxton_1,675.0
+Hoxton_2,721.625
+Hoxton_3,708.5
+Hoxton_4,694.875
+Hoxton_5,669.125
+Hoxton_6,499.625
+"Hyde Park_0",764.0
+"Hyde Park_1",676.0
+"Hyde Park_2",671.25
+"Hyde Park_3",724.75
+"Hyde Park_4",615.25
+"Hyde Park_5",766.0
+"Hyde Park_6",1017.125
+Kennington_0,229.0
+Kennington_1,345.142857142857
+Kennington_2,383.0
+Kennington_3,367.875
+Kennington_4,351.25
+Kennington_5,337.0
+Kennington_6,284.75
+Kensington_0,477.875
+Kensington_1,608.142857142857
+Kensington_2,666.875
+Kensington_3,635.625
+Kensington_4,614.375
+Kensington_5,638.5
+Kensington_6,567.0
+"King's Cross_0",320.125
+"King's Cross_1",825.714285714286
+"King's Cross_2",878.125
+"King's Cross_3",884.125
+"King's Cross_4",840.625
+"King's Cross_5",794.625
+"King's Cross_6",405.0
+Knightsbridge_0,510.0
+Knightsbridge_1,826.714285714286
+Knightsbridge_2,858.125
+Knightsbridge_3,842.5
+Knightsbridge_4,811.125
+Knightsbridge_5,821.375
+Knightsbridge_6,628.125
+"Ladbroke Grove_0",103.375
+"Ladbroke Grove_1",104.285714285714
+"Ladbroke Grove_2",118.625
+"Ladbroke Grove_3",119.25
+"Ladbroke Grove_4",116.75
+"Ladbroke Grove_5",112.875
+"Ladbroke Grove_6",116.875
+Limehouse_0,140.875
+Limehouse_1,162.857142857143
+Limehouse_2,168.5
+Limehouse_3,174.25
+Limehouse_4,173.625
+Limehouse_5,172.25
+Limehouse_6,163.125
+"Liverpool Street_0",307.125
+"Liverpool Street_1",832.571428571429
+"Liverpool Street_2",891.25
+"Liverpool Street_3",859.25
+"Liverpool Street_4",851.5
+"Liverpool Street_5",818.875
+"Liverpool Street_6",313.5
+Marylebone_0,680.25
+Marylebone_1,1301.14285714286
+Marylebone_2,1408.375
+Marylebone_3,1408.75
+Marylebone_4,1350.375
+Marylebone_5,1336.0
+Marylebone_6,809.75
+Mayfair_0,359.375
+Mayfair_1,754.714285714286
+Mayfair_2,797.25
+Mayfair_3,805.5
+Mayfair_4,769.375
+Mayfair_5,771.625
+Mayfair_6,452.5
+"Mile End_0",357.875
+"Mile End_1",432.0
+"Mile End_2",443.25
+"Mile End_3",454.375
+"Mile End_4",451.5
+"Mile End_5",419.25
+"Mile End_6",426.375
+Millwall_0,52.5
+Millwall_1,62.0
+Millwall_2,68.0
+Millwall_3,69.375
+Millwall_4,71.0
+Millwall_5,64.875
+Millwall_6,71.5
+"Notting Hill_0",228.875
+"Notting Hill_1",220.0
+"Notting Hill_2",273.5
+"Notting Hill_3",257.375
+"Notting Hill_4",250.625
+"Notting Hill_5",259.625
+"Notting Hill_6",294.0
+"Old Ford_0",66.375
+"Old Ford_1",94.8571428571429
+"Old Ford_2",98.875
+"Old Ford_3",98.5
+"Old Ford_4",86.5
+"Old Ford_5",93.625
+"Old Ford_6",95.75
+Olympia_0,117.875
+Olympia_1,174.857142857143
+Olympia_2,173.875
+Olympia_3,182.5
+Olympia_4,182.25
+Olympia_5,168.25
+Olympia_6,152.5
+"Olympic Park_0",358.5
+"Olympic Park_1",263.714285714286
+"Olympic Park_2",299.375
+"Olympic Park_3",316.25
+"Olympic Park_4",301.375
+"Olympic Park_5",333.75
+"Olympic Park_6",428.375
+Paddington_0,223.375
+Paddington_1,449.0
+Paddington_2,523.5
+Paddington_3,507.0
+Paddington_4,492.625
+Paddington_5,457.25
+Paddington_6,255.25
+"Parson's Green_0",148.75
+"Parson's Green_1",191.428571428571
+"Parson's Green_2",220.625
+"Parson's Green_3",214.375
+"Parson's Green_4",221.875
+"Parson's Green_5",234.625
+"Parson's Green_6",205.75
+Pimlico_0,459.875
+Pimlico_1,615.571428571429
+Pimlico_2,683.25
+Pimlico_3,675.75
+Pimlico_4,639.375
+Pimlico_5,655.75
+Pimlico_6,526.5
+Poplar_0,94.875
+Poplar_1,120.857142857143
+Poplar_2,123.5
+Poplar_3,128.5
+Poplar_4,120.625
+Poplar_5,120.375
+Poplar_6,107.125
+Portobello_0,187.875
+Portobello_1,223.142857142857
+Portobello_2,231.125
+Portobello_3,241.25
+Portobello_4,217.625
+Portobello_5,230.25
+Portobello_6,235.5
+Putney_0,144.0
+Putney_1,142.571428571429
+Putney_2,145.875
+Putney_3,147.125
+Putney_4,158.125
+Putney_5,149.875
+Putney_6,177.5
+"Regent's Park_0",196.875
+"Regent's Park_1",229.571428571429
+"Regent's Park_2",246.0
+"Regent's Park_3",236.625
+"Regent's Park_4",233.625
+"Regent's Park_5",237.875
+"Regent's Park_6",236.0
+"Sands End_0",192.25
+"Sands End_1",279.285714285714
+"Sands End_2",309.75
+"Sands End_3",303.375
+"Sands End_4",297.125
+"Sands End_5",290.75
+"Sands End_6",232.875
+Shadwell_0,144.625
+Shadwell_1,198.142857142857
+Shadwell_2,202.75
+Shadwell_3,199.25
+Shadwell_4,192.0
+Shadwell_5,198.0
+Shadwell_6,162.625
+"Shepherd's Bush_0",178.75
+"Shepherd's Bush_1",216.428571428571
+"Shepherd's Bush_2",220.375
+"Shepherd's Bush_3",228.25
+"Shepherd's Bush_4",223.375
+"Shepherd's Bush_5",231.375
+"Shepherd's Bush_6",226.25
+Shoreditch_0,477.75
+Shoreditch_1,785.857142857143
+Shoreditch_2,840.0
+Shoreditch_3,837.375
+Shoreditch_4,816.375
+Shoreditch_5,774.0
+Shoreditch_6,589.625
+Soho_0,409.5
+Soho_1,656.571428571429
+Soho_2,676.875
+Soho_3,678.25
+Soho_4,692.125
+Soho_5,692.625
+Soho_6,491.25
+"South Bank_0",298.875
+"South Bank_1",715.0
+"South Bank_2",769.0
+"South Bank_3",763.625
+"South Bank_4",710.875
+"South Bank_5",690.25
+"South Bank_6",361.5
+"South Kensington_0",445.75
+"South Kensington_1",549.285714285714
+"South Kensington_2",571.625
+"South Kensington_3",555.375
+"South Kensington_4",544.75
+"South Kensington_5",559.875
+"South Kensington_6",492.25
+Southwark_0,70.375
+Southwark_1,177.285714285714
+Southwark_2,184.5
+Southwark_3,188.125
+Southwark_4,200.5
+Southwark_5,180.75
+Southwark_6,104.75
+"St John's Wood_0",315.875
+"St John's Wood_1",365.285714285714
+"St John's Wood_2",404.5
+"St John's Wood_3",416.625
+"St John's Wood_4",385.875
+"St John's Wood_5",414.375
+"St John's Wood_6",333.125
+"St Luke's_0",181.0
+"St Luke's_1",327.857142857143
+"St Luke's_2",363.375
+"St Luke's_3",358.5
+"St Luke's_4",364.5
+"St Luke's_5",340.625
+"St Luke's_6",220.25
+"St Paul's_0",151.0
+"St Paul's_1",600.142857142857
+"St Paul's_2",607.75
+"St Paul's_3",616.0
+"St Paul's_4",602.25
+"St Paul's_5",584.75
+"St Paul's_6",176.375
+Stepney_0,339.0
+Stepney_1,414.285714285714
+Stepney_2,445.0
+Stepney_3,435.25
+Stepney_4,438.25
+Stepney_5,419.0
+Stepney_6,388.625
+Stockwell_0,300.625
+Stockwell_1,415.0
+Stockwell_2,454.25
+Stockwell_3,463.375
+Stockwell_4,446.375
+Stockwell_5,434.0
+Stockwell_6,375.125
+Strand_0,460.25
+Strand_1,852.285714285714
+Strand_2,879.375
+Strand_3,906.25
+Strand_4,877.0
+Strand_5,830.625
+Strand_6,617.75
+Vauxhall_0,517.625
+Vauxhall_1,797.428571428571
+Vauxhall_2,828.625
+Vauxhall_3,820.125
+Vauxhall_4,809.625
+Vauxhall_5,776.375
+Vauxhall_6,598.25
+"Victoria Park_0",211.125
+"Victoria Park_1",200.142857142857
+"Victoria Park_2",195.875
+"Victoria Park_3",218.625
+"Victoria Park_4",219.0
+"Victoria Park_5",210.75
+"Victoria Park_6",241.5
+Victoria_0,285.75
+Victoria_1,523.285714285714
+Victoria_2,566.5
+Victoria_3,515.875
+Victoria_4,520.375
+Victoria_5,487.5
+Victoria_6,361.25
+"Walham Green_0",160.875
+"Walham Green_1",204.571428571429
+"Walham Green_2",222.375
+"Walham Green_3",199.375
+"Walham Green_4",207.0
+"Walham Green_5",222.25
+"Walham Green_6",209.75
+Walworth_0,133.0
+Walworth_1,184.0
+Walworth_2,191.75
+Walworth_3,219.875
+Walworth_4,193.25
+Walworth_5,212.375
+Walworth_6,142.375
+"Wandsworth Road_0",132.125
+"Wandsworth Road_1",155.142857142857
+"Wandsworth Road_2",169.625
+"Wandsworth Road_3",173.25
+"Wandsworth Road_4",161.0
+"Wandsworth Road_5",162.0
+"Wandsworth Road_6",148.375
+Wandsworth_0,280.875
+Wandsworth_1,327.571428571429
+Wandsworth_2,357.5
+Wandsworth_3,354.0
+Wandsworth_4,334.75
+Wandsworth_5,337.875
+Wandsworth_6,329.25
+Wapping_0,250.875
+Wapping_1,362.0
+Wapping_2,374.625
+Wapping_3,389.375
+Wapping_4,351.875
+Wapping_5,365.125
+Wapping_6,313.5
+Waterloo_0,289.125
+Waterloo_1,1064.85714285714
+Waterloo_2,1069.375
+Waterloo_3,1056.375
+Waterloo_4,1098.0
+Waterloo_5,1080.625
+Waterloo_6,360.5
+"West Chelsea_0",238.5
+"West Chelsea_1",309.0
+"West Chelsea_2",341.75
+"West Chelsea_3",349.0
+"West Chelsea_4",325.375
+"West Chelsea_5",319.5
+"West Chelsea_6",301.625
+"West End_0",260.625
+"West End_1",428.0
+"West End_2",460.0
+"West End_3",466.5
+"West End_4",406.875
+"West End_5",452.25
+"West End_6",322.0
+"West Kensington_0",237.75
+"West Kensington_1",267.428571428571
+"West Kensington_2",273.875
+"West Kensington_3",272.375
+"West Kensington_4",273.75
+"West Kensington_5",275.875
+"West Kensington_6",278.25
+Westminster_0,464.125
+Westminster_1,1139.71428571429
+Westminster_2,1163.625
+Westminster_3,1133.0
+Westminster_4,1098.0
+Westminster_5,1044.0
+Westminster_6,525.0
+Whitechapel_0,367.875
+Whitechapel_1,484.428571428571
+Whitechapel_2,498.375
+Whitechapel_3,504.25
+Whitechapel_4,509.75
+Whitechapel_5,487.0
+Whitechapel_6,428.375

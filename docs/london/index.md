@@ -9,7 +9,7 @@ How can we understand and compare patterns of human movement? Are individuals mo
 
 We estimate one form of active travel – use of the [TfL Santander public bicycle hire scheme](https://tfl.gov.uk/modes/cycling/santander-cycles) – by looking at how numbers of bicycles at docking stations change every 10 minutes. By combining measures of docking station activity into localities around London we can estimate where and when travel by hire bicycle occurs (see [data processing of TfL docking stations](./dataProcessing) for more details).
 
-By comparing daily use with that expected during January 2020 ("anomaly" calculated with the [signed chi score](https://openaccess.city.ac.uk/id/eprint/537/1/wood_visualization_2010.pdf)), we can begin to see the effect of the Covid-19 crisis on movement patterns – where and when we see more or less bicycle activity than expected. Expected use is calculated by day of week for each local region so we can account for expected weekday/weekend fluctuations.
+By comparing daily use with that expected between January 6th and March 1st 2020 ("anomaly" calculated with the [signed chi score](https://openaccess.city.ac.uk/id/eprint/537/1/wood_visualization_2010.pdf)), we can begin to see the effect of the Covid-19 crisis on movement patterns – where and when we see more or less bicycle activity than expected. Expected use is calculated by day of week for each local region so we can account for expected weekday/weekend fluctuations.
 
 ## Visualizations
 
