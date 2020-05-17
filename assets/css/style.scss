@@ -23,11 +23,11 @@ h6 {
 
 .wide {
   width: 100vw;
-  position: relative;  
+  position: relative;
   left: calc(-50vw + 50%);
   text-align: center;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=family=Roboto+Condensed&Fjalla+One&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap");
 
 @import "{{ site.theme }}";

@@ -102,6 +102,7 @@ let vlSpecLinkedFoot = {
                     labelExpr:
                       "timeFormat(datum.value, '%a') == 'Mon' ? timeFormat(datum.value, '%e %b') : ''",
                     title: "",
+                    labelFont: "Roboto Condensed",
                   },
                 },
                 y: {
@@ -115,6 +116,7 @@ let vlSpecLinkedFoot = {
                   axis: {
                     title: "",
                     offset: 7,
+                    font: "Roboto Condensed",
                     domain: false,
                     ticks: false,
                   },
@@ -214,6 +216,7 @@ let vlSpecLinkedFoot = {
                     align: "left",
                     opacity: 0.5,
                     fontSize: 8,
+                    font: "Roboto Condensed",
                     dx: 2,
                   },
                 },
@@ -257,6 +260,7 @@ let vlSpecLinkedFoot = {
                     labelExpr:
                       "timeFormat(datum.value, '%a') == 'Mon' ? timeFormat(datum.value, '%e %b') : ''",
                     title: "",
+                    labelFont: "Roboto Condensed",
                   },
                 },
                 y: {
@@ -432,6 +436,7 @@ let vlSpecLinkedFoot = {
             type: "text",
             dy: 10,
             fontSize: 6,
+            font: "Roboto Condensed",
           },
         },
       ],

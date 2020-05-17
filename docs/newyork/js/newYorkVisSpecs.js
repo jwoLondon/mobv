@@ -104,6 +104,7 @@ let vlSpecLinkedBicycle = {
                     labelExpr:
                       "timeFormat(datum.value, '%a') == 'Mon' ? timeFormat(datum.value, '%e %b') : ''",
                     title: "",
+                    labelFont: "Roboto Condensed",
                   },
                 },
                 y: {
@@ -119,6 +120,7 @@ let vlSpecLinkedBicycle = {
                     offset: 7,
                     domain: false,
                     ticks: false,
+                    labelFont: "Roboto Condensed",
                   },
                 },
                 color: {
@@ -217,6 +219,7 @@ let vlSpecLinkedBicycle = {
                     opacity: 0.5,
                     fontSize: 8,
                     dx: 2,
+                    font: "Roboto Condensed",
                   },
                 },
               ],
@@ -259,6 +262,7 @@ let vlSpecLinkedBicycle = {
                     labelExpr:
                       "timeFormat(datum.value, '%a') == 'Mon' ? timeFormat(datum.value, '%e %b') : ''",
                     title: "",
+                    labelFont: "Roboto Condensed",
                   },
                 },
                 y: {
@@ -269,6 +273,7 @@ let vlSpecLinkedBicycle = {
                     nice: false,
                   },
                   title: "Anomaly",
+                  labelFont: "Roboto Condensed",
                 },
                 color: {
                   condition: {
@@ -447,6 +452,7 @@ let vlSpecLinkedBicycle = {
             type: "text",
             dy: 10,
             fontSize: 6,
+            font: "Roboto Condensed",
           },
         },
       ],
