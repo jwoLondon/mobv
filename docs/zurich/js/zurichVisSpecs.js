@@ -172,6 +172,7 @@ let vlSpecLinkedBicycle = {
                     field: "value",
                     type: "quantitative",
                     title: "expected",
+                    format: ".0f",
                   },
                   {
                     field: "count",
@@ -618,6 +619,7 @@ let vlSpecLinkedFoot = {
                     field: "value",
                     type: "quantitative",
                     title: "expected",
+                    format: ".0f",
                   },
                   {
                     field: "count",
