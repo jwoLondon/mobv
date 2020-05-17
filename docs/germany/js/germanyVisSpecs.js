@@ -116,7 +116,7 @@ let vlSpecLinkedFoot = {
                   axis: {
                     title: "",
                     offset: 7,
-                    font: "Roboto Condensed",
+                    labelFont: "Roboto Condensed",
                     domain: false,
                     ticks: false,
                   },
@@ -271,6 +271,7 @@ let vlSpecLinkedFoot = {
                     nice: false,
                   },
                   title: "Anomaly",
+                  labelFont: "Roboto Condensed",
                 },
                 color: {
                   condition: {
