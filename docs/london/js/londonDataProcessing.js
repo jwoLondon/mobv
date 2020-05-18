@@ -2,6 +2,12 @@
 
 let path = "https://jwolondon.github.io/mobv/data/london/";
 
+let bicycleStationData = path + "stationLocations-Bicycle.csv";
+let bicycleTimeSeriesData = path + "StationDailyTimeSeries-Bicycle.csv";
+let bicycleReferenceData = path + "StationReference-Bicycle.csv";
+
+let annotationsData = path + "annotations.csv";
+
 let localityData = path + "geo/localities.json";
 let localityFeature = "localities";
 let localityCentroidData = path + "geo/localityCentroids.csv";
