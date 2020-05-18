@@ -3,6 +3,13 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
+<style>
+input[type="range"],
+  .vega-bind {
+    font-size:0px;
+}
+</style>
+
 # Public Bicycle Use Across London
 
 How can we understand and compare patterns of human movement? Are individuals moving more or less than normal at the moment? And where in London are people moving?
