@@ -21,6 +21,12 @@ Stations are sorted vertically by the overall volume of activity with busier are
 
 The vertical patterns in the charts show clearly how mobility in London after the lockdown changed and that weekday and weekend changes differ. We also see the effect of weather on, what is in many cases, discretionary travel. Not all regions in London show similar behaviour, for example regions associated with likely leisure activity (often near parks) have seen an increase in use.
 
+### Geographic patterns
+
+_Drag slider to see change over time._
+
+<div class="wide" id="visMap"></div>
+
 ## Team
 
 Conceived and implemented by

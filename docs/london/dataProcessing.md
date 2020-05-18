@@ -258,9 +258,9 @@ We can now use the generated files in the visualization specification just as we
 
 ## Geographic Patterns
 
-<div class="wide" id="visMap"></div>
-
 _Drag slider to see change over time._
+
+<div class="wide" id="visMap"></div>
 
 <!-- Script containing the vis specs used above. Must be at end of document. -->
 <script src="js/londonDataProcessing.js"></script>

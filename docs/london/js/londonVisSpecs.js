@@ -18,6 +18,15 @@ let greenPolyFeature = "parks";
 let bicycleAnomalyMax = 40;
 let bicycleAnomalyMin = -40;
 
+// INTERACTIVE MAP SPECIFICATION (CURRENTLY LONDON ONLY)
+
+let localityData = path + "geo/localities.json";
+let localityFeature = "localities";
+let localityCentroidData = path + "geo/localityCentroids.csv";
+let thamesData = path + "geo/thamesSimplified.json";
+let thamesFeature = "thames";
+let yesterday = Math.floor(Date.now() / 86400000 - 1) * 86400000;
+
 // -----------------------------------------------------------------------------
 
 // BICYCLE LINKED VIEWS CHART
@@ -452,8 +461,222 @@ let vlSpecLinkedBicycle = {
 
 // -----------------------------------------------------------------------------
 
+let vlSpecMap = {
+  $schema: "https://vega.github.io/schema/vega-lite/v4.json",
+  config: {
+    view: {
+      stroke: "",
+    },
+  },
+  background: "rgb(252,246,229)",
+  width: 835,
+  height: 525,
+  layer: [
+    {
+      data: { url: `${bicycleTimeSeriesData}` },
+      selection: {
+        mySelection: {
+          type: "single",
+          fields: ["date"],
+          init: {
+            date: 1577836800000,
+          },
+          bind: {
+            date: {
+              input: "range",
+              name: "date",
+              min: 1577836800000,
+              max: `${yesterday}`,
+              step: 86400000,
+            },
+          },
+        },
+      },
+      transform: [
+        {
+          lookup: "station",
+          from: {
+            data: {
+              url: `${localityData}`,
+              format: { type: "topojson", feature: `${localityFeature}` },
+            },
+            key: "properties.name",
+          },
+          as: "geo",
+        },
+        {
+          filter: "datum.date == mySelection_date",
+        },
+        {
+          lookup: "id",
+          from: {
+            data: { url: `${bicycleReferenceData}` },
+            key: "id",
+            fields: ["value"],
+          },
+        },
+        {
+          calculate:
+            "datum.value == 0 ? 0 : (datum.count - datum.value)/sqrt(datum.value)",
+          as: "anomaly",
+        },
+      ],
+      encoding: {
+        shape: {
+          field: "geo",
+          type: "geojson",
+        },
+        color: {
+          field: "anomaly",
+          type: "quantitative",
+          scale: {
+            scheme: "blueOrange",
+            domainMid: 0,
+            domain: [-50, 50],
+            nice: false,
+          },
+          legend: {
+            title: "Anomaly",
+            direction: "horizontal",
+            orient: "bottom-right",
+            offset: 40,
+            gradientThickness: 12,
+          },
+        },
+        tooltip: [
+          {
+            field: "station",
+            type: "nominal",
+            title: "locality",
+          },
+          {
+            field: "date",
+            type: "temporal",
+            format: "%a %e %b",
+          },
+          {
+            field: "value",
+            type: "quantitative",
+            title: "expected",
+          },
+          {
+            field: "count",
+            type: "quantitative",
+            title: "observed",
+            format: ".0f",
+          },
+          {
+            field: "anomaly",
+            type: "quantitative",
+            format: ".1f",
+          },
+        ],
+      },
+      mark: {
+        type: "geoshape",
+        stroke: "white",
+        strokeWidth: 2,
+      },
+    },
+    {
+      data: {
+        url: `${thamesData}`,
+        format: { type: "topojson", feature: `${thamesFeature}` },
+      },
+      mark: {
+        type: "geoshape",
+        stroke: "white",
+        strokeWidth: 10,
+        strokeJoin: "round",
+        strokeCap: "round",
+        filled: false,
+      },
+    },
+    {
+      data: { url: `${localityCentroidData}` },
+      encoding: {
+        longitude: {
+          field: "lon",
+          type: "quantitative",
+        },
+        latitude: {
+          field: "lat",
+          type: "quantitative",
+        },
+        text: {
+          field: "name",
+          type: "nominal",
+        },
+      },
+      mark: {
+        type: "text",
+        fontSize: 8,
+        font: "Roboto Condensed",
+        opacity: 0.6,
+      },
+    },
+    {
+      data: { url: `${bicycleTimeSeriesData}` },
+      transform: [
+        {
+          filter: "datum.station == 'Marylebone'",
+        },
+        {
+          filter: "datum.date == mySelection_date",
+        },
+      ],
+      encoding: {
+        x: {
+          value: 20,
+        },
+        y: {
+          value: 40,
+        },
+        text: {
+          field: "date",
+          type: "temporal",
+          format: "%a %e %B",
+        },
+      },
+      mark: {
+        type: "text",
+        font: "Fjalla One",
+        fontSize: 32,
+        align: "left",
+      },
+    },
+    {
+      data: { url: `${annotationsData}` },
+      transform: [
+        {
+          filter: "time(datum.date) == mySelection_date",
+        },
+      ],
+      encoding: {
+        x: {
+          value: 20,
+        },
+        y: {
+          value: 70,
+        },
+        text: {
+          field: "notes",
+          type: "nominal",
+        },
+      },
+      mark: {
+        type: "text",
+        font: "Roboto Condensed",
+        fontSize: 18,
+        align: "left",
+      },
+    },
+  ],
+};
+
 // -----------------------------------------------------------------------------
 // Reference each of the specs with an ID that can be used in the main HTML.
 // If a new spec is added above, add its name along with a corresponding DOM id.
 
 vegaEmbed("#visLinkedBicycle", vlSpecLinkedBicycle).catch(console.error);
+vegaEmbed("#visMap", vlSpecMap).catch(console.error);

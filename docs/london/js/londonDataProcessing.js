@@ -1,4 +1,13 @@
+// INTERACTIVE MAP SPECIFICATION
+
+let localityData = path + "geo/localities.json";
+let localityFeature = "localities";
+let localityCentroidData = path + "geo/localityCentroids.csv";
+let thamesData = path + "geo/thamesSimplified.json";
+let thamesFeature = "thames";
 let yesterday = Math.floor(Date.now() / 86400000 - 1) * 86400000;
+
+// ---------------------------------------------------------------------------
 
 // TfL Stations
 
@@ -788,10 +797,7 @@ let vlSpecMap = {
   height: 525,
   layer: [
     {
-      data: {
-        url:
-          "https://jwolondon.github.io/mobv/data/london/StationDailyTimeSeries-Bicycle.csv",
-      },
+      data: { url: `${bicycleTimeSeriesData}` },
       selection: {
         mySelection: {
           type: "single",
@@ -815,12 +821,8 @@ let vlSpecMap = {
           lookup: "station",
           from: {
             data: {
-              url:
-                "https://jwolondon.github.io/mobv/data/london/geo/localities.json?q=25",
-              format: {
-                type: "topojson",
-                feature: "localities",
-              },
+              url: `${localityData}`,
+              format: { type: "topojson", feature: `${localityFeature}` },
             },
             key: "properties.name",
           },
@@ -832,10 +834,7 @@ let vlSpecMap = {
         {
           lookup: "id",
           from: {
-            data: {
-              url:
-                "https://jwolondon.github.io/mobv/data/london/StationReference-Bicycle.csv",
-            },
+            data: { url: `${bicycleReferenceData}` },
             key: "id",
             fields: ["value"],
           },
@@ -905,12 +904,8 @@ let vlSpecMap = {
     },
     {
       data: {
-        url:
-          "https://jwolondon.github.io/mobv/data/london/geo/thamesSimplified.json",
-        format: {
-          type: "topojson",
-          feature: "thames",
-        },
+        url: `${thamesData}`,
+        format: { type: "topojson", feature: `${thamesFeature}` },
       },
       mark: {
         type: "geoshape",
@@ -922,10 +917,7 @@ let vlSpecMap = {
       },
     },
     {
-      data: {
-        url:
-          "https://jwolondon.github.io/mobv/data/london/geo/localityCentroids.csv",
-      },
+      data: { url: `${localityCentroidData}` },
       encoding: {
         longitude: {
           field: "lon",
@@ -948,10 +940,7 @@ let vlSpecMap = {
       },
     },
     {
-      data: {
-        url:
-          "https://jwolondon.github.io/mobv/data/london/StationDailyTimeSeries-Bicycle.csv",
-      },
+      data: { url: `${bicycleTimeSeriesData}` },
       transform: [
         {
           filter: "datum.station == 'Marylebone'",
@@ -981,9 +970,7 @@ let vlSpecMap = {
       },
     },
     {
-      data: {
-        url: "https://jwolondon.github.io/mobv/data/london/annotations.csv",
-      },
+      data: { url: `${annotationsData}` },
       transform: [
         {
           filter: "time(datum.date) == mySelection_date",
