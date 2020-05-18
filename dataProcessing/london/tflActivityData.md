@@ -12,6 +12,17 @@ import Tidy exposing (..)
 import VegaLite exposing (..)
 ```
 
+<style>
+input[type="range"],
+  .vega-bind {
+    padding: 0;
+    width: 300px;
+    color:transparent;
+}
+
+.range-slider__value {color: #f00;}
+</style>
+
 # Generating London Locality Data
 
 Using the [TfL Santander public bicycle hire scheme](https://tfl.gov.uk/modes/cycling/santander-cycles) as a proxy for active travel presents several problems. There is, for example, uncertainty as to how representative public bicycle hire use might be of more general trends in active travel. Others relate to how best to process bicycle docking station data to produce meaningful measures of activity.
@@ -237,6 +248,8 @@ FROM stations
 GROUP BY village;
 ```
 
+Boundaries around each locality are constructed for mapping purposes by building voronoi regions around each docking station then merging regions in the same locality. Boundaries are then further modified by hand to follow the line of the Thames and follow a coherent exterior boundary.
+
 ```elm {v interactive siding}
 localityMap : Spec
 localityMap =
@@ -267,7 +280,7 @@ localityMap =
                 << text [ tName "station_name", tNominal ]
 
         specLabels =
-            asSpec [ encLabels [], textMark [ maDy 10, maFontSize 10 ] ]
+            asSpec [ encLabels [], textMark [ maDy 10, maFontSize 8, maFont "Roboto Condensed" ] ]
 
         specLocalities =
             asSpec [ localityData, geoshape [ maStroke "black", maOpacity 0.1, maFilled False ] ]
@@ -350,13 +363,13 @@ CREATE TABLE station_daily_time_series AS
 
 ### Calculate benchmark data
 
-To calculate expected activity for each locality we take the mean activity for January grouped by day of week:
+To calculate expected activity for each locality we take the mean activity between Monday 6th January and Sunday 1st March inclusive, grouped by day of week:
 
 ```sql
 CREATE TABLE station_reference_bicycle AS
   SELECT id,AVG(count) AS value
   FROM station_daily_time_series
-  WHERE date < '2020-02-01'
+  WHERE date > '2020-01-06' AND date < '2020-03-02'
   GROUP BY id;
 ```
 
@@ -366,7 +379,7 @@ And then export:
 .headers on
 .mode csv
 .output StationReference-Bicycle.csv
-SELECT id,count FROM station_reference_bicycle ORDER BY id;
+SELECT id,value FROM station_reference_bicycle ORDER BY id;
 .quit
 ```
 
@@ -380,7 +393,9 @@ SELECT date,station,id,count FROM station_daily_time_series ORDER BY date,id;
 .quit
 ```
 
-# Visualization
+# Visualizations
+
+## Differences from expectation
 
 We can now use the generated files in the visualization specification just as we would for more direct sensor measurements.
 
@@ -401,10 +416,10 @@ londonExample =
             dataFromUrl (path ++ "annotations.csv") []
 
         anomalyMax =
-            40
+            50
 
         anomalyMin =
-            -40
+            -50
 
         cfg =
             configure
@@ -434,14 +449,15 @@ londonExample =
                         , axGridWidth 8
                         , axGridColor "#f6f6f6"
                         , axLabelExpr "timeFormat(datum.value, '%a') == 'Mon' ? timeFormat(datum.value, '%e %b') : ''"
+                        , axLabelFont "Roboto Condensed"
                         , axTitle ""
                         ]
                     ]
                 << position Y
                     [ pName "station_name"
                     , pNominal
-                    , pSort [ soByField "count" opSum, soDescending ]
-                    , pAxis [ axTitle "", axOffset 7, axDomain False, axTicks False ]
+                    , pSort [ soByField "count" opMean, soDescending ]
+                    , pAxis [ axTitle "", axOffset 7, axLabelFont "Roboto Condensed", axDomain False, axTicks False ]
                     ]
                 << color
                     [ mName "anomaly"
@@ -459,7 +475,7 @@ londonExample =
                 << tooltips
                     [ [ tName "station_name", tNominal, tTitle "locality" ]
                     , [ tName "date", tTemporal, tFormat "%a %e %b" ]
-                    , [ tName "value", tQuant, tTitle "expected" ]
+                    , [ tName "value", tQuant, tTitle "expected", tFormat ".0f" ]
                     , [ tName "count", tQuant, tTitle "observed" ]
                     , [ tName "anomaly", tQuant, tFormat ".1f" ]
                     ]
@@ -487,7 +503,7 @@ londonExample =
         labelSpec =
             asSpec
                 [ labelEnc []
-                , textMark [ maAngle -50, maAlign haLeft, maOpacity 0.5, maFontSize 8, maDx 2 ]
+                , textMark [ maAngle -50, maAlign haLeft, maOpacity 0.5, maFontSize 8, maFont "Roboto Condensed", maDx 2 ]
                 ]
 
         annotationSpec =
@@ -514,13 +530,14 @@ londonExample =
                         , axGridColor "#f6f6f6"
                         , axLabelExpr "timeFormat(datum.value, '%a') == 'Mon' ? timeFormat(datum.value, '%e %b') : ''"
                         , axTitle ""
+                        , axLabelFont "Roboto Condensed"
                         ]
                     ]
                 << position Y
                     [ pName "anomaly"
                     , pQuant
                     , pScale [ scDomain (doNums [ anomalyMin, anomalyMax ]), scNice niFalse ]
-                    , pTitle "Anomaly"
+                    , pAxis [ axLabelFont "Roboto Condensed", axTitle "Anomaly" ]
                     ]
                 << color
                     [ mSelectionCondition (selectionName "brush")
@@ -588,7 +605,7 @@ londonExample =
                 << opacity [ mSelectionCondition (selectionName "brush") [ mNum 1 ] [ mNum 0.1 ] ]
 
         specStationLabels =
-            asSpec [ encStationLabels [], textMark [ maDy 10, maFontSize 10 ] ]
+            asSpec [ encStationLabels [], textMark [ maDy 10, maFontSize 9, maFont "Roboto Condensed" ] ]
     in
     toVegaLite
         [ cfg []
@@ -601,5 +618,169 @@ londonExample =
             , timelineSpec
             , asSpec [ width 1000, height 810, transStations [], layer (specMap ++ [ specStations, specStationLabels ]) ]
             ]
+        ]
+```
+
+## Geographic Patterns
+
+```elm {v interactive}
+localityAnomalyMap : Spec
+localityAnomalyMap =
+    let
+        cfg =
+            configure
+                << configuration (coView [ vicoStroke Nothing ])
+
+        localityData =
+            dataFromUrl (path ++ "geo/localities.json?q=25") [ topojsonFeature "localities" ]
+
+        centroidData =
+            dataFromUrl (path ++ "geo/localityCentroids.csv") []
+
+        thamesData =
+            dataFromUrl (path ++ "geo/thamesSimplified.json") [ topojsonFeature "thames" ]
+
+        timeSeriesData =
+            dataFromUrl (path ++ "StationDailyTimeSeries-Bicycle.csv") []
+
+        referenceData =
+            dataFromUrl (path ++ "StationReference-Bicycle.csv") []
+
+        annotationData =
+            dataFromUrl (path ++ "annotations.csv") []
+
+        anomalyMax =
+            50
+
+        anomalyMin =
+            -50
+
+        millisInDay =
+            1000 * 60 * 60 * 24
+
+        dayToDate d =
+            1577836800000 + (d - 1) * millisInDay
+
+        sel =
+            selection
+                << select "mySelection"
+                    seSingle
+                    [ seFields [ "date" ]
+                    , seInit [ ( "date", num 1577836800000 ) ]
+                    , seBind [ iRange "date" [ inName "date", inMin (dayToDate 1), inMax (dayToDate 138), inStep millisInDay ] ]
+                    ]
+
+        trans =
+            transform
+                << lookup "station" localityData "properties.name" (luAs "geo")
+                << filter (fiExpr "datum.date == mySelection_date")
+                << lookup "id" referenceData "id" (luFields [ "value" ])
+                << calculateAs "datum.value == 0 ? 0 : (datum.count - datum.value)/sqrt(datum.value)" "anomaly"
+
+        enc =
+            encoding
+                << shape [ mName "geo", mGeo ]
+                << color
+                    [ mName "anomaly"
+                    , mQuant
+                    , mScale
+                        [ scScheme "blueOrange" []
+                        , scDomainMid 0
+                        , scDomain (doNums [ anomalyMin, anomalyMax ])
+                        , scNice niFalse
+                        ]
+                    , mLegend
+                        [ leTitle "Anomaly"
+                        , leDirection moHorizontal
+                        , leOrient loBottomRight
+                        , leOffset 40
+                        , leGradientThickness 12
+                        ]
+                    ]
+                << tooltips
+                    [ [ tName "station", tNominal, tTitle "locality" ]
+                    , [ tName "date", tTemporal, tFormat "%a %e %b" ]
+                    , [ tName "value", tQuant, tTitle "expected" ]
+                    , [ tName "count", tQuant, tTitle "observed", tFormat ".0f" ]
+                    , [ tName "anomaly", tQuant, tFormat ".1f" ]
+                    ]
+
+        specLocalities =
+            asSpec
+                [ timeSeriesData
+                , sel []
+                , trans []
+                , enc []
+                , geoshape [ maStroke "white", maStrokeWidth 2 ]
+                ]
+
+        specRiver =
+            asSpec
+                [ thamesData
+                , geoshape
+                    [ maStroke "white"
+                    , maStrokeWidth 10
+                    , maStrokeJoin joRound
+                    , maStrokeCap caRound
+                    , maFilled False
+                    ]
+                ]
+
+        encLabels =
+            encoding
+                << position Longitude [ pName "lon", pQuant ]
+                << position Latitude [ pName "lat", pQuant ]
+                << text [ tName "name", tNominal ]
+
+        specLabels =
+            asSpec
+                [ centroidData
+                , encLabels []
+                , textMark [ maFontSize 8, maFont "Roboto Condensed", maOpacity 0.6 ]
+                ]
+
+        transDateLabel =
+            transform
+                << filter (fiExpr "datum.station == 'Marylebone'")
+                << filter (fiExpr "datum.date == mySelection_date")
+
+        encDateLabel =
+            encoding
+                << position X [ pNum 20 ]
+                << position Y [ pNum 40 ]
+                << text [ tName "date", tTemporal, tFormat "%a %e %B" ]
+
+        specDateLabel =
+            asSpec
+                [ timeSeriesData
+                , transDateLabel []
+                , encDateLabel []
+                , textMark [ maFont "Fjalla One", maFontSize 32, maAlign haLeft ]
+                ]
+
+        transAnnotation =
+            transform
+                << filter (fiExpr "time(datum.date) == mySelection_date")
+
+        encAnnotation =
+            encoding
+                << position X [ pNum 20 ]
+                << position Y [ pNum 70 ]
+                << text [ tName "notes", tNominal ]
+
+        specAnnotation =
+            asSpec
+                [ annotationData
+                , transAnnotation []
+                , encAnnotation []
+                , textMark [ maFont "Roboto Condensed", maFontSize 18, maAlign haLeft ]
+                ]
+    in
+    toVegaLite
+        [ cfg []
+        , background "rgb(252,246,229)"
+        , width 1000
+        , height 630
+        , layer [ specLocalities, specRiver, specLabels, specDateLabel, specAnnotation ]
         ]
 ```
