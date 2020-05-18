@@ -19,8 +19,6 @@ input[type="range"],
     width: 300px;
     color:transparent;
 }
-
-.range-slider__value {color: #f00;}
 </style>
 
 # Generating London Locality Data

@@ -3,6 +3,15 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
+<style>
+input[type="range"],
+  .vega-bind {
+    padding: 0;
+    width: 300px;
+    color:transparent;
+}
+</style>
+
 # Generating London Locality Data
 
 Using the [TfL Santander public bicycle hire scheme](https://tfl.gov.uk/modes/cycling/santander-cycles) as a proxy for active travel presents several problems. There is, for example, uncertainty as to how representative public bicycle hire use might be of more general trends in active travel. Others relate to how best to process bicycle docking station data to produce meaningful measures of activity.
