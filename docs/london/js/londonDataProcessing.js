@@ -782,8 +782,8 @@ let vlSpecMap = {
     },
   },
   background: "rgb(252,246,229)",
-  width: 1000,
-  height: 630,
+  width: 835,
+  height: 525,
   layer: [
     {
       data: {

@@ -777,8 +777,8 @@ localityAnomalyMap =
     toVegaLite
         [ cfg []
         , background "rgb(252,246,229)"
-        , width 1000
-        , height 630
+        , width 835
+        , height 525
         , layer [ specLocalities, specRiver, specLabels, specDateLabel, specAnnotation ]
         ]
 ```
