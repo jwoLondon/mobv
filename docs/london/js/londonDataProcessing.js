@@ -1,5 +1,7 @@
 // INTERACTIVE MAP SPECIFICATION
 
+let path = "https://jwolondon.github.io/mobv/data/london/";
+
 let localityData = path + "geo/localities.json";
 let localityFeature = "localities";
 let localityCentroidData = path + "geo/localityCentroids.csv";
