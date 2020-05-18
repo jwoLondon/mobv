@@ -1,3 +1,5 @@
+let yesterday = Math.floor(Date.now() / 86400000 - 1) * 86400000;
+
 // TfL Stations
 
 let vlTfLStations = {
@@ -802,7 +804,7 @@ let vlSpecMap = {
               input: "range",
               name: "date",
               min: 1577836800000,
-              max: 1589673600000,
+              max: `${yesterday}`,
               step: 86400000,
             },
           },
