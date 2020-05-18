@@ -6,7 +6,6 @@
 <style>
 input[type="range"],
   .vega-bind {
-    width: 300px;
     color:transparent;
 }
 </style>
