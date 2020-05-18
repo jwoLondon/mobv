@@ -583,7 +583,7 @@ let vlSpecLinkedBicycle = {
               field: "anomaly",
               type: "quantitative",
               scale: {
-                domain: [-40, 40],
+                domain: [-50, 50],
                 nice: false,
               },
               title: "Anomaly",
@@ -774,6 +774,241 @@ let vlSpecLinkedBicycle = {
   ],
 };
 
+let vlSpecMap = {
+  $schema: "https://vega.github.io/schema/vega-lite/v4.json",
+  config: {
+    view: {
+      stroke: "",
+    },
+  },
+  background: "rgb(252,246,229)",
+  width: 1000,
+  height: 630,
+  layer: [
+    {
+      data: {
+        url:
+          "https://jwolondon.github.io/mobv/data/london/StationDailyTimeSeries-Bicycle.csv",
+      },
+      selection: {
+        mySelection: {
+          type: "single",
+          fields: ["date"],
+          init: {
+            date: 1577836800000,
+          },
+          bind: {
+            date: {
+              input: "range",
+              name: "date",
+              min: 1577836800000,
+              max: 1589673600000,
+              step: 86400000,
+            },
+          },
+        },
+      },
+      transform: [
+        {
+          lookup: "station",
+          from: {
+            data: {
+              url:
+                "https://jwolondon.github.io/mobv/data/london/geo/localities.json?q=25",
+              format: {
+                type: "topojson",
+                feature: "localities",
+              },
+            },
+            key: "properties.name",
+          },
+          as: "geo",
+        },
+        {
+          filter: "datum.date == mySelection_date",
+        },
+        {
+          lookup: "id",
+          from: {
+            data: {
+              url:
+                "https://jwolondon.github.io/mobv/data/london/StationReference-Bicycle.csv",
+            },
+            key: "id",
+            fields: ["value"],
+          },
+        },
+        {
+          calculate:
+            "datum.value == 0 ? 0 : (datum.count - datum.value)/sqrt(datum.value)",
+          as: "anomaly",
+        },
+      ],
+      encoding: {
+        shape: {
+          field: "geo",
+          type: "geojson",
+        },
+        color: {
+          field: "anomaly",
+          type: "quantitative",
+          scale: {
+            scheme: "blueOrange",
+            domainMid: 0,
+            domain: [-50, 50],
+            nice: false,
+          },
+          legend: {
+            title: "Anomaly",
+            direction: "horizontal",
+            orient: "bottom-right",
+            offset: 40,
+            gradientThickness: 12,
+          },
+        },
+        tooltip: [
+          {
+            field: "station",
+            type: "nominal",
+            title: "locality",
+          },
+          {
+            field: "date",
+            type: "temporal",
+            format: "%a %e %b",
+          },
+          {
+            field: "value",
+            type: "quantitative",
+            title: "expected",
+          },
+          {
+            field: "count",
+            type: "quantitative",
+            title: "observed",
+            format: ".0f",
+          },
+          {
+            field: "anomaly",
+            type: "quantitative",
+            format: ".1f",
+          },
+        ],
+      },
+      mark: {
+        type: "geoshape",
+        stroke: "white",
+        strokeWidth: 2,
+      },
+    },
+    {
+      data: {
+        url:
+          "https://jwolondon.github.io/mobv/data/london/geo/thamesSimplified.json",
+        format: {
+          type: "topojson",
+          feature: "thames",
+        },
+      },
+      mark: {
+        type: "geoshape",
+        stroke: "white",
+        strokeWidth: 10,
+        strokeJoin: "round",
+        strokeCap: "round",
+        filled: false,
+      },
+    },
+    {
+      data: {
+        url:
+          "https://jwolondon.github.io/mobv/data/london/geo/localityCentroids.csv",
+      },
+      encoding: {
+        longitude: {
+          field: "lon",
+          type: "quantitative",
+        },
+        latitude: {
+          field: "lat",
+          type: "quantitative",
+        },
+        text: {
+          field: "name",
+          type: "nominal",
+        },
+      },
+      mark: {
+        type: "text",
+        fontSize: 8,
+        font: "Roboto Condensed",
+        opacity: 0.6,
+      },
+    },
+    {
+      data: {
+        url:
+          "https://jwolondon.github.io/mobv/data/london/StationDailyTimeSeries-Bicycle.csv",
+      },
+      transform: [
+        {
+          filter: "datum.station == 'Marylebone'",
+        },
+        {
+          filter: "datum.date == mySelection_date",
+        },
+      ],
+      encoding: {
+        x: {
+          value: 20,
+        },
+        y: {
+          value: 40,
+        },
+        text: {
+          field: "date",
+          type: "temporal",
+          format: "%a %e %B",
+        },
+      },
+      mark: {
+        type: "text",
+        font: "Fjalla One",
+        fontSize: 32,
+        align: "left",
+      },
+    },
+    {
+      data: {
+        url: "https://jwolondon.github.io/mobv/data/london/annotations.csv",
+      },
+      transform: [
+        {
+          filter: "time(datum.date) == mySelection_date",
+        },
+      ],
+      encoding: {
+        x: {
+          value: 20,
+        },
+        y: {
+          value: 70,
+        },
+        text: {
+          field: "notes",
+          type: "nominal",
+        },
+      },
+      mark: {
+        type: "text",
+        font: "Roboto Condensed",
+        fontSize: 18,
+        align: "left",
+      },
+    },
+  ],
+};
+
 // -----------------------------------------------------------------------------
 // Reference each of the specs with an ID that can be used in the main HTML.
 // If a new spec is added above, add its name along with a corresponding DOM id.
@@ -784,3 +1019,4 @@ vegaEmbed("#visTfLModifiedStations", vlTfLModifiedStations).catch(
 );
 vegaEmbed("#visLocalities", vlLocalities).catch(console.error);
 vegaEmbed("#visLinkedBicycle", vlSpecLinkedBicycle).catch(console.error);
+vegaEmbed("#visMap", vlSpecMap).catch(console.error);

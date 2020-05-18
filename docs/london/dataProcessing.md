@@ -241,11 +241,19 @@ SELECT date,station,id,count FROM station_daily_time_series ORDER BY date,id;
 .quit
 ```
 
-## Visualization
+## Visualizations
+
+### Differences from expectation
 
 We can now use the generated files in the visualization specification just as we would for more direct sensor measurements.
 
 <div class="wide" id="visLinkedBicycle"></div>
+
+## Geographic Patterns
+
+<div class="wide" id="visMap"></div>
+
+_Drag slider to see change over time._
 
 <!-- Script containing the vis specs used above. Must be at end of document. -->
 <script src="js/londonDataProcessing.js"></script>
