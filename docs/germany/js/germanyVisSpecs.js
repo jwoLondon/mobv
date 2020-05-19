@@ -16,6 +16,19 @@ let boundaryFeature = "bundeslaender";
 let footAnomalyMax = 350;
 let footAnomalyMin = -350;
 
+// INTERACTIVE MAP SPECIFICATION (CURRENTLY GERMANY AND LONDON ONLY)
+
+let regionData = path + "geo/bundeslaender.json";
+let regionFeature = "bundeslaender";
+let stationRegionData = path + "StationRegions.csv";
+let stationLocationData = path + "StationLocations.csv";
+let regionCentroidData = path + "geo/bundeslaenderCentroids.csv";
+let yesterday = Math.floor(Date.now() / 86400000 - 1) * 86400000;
+
+// Stations aggregated by Bundeslaender will regress to mean, so lower the range.
+let mapAnomalyMax = 250;
+let mapAnomalyMin = -250;
+
 // -----------------------------------------------------------------------------
 
 // PEDESTRIAN LINKED VIEWS CHART
@@ -446,7 +459,233 @@ let vlSpecLinkedFoot = {
 };
 
 // -----------------------------------------------------------------------------
+
+let vlSpecMap = {
+  $schema: "https://vega.github.io/schema/vega-lite/v4.json",
+  config: {
+    view: {
+      stroke: "",
+    },
+  },
+  width: 800,
+  height: 1000,
+  layer: [
+    {
+      data: {
+        url: `${regionData}`,
+        format: { type: "topojson", feature: `${regionFeature}` },
+      },
+      mark: {
+        type: "geoshape",
+        fill: "#eee",
+        stroke: "black",
+        strokeWidth: 0.5,
+      },
+    },
+    {
+      data: { url: `${footTimeSeriesData}` },
+      selection: {
+        mySelection: {
+          type: "single",
+          fields: ["date"],
+          init: {
+            date: 1577836800000,
+          },
+          bind: {
+            date: {
+              input: "range",
+              name: "date",
+              min: 1577836800000,
+              max: `${yesterday}`,
+              step: 86400000,
+            },
+          },
+        },
+      },
+      transform: [
+        {
+          filter: "datum.date == mySelection_date",
+        },
+        {
+          lookup: "station",
+          from: {
+            data: { url: `${stationLocationData}` },
+            key: "station_id",
+            fields: ["station_name"],
+          },
+        },
+        {
+          lookup: "station",
+          from: {
+            data: { url: `${stationRegionData}` },
+            key: "station_id",
+            fields: ["bundeslaender"],
+          },
+        },
+        {
+          lookup: "id",
+          from: {
+            data: { url: `${footReferenceData}` },
+            key: "id",
+            fields: ["value"],
+          },
+        },
+        {
+          calculate:
+            "datum.value == 0 ? 0 : (datum.count - datum.value)/sqrt(datum.value)",
+          as: "anomaly",
+        },
+        {
+          aggregate: [
+            {
+              op: "mean",
+              field: "anomaly",
+              as: "avAnomaly",
+            },
+          ],
+          groupby: ["bundeslaender"],
+        },
+        {
+          lookup: "bundeslaender",
+          from: {
+            data: {
+              url: `${regionData}`,
+              format: { type: "topojson", feature: `${regionFeature}` },
+            },
+            key: "properties.NAME_1",
+          },
+          as: "geo",
+        },
+      ],
+      encoding: {
+        shape: {
+          field: "geo",
+          type: "geojson",
+        },
+        color: {
+          field: "avAnomaly",
+          type: "quantitative",
+          scale: {
+            scheme: "blueOrange",
+            domainMid: 0,
+            domain: [-250, 250],
+            nice: false,
+          },
+          legend: {
+            title: "Anomaly",
+            direction: "horizontal",
+            orient: "none",
+            legendX: 20,
+            legendY: 100,
+            gradientLength: 200,
+            offset: 105,
+            gradientThickness: 12,
+          },
+        },
+        tooltip: [
+          {
+            field: "bundeslaender",
+            type: "nominal",
+            title: "Bundeslaender",
+          },
+          {
+            field: "avAnomaly",
+            type: "quantitative",
+            format: ".1f",
+          },
+        ],
+      },
+      mark: {
+        type: "geoshape",
+        stroke: "black",
+        strokeWidth: 2,
+      },
+    },
+    {
+      data: { url: `${regionCentroidData}` },
+      encoding: {
+        longitude: {
+          field: "longitude",
+          type: "quantitative",
+        },
+        latitude: {
+          field: "latitude",
+          type: "quantitative",
+        },
+        text: {
+          field: "NAME_1",
+          type: "nominal",
+        },
+      },
+      mark: {
+        type: "text",
+        fontSize: 8,
+        font: "Roboto Condensed",
+        opacity: 0.6,
+      },
+    },
+    {
+      data: { url: `${footTimeSeriesData}` },
+      transform: [
+        {
+          filter: "datum.station == 73",
+        },
+        {
+          filter: "datum.date == mySelection_date",
+        },
+      ],
+      encoding: {
+        x: {
+          value: 20,
+        },
+        y: {
+          value: 40,
+        },
+        text: {
+          field: "date",
+          type: "temporal",
+          format: "%a %e %B",
+        },
+      },
+      mark: {
+        type: "text",
+        font: "Fjalla One",
+        fontSize: 32,
+        align: "left",
+      },
+    },
+    {
+      data: { url: `${annotationsData}` },
+      transform: [
+        {
+          filter: "time(datum.date) == mySelection_date",
+        },
+      ],
+      encoding: {
+        x: {
+          value: 20,
+        },
+        y: {
+          value: 70,
+        },
+        text: {
+          field: "notes",
+          type: "nominal",
+        },
+      },
+      mark: {
+        type: "text",
+        font: "Roboto Condensed",
+        fontSize: 18,
+        align: "left",
+      },
+    },
+  ],
+};
+
+// -----------------------------------------------------------------------------
 // Reference each of the specs with an ID that can be used in the main HTML.
 // If a new spec is added above, add its name along with a corresponding DOM id.
 
 vegaEmbed("#visLinkedFoot", vlSpecLinkedFoot).catch(console.error);
+vegaEmbed("#visMap", vlSpecMap).catch(console.error);

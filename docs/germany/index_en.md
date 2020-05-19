@@ -3,6 +3,13 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
+<style>
+input[type="range"],
+  .vega-bind {
+    font-size:0px;
+}
+</style>
+
 # Pedestrian Travel In German City Centres
 
 How can we understand and compare patterns of human movement? Are individuals moving more or less than normal at the moment? And where are people moving? The following linked visualizations - heatmaps, charts and maps - are designed to help decision makers and other interested parties gain an overview and allow simple comparisons between locations across Germany over time.
@@ -16,6 +23,12 @@ The heatmaps are dynamic to enable comparison between stations: through mouseove
 The vertical patterns in the heatmap and charts show how overall relative mobility in Germany rapidly reduced after the lockdown in mid-March, though not all locations behave in the same way. As Germany emerges at different rates from the lockdown, comparisons will allow exploration of behaviour over time.
 
 <div class="wide" id="visLinkedFoot"></div>
+
+### Geographic patterns
+
+_Drag slider to see change over time._
+
+<div class="wide" id="visMap"></div>
 
 ## Data sources and implementation
 

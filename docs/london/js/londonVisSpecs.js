@@ -18,7 +18,7 @@ let greenPolyFeature = "parks";
 let bicycleAnomalyMax = 50;
 let bicycleAnomalyMin = -50;
 
-// INTERACTIVE MAP SPECIFICATION (CURRENTLY LONDON ONLY)
+// INTERACTIVE MAP SPECIFICATION (CURRENTLY LONDON AND GERMANY ONLY)
 
 let localityData = path + "geo/localities.json";
 let localityFeature = "localities";
