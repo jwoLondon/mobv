@@ -30,7 +30,7 @@ Analoge Visualisierungen haben wir mit Open Government Data (OGD) der [Stadt Zü
 
 ### Geographic patterns
 
-_Drag slider to see change over time._
+_Ziehen Sie den Schieberegler unter der Karte, um Veränderungen im Lauf der Zeit zu sehen._
 
 <div class="wide" id="visMap"></div>
 
