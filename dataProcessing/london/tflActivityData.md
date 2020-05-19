@@ -630,7 +630,7 @@ localityAnomalyMap =
                 << configuration (coView [ vicoStroke Nothing ])
 
         localityData =
-            dataFromUrl (path ++ "geo/localities.json?q=25") [ topojsonFeature "localities" ]
+            dataFromUrl (path ++ "geo/localities.json") [ topojsonFeature "localities" ]
 
         centroidData =
             dataFromUrl (path ++ "geo/localityCentroids.csv") []
