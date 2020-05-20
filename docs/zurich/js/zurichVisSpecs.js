@@ -180,6 +180,7 @@ let vlSpecLinkedBicycle = {
                     field: "count",
                     type: "quantitative",
                     title: "observed",
+                    format: ".0f",
                   },
                   {
                     field: "anomaly",
@@ -633,6 +634,7 @@ let vlSpecLinkedFoot = {
                     field: "count",
                     type: "quantitative",
                     title: "observed",
+                    format: ".0f",
                   },
                   {
                     field: "anomaly",

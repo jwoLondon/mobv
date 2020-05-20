@@ -498,11 +498,13 @@ let vlSpecLinkedBicycle = {
                 field: "value",
                 type: "quantitative",
                 title: "expected",
+                format: ".0f",
               },
               {
                 field: "count",
                 type: "quantitative",
                 title: "observed",
+                format: ".0f",
               },
               {
                 field: "anomaly",
@@ -890,6 +892,7 @@ let vlSpecMap = {
             field: "value",
             type: "quantitative",
             title: "expected",
+            format: ".0f",
           },
           {
             field: "count",
