@@ -1,6 +1,6 @@
 <!-- Scripts to link to the Vega/Vega-Lite runtime -->
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.5.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.5.2"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
 # Bewegung in der Corona-Zeit
