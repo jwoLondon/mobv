@@ -461,6 +461,624 @@ let vlSpecLinkedBicycle = {
 
 // -----------------------------------------------------------------------------
 
+let vlTotalLineChart = {
+  $schema: "https://vega.github.io/schema/vega-lite/v4.json",
+  config: {
+    view: {
+      stroke: "",
+    },
+  },
+  width: 900,
+  height: 500,
+  layer: [
+    {
+      data: {
+        url:
+          "https://jwolondon.github.io/mobv/data/london/StationDailyTimeSeries-Bicycle2019.csv",
+      },
+      encoding: {
+        x: {
+          field: "date",
+          type: "temporal",
+          axis: {
+            gridOpacity: {
+              condition: {
+                test: "day(datum.value) == 6 || day(datum.value) == 0",
+                value: 1,
+              },
+              value: 0,
+            },
+            tickSize: {
+              condition: {
+                test: "day(datum.value) == 1",
+                value: 6,
+              },
+              value: 3,
+            },
+            tickCount: 200,
+            gridWidth: 8,
+            gridColor: "#f6f6f6",
+            labelExpr:
+              "timeFormat(datum.value, '%a') == 'Mon' ? timeFormat(datum.value, '%e %b') : ''",
+            title: "",
+            labelFont: "Roboto Condensed",
+          },
+        },
+        y: {
+          field: "count",
+          type: "quantitative",
+          aggregate: "sum",
+          title: "Number of docking changes",
+        },
+      },
+      mark: {
+        type: "line",
+        interpolate: "monotone",
+        clip: true,
+        strokeWidth: 0.5,
+      },
+    },
+    {
+      data: {
+        url:
+          "https://jwolondon.github.io/mobv/data/london/StationDailyTimeSeries-Bicycle.csv",
+      },
+      encoding: {
+        x: {
+          field: "date",
+          type: "temporal",
+          axis: {
+            gridOpacity: {
+              condition: {
+                test: "day(datum.value) == 6 || day(datum.value) == 0",
+                value: 1,
+              },
+              value: 0,
+            },
+            tickSize: {
+              condition: {
+                test: "day(datum.value) == 1",
+                value: 6,
+              },
+              value: 3,
+            },
+            tickCount: 200,
+            gridWidth: 8,
+            gridColor: "#f6f6f6",
+            labelExpr:
+              "timeFormat(datum.value, '%a') == 'Mon' ? timeFormat(datum.value, '%e %b') : ''",
+            title: "",
+            labelFont: "Roboto Condensed",
+          },
+        },
+        y: {
+          field: "count",
+          type: "quantitative",
+          aggregate: "sum",
+          title: "Number of docking changes",
+        },
+      },
+      mark: {
+        type: "line",
+        interpolate: "monotone",
+        clip: true,
+        color: "rgb(177,36,24)",
+        strokeWidth: 0.5,
+      },
+    },
+    {
+      data: {
+        url:
+          "https://jwolondon.github.io/mobv/data/london/StationDailyTimeSeries-Bicycle2019.csv",
+      },
+      transform: [
+        {
+          aggregate: [
+            {
+              op: "sum",
+              field: "count",
+              as: "dailyTotal",
+            },
+          ],
+          groupby: ["date"],
+        },
+        {
+          window: [
+            {
+              as: "weeklyAve",
+              op: "mean",
+              field: "dailyTotal",
+            },
+          ],
+          frame: [-3, 3],
+        },
+      ],
+      encoding: {
+        x: {
+          field: "date",
+          type: "temporal",
+          scale: {
+            domain: [
+              {
+                year: 2020,
+                month: "Jan",
+                date: 1,
+              },
+              {
+                year: 2020,
+                month: "Jun",
+                date: 1,
+              },
+            ],
+          },
+        },
+        y: {
+          field: "weeklyAve",
+          type: "quantitative",
+        },
+      },
+      mark: {
+        type: "line",
+        interpolate: "monotone",
+        clip: true,
+        color: "rgb(86,119,164)",
+        strokeWidth: 3,
+      },
+    },
+    {
+      data: {
+        url:
+          "https://jwolondon.github.io/mobv/data/london/StationDailyTimeSeries-Bicycle.csv",
+      },
+      transform: [
+        {
+          aggregate: [
+            {
+              op: "sum",
+              field: "count",
+              as: "dailyTotal",
+            },
+          ],
+          groupby: ["date"],
+        },
+        {
+          window: [
+            {
+              as: "weeklyAve",
+              op: "mean",
+              field: "dailyTotal",
+            },
+          ],
+          frame: [-3, 3],
+        },
+      ],
+      encoding: {
+        x: {
+          field: "date",
+          type: "temporal",
+          scale: {
+            domain: [
+              {
+                year: 2020,
+                month: "Jan",
+                date: 1,
+              },
+              {
+                year: 2020,
+                month: "Jun",
+                date: 1,
+              },
+            ],
+          },
+        },
+        y: {
+          field: "weeklyAve",
+          type: "quantitative",
+        },
+      },
+      mark: {
+        type: "line",
+        interpolate: "monotone",
+        color: "rgb(177,36,24)",
+        strokeWidth: 4,
+      },
+    },
+    {
+      data: {
+        url: "https://jwolondon.github.io/mobv/data/london/annotations.csv",
+      },
+      layer: [
+        {
+          encoding: {
+            x: {
+              field: "date",
+              type: "temporal",
+            },
+          },
+          mark: {
+            type: "rule",
+            strokeDash: [4, 2],
+            opacity: 0.5,
+          },
+        },
+        {
+          encoding: {
+            x: {
+              field: "date",
+              type: "temporal",
+            },
+            y: {
+              value: 0,
+            },
+            text: {
+              field: "notes",
+              type: "nominal",
+            },
+          },
+          mark: {
+            type: "text",
+            angle: 310,
+            align: "left",
+            opacity: 0.5,
+            fontSize: 8,
+            dx: 2,
+          },
+        },
+      ],
+    },
+    {
+      data: {
+        values: [
+          {
+            year: 2020,
+            trend: "weekly trend",
+            yearLabelY: 10000,
+            symbolY: 11000,
+          },
+          {
+            year: 2020,
+            trend: "daily count",
+            yearLabelY: 10000,
+            symbolY: 9000,
+          },
+          {
+            year: 2019,
+            trend: "weekly trend",
+            yearLabelY: 5000,
+            symbolY: 6000,
+          },
+          {
+            year: 2019,
+            trend: "daily count",
+            yearLabelY: 5000,
+            symbolY: 4000,
+          },
+        ],
+      },
+      encoding: {
+        x: {
+          value: 50,
+        },
+        x2: {
+          value: 80,
+        },
+        y: {
+          field: "symbolY",
+          type: "quantitative",
+        },
+        color: {
+          field: "year",
+          type: "nominal",
+          scale: {
+            domain: ["2020", "2019"],
+            range: ["rgb(177,36,24)", "rgb(86,119,164)"],
+          },
+          legend: null,
+        },
+        strokeWidth: {
+          field: "trend",
+          type: "nominal",
+          legend: null,
+        },
+      },
+      mark: "rule",
+    },
+    {
+      data: {
+        values: [
+          {
+            year: 2020,
+            trend: "weekly trend",
+            yearLabelY: 10000,
+            symbolY: 11000,
+          },
+          {
+            year: 2020,
+            trend: "daily count",
+            yearLabelY: 10000,
+            symbolY: 9000,
+          },
+          {
+            year: 2019,
+            trend: "weekly trend",
+            yearLabelY: 5000,
+            symbolY: 6000,
+          },
+          {
+            year: 2019,
+            trend: "daily count",
+            yearLabelY: 5000,
+            symbolY: 4000,
+          },
+        ],
+      },
+      layer: [
+        {
+          encoding: {
+            x: {
+              value: 20,
+            },
+            y: {
+              field: "yearLabelY",
+              type: "quantitative",
+            },
+            color: {
+              field: "year",
+              type: "nominal",
+              scale: {
+                domain: ["2020", "2019"],
+                range: ["rgb(177,36,24)", "rgb(86,119,164)"],
+              },
+              legend: null,
+            },
+            text: {
+              field: "year",
+              type: "nominal",
+            },
+          },
+          mark: {
+            type: "text",
+            align: "left",
+            font: "Roboto Condensed",
+          },
+        },
+        {
+          encoding: {
+            x: {
+              value: 85,
+            },
+            y: {
+              field: "symbolY",
+              type: "quantitative",
+            },
+            color: {
+              field: "year",
+              type: "nominal",
+              scale: {
+                domain: ["2020", "2019"],
+                range: ["rgb(177,36,24)", "rgb(86,119,164)"],
+              },
+              legend: null,
+            },
+            text: {
+              field: "trend",
+              type: "nominal",
+            },
+          },
+          mark: {
+            type: "text",
+            align: "left",
+            font: "Roboto Condensed",
+          },
+        },
+      ],
+    },
+  ],
+};
+
+// -----------------------------------------------------------------------------
+
+let vlHourly2019 = {
+  $schema: "https://vega.github.io/schema/vega-lite/v4.json",
+  width: 800,
+  height: 200,
+  data: {
+    url:
+      "https://jwolondon.github.io/mobv/data/london/LondonHourlyCount2019.csv",
+    format: {
+      parse: {
+        date: "date:'%Y-%m-%d %H'",
+      },
+    },
+  },
+  transform: [
+    {
+      filter:
+        "timeFormat(datum.date,'%Y-%m-%d') > '2020-03-23' || timeFormat(datum.date,'%Y-%m-%d') < '2020-01-01'",
+    },
+  ],
+  encoding: {
+    x: {
+      field: "date",
+      type: "temporal",
+      timeUnit: {
+        unit: "hours",
+      },
+      axis: {
+        format: "%_I %p",
+        labelFont: "Roboto Condensed",
+        titleFont: "Roboto Condensed",
+        labelAngle: 0,
+        title: "",
+      },
+    },
+    y: {
+      field: "date",
+      type: "ordinal",
+      timeUnit: {
+        unit: "day",
+      },
+      sort: [
+        {
+          day: "Mon",
+        },
+        {
+          day: "Tue",
+        },
+        {
+          day: "Wed",
+        },
+        {
+          day: "Thu",
+        },
+        {
+          day: "Fri",
+        },
+        {
+          day: "Sat",
+        },
+        {
+          day: "Sun",
+        },
+      ],
+      axis: {
+        format: "%As",
+        labelFont: "Roboto Condensed",
+        title: "",
+      },
+    },
+    color: {
+      field: "count",
+      type: "quantitative",
+      scale: {
+        scheme: "browns",
+        domain: [0, 70],
+      },
+      legend: {
+        title: ["Number of docking", "changes per hour"],
+        titleFont: "Roboto Condensed",
+        labelFont: "Roboto Condensed",
+        gradientLength: 170,
+        tickCount: 6,
+      },
+    },
+    tooltip: [
+      {
+        field: "count",
+        type: "quantitative",
+        format: ".1f",
+        title: "Changes per hour",
+      },
+    ],
+  },
+  mark: {
+    type: "rect",
+    stroke: "white",
+    strokeWidth: 0.5,
+  },
+};
+
+let vlHourly2020 = {
+  $schema: "https://vega.github.io/schema/vega-lite/v4.json",
+  width: 800,
+  height: 200,
+  data: {
+    url: "https://jwolondon.github.io/mobv/data/london/LondonHourlyCount.csv",
+    format: {
+      parse: {
+        date: "date:'%Y-%m-%d %H'",
+      },
+    },
+  },
+  transform: [
+    {
+      filter:
+        "timeFormat(datum.date,'%Y-%m-%d') > '2020-03-23' || timeFormat(datum.date,'%Y-%m-%d') < '2020-01-01'",
+    },
+  ],
+  encoding: {
+    x: {
+      field: "date",
+      type: "temporal",
+      timeUnit: {
+        unit: "hours",
+      },
+      axis: {
+        format: "%_I %p",
+        labelFont: "Roboto Condensed",
+        titleFont: "Roboto Condensed",
+        labelAngle: 0,
+        title: "",
+      },
+    },
+    y: {
+      field: "date",
+      type: "ordinal",
+      timeUnit: {
+        unit: "day",
+      },
+      sort: [
+        {
+          day: "Mon",
+        },
+        {
+          day: "Tue",
+        },
+        {
+          day: "Wed",
+        },
+        {
+          day: "Thu",
+        },
+        {
+          day: "Fri",
+        },
+        {
+          day: "Sat",
+        },
+        {
+          day: "Sun",
+        },
+      ],
+      axis: {
+        format: "%As",
+        labelFont: "Roboto Condensed",
+        title: "",
+      },
+    },
+    color: {
+      field: "count",
+      type: "quantitative",
+      scale: {
+        scheme: "browns",
+        domain: [0, 70],
+      },
+      legend: {
+        title: ["Number of docking", "changes per hour"],
+        titleFont: "Roboto Condensed",
+        labelFont: "Roboto Condensed",
+        gradientLength: 170,
+        tickCount: 6,
+      },
+    },
+    tooltip: [
+      {
+        field: "count",
+        type: "quantitative",
+        format: ".1f",
+        title: "Changes per hour",
+      },
+    ],
+  },
+  mark: {
+    type: "rect",
+    stroke: "white",
+    strokeWidth: 0.5,
+  },
+};
+
+// -----------------------------------------------------------------------------
+
 let vlSpecMap = {
   $schema: "https://vega.github.io/schema/vega-lite/v4.json",
   config: {
@@ -679,5 +1297,8 @@ let vlSpecMap = {
 // Reference each of the specs with an ID that can be used in the main HTML.
 // If a new spec is added above, add its name along with a corresponding DOM id.
 
+vegaEmbed("#visTotal", vlTotalLineChart).catch(console.error);
+vegaEmbed("#visHourly2019", vlHourly2019).catch(console.error);
+vegaEmbed("#visHourly2020", vlHourly2020).catch(console.error);
 vegaEmbed("#visLinkedBicycle", vlSpecLinkedBicycle).catch(console.error);
 vegaEmbed("#visMap", vlSpecMap).catch(console.error);

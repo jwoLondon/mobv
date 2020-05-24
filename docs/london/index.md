@@ -18,7 +18,23 @@ We estimate one form of active travel – use of the [TfL Santander public bicyc
 
 By comparing daily use with that expected between January 6th and March 1st 2020 ("anomaly" calculated with the [signed chi score](https://openaccess.city.ac.uk/id/eprint/537/1/wood_visualization_2010.pdf)), we can begin to see the effect of the Covid-19 crisis on movement patterns – where and when we see more or less bicycle activity than expected. Expected use is calculated by day of week for each local region so we can account for expected weekday/weekend fluctuations.
 
-## Visualizations
+## London-Wide Patterns
+
+How has the total volume of cycle hire use changed through 2020 and how does it compare with last year? Because there is a strong weekday-weekend pattern, data from 2019 are shifted by a day so the days of the week align between both years.
+
+<div class="wide" id="visTotal"></div>
+
+What about during the day? How do daily patterns vary between 2019 and 2020? Here we compare January-July 2019 with the time since lockdown (23rd March 2020). Darker squares represent a greater volume of cycle hire use within an hour long period.
+
+#### 2019
+
+<div class="wide" id="visHourly2019"></div>
+
+#### 2020
+
+<div class="wide" id="visHourly2020"></div>
+
+## Variation by Locality
 
 We can compare movement in local regions: through mouseover the values for an individual day, the expected value and the anomaly are shown. With a mouse click on a cell, a single locality can be selected and is highlighted in all three visualisations. Shift-click allows selection of multiple localities, and double-click selects all of London.
 
