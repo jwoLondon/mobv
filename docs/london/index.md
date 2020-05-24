@@ -20,17 +20,21 @@ By comparing daily use with that expected between January 6th and March 1st 2020
 
 ## London-Wide Patterns
 
-How has the total volume of cycle hire use changed through 2020 and how does it compare with last year? Because there is a strong weekday-weekend pattern, data from 2019 are shifted by a day so the days of the week align between both years.
+How has the total volume of cycle hire use changed through 2020 and how does it compare with last year? Because there is a strong weekday-weekend pattern, data from 2019 are shifted by a day so the days of the week align between both years. The weekly rolling average (thick lines) shows the general trend avoiding the large differences between weekday and weekend behaviour.
 
 <div class="wide" id="visTotal"></div>
 
-What about during the day? How do daily patterns vary between 2019 and 2020? Here we compare January-July 2019 with the time since lockdown (23rd March 2020). Darker squares represent a greater volume of cycle hire use within an hour long period.
+What about during the day? How do daily patterns vary between 2019 and 2020? Below we compare January-July 2019 with the time since the London lockdown. Darker squares represent a greater volume of cycle hire use within an hour long period.
 
 #### 2019
+
+_1st January – 31st July 2019._
 
 <div class="wide" id="visHourly2019"></div>
 
 #### 2020
+
+_23rd March 2020 – present._
 
 <div class="wide" id="visHourly2020"></div>
 
