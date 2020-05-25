@@ -98,7 +98,7 @@ let vlSpecLinkedBicycle = {
                       },
                       value: 3,
                     },
-                    tickCount: 100,
+                    tickCount: 200,
                     gridWidth: 8,
                     gridColor: "#f6f6f6",
                     labelExpr:
@@ -257,7 +257,7 @@ let vlSpecLinkedBicycle = {
                       },
                       value: 3,
                     },
-                    tickCount: 100,
+                    tickCount: 200,
                     gridWidth: 8,
                     gridColor: "#f6f6f6",
                     labelExpr:
