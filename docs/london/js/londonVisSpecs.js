@@ -1150,7 +1150,7 @@ let vlSpecMap = {
           scale: {
             scheme: "blueOrange",
             domainMid: 0,
-            domain: [-50, 50],
+            domain: [`${bicycleAnomalyMin}`, `${bicycleAnomalyMax}`],
             nice: false,
           },
           legend: {
