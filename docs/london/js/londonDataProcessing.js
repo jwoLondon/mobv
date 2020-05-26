@@ -15,6 +15,11 @@ let thamesData = path + "geo/thamesSimplified.json";
 let thamesFeature = "thames";
 let yesterday = Math.floor(Date.now() / 86400000 - 1) * 86400000;
 
+// CHART SCALING
+
+let bicycleAnomalyMax = 80;
+let bicycleAnomalyMin = -80;
+
 // ---------------------------------------------------------------------------
 
 // TfL Stations
@@ -604,7 +609,7 @@ let vlSpecLinkedBicycle = {
               field: "anomaly",
               type: "quantitative",
               scale: {
-                domain: [-50, 50],
+                domain: [`${bicycleAnomalyMin}`, `${bicycleAnomalyMax}`],
                 nice: false,
               },
               title: "Anomaly",
@@ -866,7 +871,7 @@ let vlSpecMap = {
           scale: {
             scheme: "blueOrange",
             domainMid: 0,
-            domain: [-50, 50],
+            domain: [`${bicycleAnomalyMin}`, `${bicycleAnomalyMax}`],
             nice: false,
           },
           legend: {

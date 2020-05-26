@@ -15,8 +15,8 @@ let greenPolyFeature = "parks";
 
 // CHART SCALING
 
-let bicycleAnomalyMax = 50;
-let bicycleAnomalyMin = -50;
+let bicycleAnomalyMax = 80;
+let bicycleAnomalyMin = -80;
 
 // INTERACTIVE MAP SPECIFICATION (CURRENTLY LONDON AND GERMANY ONLY)
 
