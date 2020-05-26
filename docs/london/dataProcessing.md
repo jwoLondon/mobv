@@ -218,13 +218,13 @@ CREATE TABLE station_daily_time_series AS
 
 ### Calculate benchmark data
 
-To calculate expected activity for each locality we take the mean activity for January grouped by day of week:
+To calculate expected activity for each locality we take the mean activity for the period Monday 6th January to Sunday 1st March grouped by day of week:
 
 ```sql
 CREATE TABLE station_reference_bicycle AS
   SELECT id,AVG(count) AS value
   FROM station_daily_time_series
-  WHERE date < '2020-02-01'
+  WHERE date > '2020-01-06' AND date < '2020-03-02'
   GROUP BY id;
 ```
 
