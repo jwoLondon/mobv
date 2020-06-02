@@ -606,7 +606,7 @@ let vlTotalLineChart = {
               },
               {
                 year: 2020,
-                month: "Jun",
+                month: "Jul",
                 date: 1,
               },
             ],
