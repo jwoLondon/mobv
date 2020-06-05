@@ -15,8 +15,8 @@ let greenPolyFeature = "parks";
 
 // CHART SCALING
 
-let bicycleAnomalyMax = 150;
-let bicycleAnomalyMin = -150;
+let bicycleAnomalyMax = 200;
+let bicycleAnomalyMin = -80;
 
 // -----------------------------------------------------------------------------
 
