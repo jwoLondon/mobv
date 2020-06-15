@@ -248,6 +248,44 @@ SELECT date,station,id,count FROM station_daily_time_series ORDER BY date,id;
 .quit
 ```
 
+### Hourly Usage
+
+We can perform a similar process of comparing temporally adjacent docking counts for deriving hourly usage, except this time don't need to export an id to compare with reference data:
+
+```sql
+CREATE TABLE usageHourly AS
+  SELECT stationId, village, availableBikes, t, substr(t,0,14) AS hour_of_year
+  FROM usage
+  LEFT JOIN stations ON stationId = id;
+```
+
+```sql
+CREATE TABLE hourly_time_series AS
+  SELECT
+    hour_of_year AS date,
+    village AS station,
+    SUM (activity) AS count
+  FROM
+    ( SELECT
+        stationID,
+        village,
+        hour_of_year,
+        abs(first_value(availableBikes) OVER win - last_value(availableBikes) OVER win) AS activity
+      FROM usageHourly WINDOW win AS
+        (PARTITION BY stationId ORDER BY t ROWS BETWEEN 1 PRECEDING AND CURRENT ROW)
+    )
+  GROUP BY village, hour_of_year
+  ORDER BY hour_of_year,village;
+```
+
+To derive the average hourly activity across the whole scheme:
+
+```sql
+SELECT date, AVG(count) AS count
+FROM hourly_time_series
+GROUP BY date;
+```
+
 ## Visualizations
 
 ### Differences from expectation

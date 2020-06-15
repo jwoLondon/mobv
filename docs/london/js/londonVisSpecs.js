@@ -955,7 +955,7 @@ let vlHourly2019 = {
         domain: [0, 70],
       },
       legend: {
-        title: ["Number of docking", "changes per hour"],
+        title: ["Average docking", "changes per hour"],
         titleFont: "Roboto Condensed",
         labelFont: "Roboto Condensed",
         gradientLength: 170,
@@ -1054,7 +1054,7 @@ let vlHourly2020 = {
         domain: [0, 70],
       },
       legend: {
-        title: ["Number of docking", "changes per hour"],
+        title: ["Average docking", "changes per hour"],
         titleFont: "Roboto Condensed",
         labelFont: "Roboto Condensed",
         gradientLength: 170,
