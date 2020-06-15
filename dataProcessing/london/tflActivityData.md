@@ -391,6 +391,44 @@ SELECT date,station,id,count FROM station_daily_time_series ORDER BY date,id;
 .quit
 ```
 
+### Hourly Usage
+
+We can perform a similar process of comparing temporally adjacent docking counts for deriving hourly usage, except this time don't need to extract and id to compare with reference data:
+
+```sql
+CREATE TABLE usageHourly AS
+  SELECT stationId, village, availableBikes, t, substr(t,0,14) AS hour_of_year
+  FROM usage
+  LEFT JOIN stations ON stationId = id;
+```
+
+```sql
+CREATE TABLE hourly_time_series AS
+  SELECT
+    hour_of_year AS date,
+    village AS station,
+    SUM (activity) AS count
+  FROM
+    ( SELECT
+        stationID,
+        village,
+        hour_of_year,
+        abs(first_value(availableBikes) OVER win - last_value(availableBikes) OVER win) AS activity
+      FROM usageHourly WINDOW win AS
+        (PARTITION BY stationId ORDER BY t ROWS BETWEEN 1 PRECEDING AND CURRENT ROW)
+    )
+  GROUP BY village, hour_of_year
+  ORDER BY hour_of_year,village;
+```
+
+To derive the average hourly activity across the whole scheme:
+
+```sql
+SELECT date, AVG(count) AS count
+FROM hourly_time_series
+GROUP BY date;
+```
+
 # Visualizations
 
 ## Differences from expectation
@@ -414,10 +452,10 @@ londonExample =
             dataFromUrl (path ++ "annotations.csv") []
 
         anomalyMax =
-            50
+            80
 
         anomalyMin =
-            -50
+            -80
 
         cfg =
             configure
@@ -648,10 +686,10 @@ localityAnomalyMap =
             dataFromUrl (path ++ "annotations.csv") []
 
         anomalyMax =
-            50
+            80
 
         anomalyMin =
-            -50
+            -80
 
         millisInDay =
             1000 * 60 * 60 * 24
@@ -665,7 +703,7 @@ localityAnomalyMap =
                     seSingle
                     [ seFields [ "date" ]
                     , seInit [ ( "date", num 1577836800000 ) ]
-                    , seBind [ iRange "date" [ inName "date", inMin (dayToDate 1), inMax (dayToDate 138), inStep millisInDay ] ]
+                    , seBind [ iRange "date" [ inName "date", inMin (dayToDate 1), inMax (dayToDate 151), inStep millisInDay ] ]
                     ]
 
         trans =
@@ -780,5 +818,414 @@ localityAnomalyMap =
         , width 835
         , height 525
         , layer [ specLocalities, specRiver, specLabels, specDateLabel, specAnnotation ]
+        ]
+```
+
+### Locality Distribution
+
+How does the absolute number of journeys vary by locality and has the distribution changed over time?
+
+```elm {v interactive}
+localityDistribution : Spec
+localityDistribution =
+    let
+        cfg =
+            configure
+                << configuration (coView [ vicoStroke Nothing ])
+
+        timeSeriesData =
+            dataFromUrl (path ++ "StationDailyTimeSeries-Bicycle.csv") []
+
+        annotationData =
+            dataFromUrl (path ++ "annotations.csv") []
+
+        referenceData =
+            dataFromUrl (path ++ "StationReference-Bicycle.csv") []
+
+        millisInDay =
+            1000 * 60 * 60 * 24
+
+        w =
+            1000
+
+        anomalyMax =
+            80
+
+        anomalyMin =
+            -80
+
+        dayToDate d =
+            1577836800000 + (d - 1) * millisInDay
+
+        sel =
+            selection
+                << select "mySelection"
+                    seSingle
+                    [ seFields [ "date" ]
+                    , seInit [ ( "date", num 1577836800000 ) ]
+                    , seBind [ iRange "date" [ inName "date", inMin (dayToDate 1), inMax (dayToDate 151), inStep millisInDay ] ]
+                    ]
+
+        trans =
+            transform
+                << filter (fiExpr "datum.date == mySelection_date")
+                << lookup "id" referenceData "id" (luFields [ "value" ])
+                << calculateAs "datum.value == 0 ? 0 : (datum.count - datum.value)/sqrt(datum.value)" "anomaly"
+
+        enc =
+            encoding
+                << position X
+                    [ pName "station"
+                    , pNominal
+                    , pSort [ soByField "count" opSum, soDescending ]
+                    , pTitle ""
+                    ]
+                << position Y
+                    [ pName "count"
+                    , pQuant
+                    , pScale [ scDomain (doNums [ 0, 2400 ]) ]
+                    , pTitle "Number of docking changes"
+                    ]
+                << color
+                    [ mName "anomaly"
+                    , mQuant
+                    , mScale
+                        [ scScheme "blueOrange" []
+                        , scDomainMid 0
+                        , scDomain (doNums [ anomalyMin, anomalyMax ])
+                        , scNice niFalse
+                        ]
+                    , mLegend [ leOrient loTopRight, leDirection moVertical, leOffset 50 ]
+                    ]
+
+        specDist =
+            asSpec
+                [ timeSeriesData
+                , sel []
+                , trans []
+                , enc []
+                , bar [ maOpacity 1 ]
+                ]
+
+        transDateLabel =
+            transform
+                << filter (fiExpr "datum.station == 'Marylebone'")
+                << filter (fiExpr "datum.date == mySelection_date")
+
+        encDateLabel =
+            encoding
+                << position X [ pNum (w - 20) ]
+                << position Y [ pNum 27 ]
+                << text [ tName "date", tTemporal, tFormat "%a %e %B" ]
+
+        specDateLabel =
+            asSpec
+                [ timeSeriesData
+                , transDateLabel []
+                , encDateLabel []
+                , textMark [ maFont "Fjalla One", maFontSize 32, maAlign haRight ]
+                ]
+
+        transAnnotation =
+            transform
+                << filter (fiExpr "time(datum.date) == mySelection_date")
+
+        encAnnotation =
+            encoding
+                << position X [ pNum (w - 20) ]
+                << position Y [ pNum 57 ]
+                << text [ tName "notes", tNominal ]
+
+        specAnnotation =
+            asSpec
+                [ annotationData
+                , transAnnotation []
+                , encAnnotation []
+                , textMark [ maFont "Roboto Condensed", maFontSize 18, maAlign haRight ]
+                ]
+    in
+    toVegaLite
+        [ cfg []
+        , width w
+        , height 550
+        , layer [ specDist, specDateLabel, specAnnotation ]
+        ]
+```
+
+## Ignoring Geography
+
+### When people cycle: Hourly counts
+
+```elm {l=hidden}
+hourlyCounts : String -> Spec
+hourlyCounts filename =
+    let
+        hourlyData =
+            dataFromUrl filename [ parse [ ( "date", foDate "%Y-%m-%d %H" ) ] ]
+
+        trans =
+            transform
+                << filter (fiExpr "timeFormat(datum.date,'%Y-%m-%d') > '2020-03-23' || timeFormat(datum.date,'%Y-%m-%d') < '2020-01-01'")
+
+        enc =
+            encoding
+                << position X
+                    [ pName "date"
+                    , pTemporal
+                    , pTimeUnit hours
+                    , pAxis
+                        [ axFormat "%_I %p"
+                        , axLabelFont "Roboto Condensed"
+                        , axTitleFont "Roboto Condensed"
+                        , axLabelAngle 0
+                        , axTitle ""
+                        ]
+                    ]
+                << position Y
+                    [ pName "date"
+                    , pOrdinal
+                    , pTimeUnit day
+                    , pSort
+                        [ soCustom
+                            (dts
+                                [ [ dtDay Mon ]
+                                , [ dtDay Tue ]
+                                , [ dtDay Wed ]
+                                , [ dtDay Thu ]
+                                , [ dtDay Fri ]
+                                , [ dtDay Sat ]
+                                , [ dtDay Sun ]
+                                ]
+                            )
+                        ]
+                    , pAxis [ axFormat "%As", axLabelFont "Roboto Condensed", axTitle "" ]
+                    ]
+                << color
+                    [ mName "count"
+                    , mQuant
+                    , mScale [ scScheme "browns" [], scDomain (doNums [ 0, 70 ]) ]
+                    , mLegend
+                        [ leTitle "Average docking\nchanges per hour"
+                        , leTitleFont "Roboto Condensed"
+                        , leLabelFont "Roboto Condensed"
+                        , leGradientLength 170
+                        , leTickCount 6
+                        ]
+                    ]
+                << tooltips
+                    [ [ tName "count", tQuant, tFormat ".1f", tTitle "Changes per hour" ]
+                    ]
+    in
+    toVegaLite [ width 800, height 200, hourlyData, trans [], enc [], rect [ maStroke "white", maStrokeWidth 0.5 ] ]
+```
+
+### 2019
+
+January to July 2019
+
+^^^elm{v=(hourlyCounts "https://jwolondon.github.io/mobv/data/london/LondonHourlyCount2019.csv") interactive}^^^
+
+### 2020
+
+Since Lockdown, 23rd March 2020
+
+^^^elm{v=(hourlyCounts ("https://jwolondon.github.io/mobv/data/london/LondonHourlyCount.csv")) interactive}^^^
+
+### Comparison with 2019
+
+What do the counts of docking station changes look like if we aggregate all localities?
+
+```elm {v interactive}
+aggregatedCounts : Spec
+aggregatedCounts =
+    let
+        timeSeriesData =
+            dataFromUrl (path ++ "StationDailyTimeSeries-Bicycle.csv") []
+
+        timeSeriesData2019 =
+            dataFromUrl (path ++ "StationDailyTimeSeries-BicycleAll2019.csv") []
+
+        referenceData =
+            dataFromUrl (path ++ "StationReference-Bicycle.csv") []
+
+        stationData =
+            dataFromUrl (path ++ "tflBicycleStations.csv") []
+
+        londonAnnotationData =
+            dataFromUrl (path ++ "annotations.csv") []
+
+        colour2020 =
+            "rgb(177,36,24)"
+
+        colour2019 =
+            "rgb(86,119,164)"
+
+        enc =
+            encoding
+                << position X
+                    [ pName "date"
+                    , pTemporal
+                    , pAxis
+                        [ axDataCondition (expr "day(datum.value) == 6 || day(datum.value) == 0") (cAxGridOpacity 1 0)
+                        , axDataCondition (expr "date(datum.value) == 1") (cAxTickSize 12 3)
+                        , axTickCount 366
+                        , axGridWidth 4
+                        , axGridColor "#f6f6f6"
+                        , axLabelExpr "timeFormat(datum.value, '%e') == 15 ? timeFormat(datum.value, '%b') : ''"
+                        , axLabelAlign haCenter
+                        , axTitle ""
+                        , axLabelFont "Roboto Condensed"
+                        , axLabelFontSize 18
+                        ]
+                    ]
+                << position Y
+                    [ pName "count"
+                    , pQuant
+                    , pAggregate opSum
+                    , pTitle "Number of docking changes"
+                    , pAxis
+                        [ axLabelFontSize 12
+                        , axTitleFontSize 18
+                        , axTitleFont "Roboto Condensed"
+                        , axTitleFontWeight Normal
+                        ]
+                    ]
+
+        lineSpec =
+            asSpec
+                [ timeSeriesData
+                , enc []
+                , line [ maInterpolate miMonotone, maClip True, maColor "rgb(177,36,24)", maStrokeWidth 1.1 ]
+                ]
+
+        lineSpec2019 =
+            asSpec
+                [ timeSeriesData2019
+                , enc []
+                , line [ maInterpolate miMonotone, maClip True, maStrokeWidth 0.5 ]
+                ]
+
+        -- Trend lines
+        transTrend =
+            transform
+                << aggregate [ opAs opSum "count" "dailyTotal" ] [ "date" ]
+                << window [ ( [ wiAggregateOp opMean, wiField "dailyTotal" ], "weeklyAve" ) ]
+                    [ wiFrame (Just -3) (Just 3) ]
+
+        encTrend =
+            encoding
+                << position X
+                    [ pName "date"
+                    , pTemporal
+                    , pScale
+                        [ scDomain
+                            (doDts
+                                [ [ dtYear 2020, dtMonth Jan, dtDate 1 ]
+                                , [ dtYear 2020, dtMonth Dec, dtDate 31 ]
+                                ]
+                            )
+                        ]
+                    ]
+                << position Y
+                    [ pName "weeklyAve"
+                    , pQuant
+                    ]
+
+        specTrend =
+            asSpec
+                [ timeSeriesData
+                , transTrend []
+                , encTrend []
+                , line [ maInterpolate miMonotone, maColor colour2020, maStrokeWidth 4 ]
+                ]
+
+        specTrend2019 =
+            asSpec
+                [ timeSeriesData2019
+                , transTrend []
+                , encTrend []
+                , line [ maInterpolate miMonotone, maClip True, maColor colour2019, maStrokeWidth 3 ]
+                ]
+
+        -- Annotations
+        leaderEnc =
+            encoding
+                << position X [ pName "date", pTemporal ]
+
+        leaderSpec =
+            asSpec [ leaderEnc [], rule [ maStrokeDash [ 4, 2 ], maOpacity 0.5 ] ]
+
+        labelEnc =
+            encoding
+                << position X [ pName "date", pTemporal ]
+                << position Y [ pNum 0 ]
+                << text [ tName "notes", tNominal ]
+
+        labelSpec =
+            asSpec
+                [ labelEnc []
+                , textMark [ maAngle -50, maAlign haLeft, maOpacity 0.5, maFontSize 8, maDx 2 ]
+                ]
+
+        annotationSpec =
+            asSpec [ londonAnnotationData, layer [ leaderSpec, labelSpec ] ]
+
+        -- Legend
+        legendData =
+            dataFromColumns []
+                << dataColumn "year" (nums [ 2020, 2020, 2019, 2019 ])
+                << dataColumn "trend" (strs [ "weekly trend", "daily count", "weekly trend", "daily count" ])
+                << dataColumn "yearLabelY" (nums [ 10000, 10000, 5000, 5000 ])
+                << dataColumn "symbolY" (nums [ 11000, 9000, 6000, 4000 ])
+
+        colours =
+            categoricalDomainMap
+                [ ( "2020", colour2020 )
+                , ( "2019", colour2019 )
+                ]
+
+        legendEnc =
+            encoding
+                << position X [ pNum 50 ]
+                << position X2 [ pNum 80 ]
+                << position Y [ pName "symbolY", pQuant ]
+                << color [ mName "year", mNominal, mScale colours, mLegend [] ]
+                << strokeWidth [ mName "trend", mNominal, mLegend [] ]
+
+        legendYearLabelEnc =
+            encoding
+                << position X [ pNum 20 ]
+                << position Y [ pName "yearLabelY", pQuant ]
+                << color [ mName "year", mNominal, mScale colours, mLegend [] ]
+                << text [ tName "year", tNominal ]
+
+        legendTrendLabelEnc =
+            encoding
+                << position X [ pNum 85 ]
+                << position Y [ pName "symbolY", pQuant ]
+                << color [ mName "year", mNominal, mScale colours, mLegend [] ]
+                << text [ tName "trend", tNominal ]
+
+        legendSpec =
+            asSpec [ legendData [], legendEnc [], rule [] ]
+
+        legendLabelSpec =
+            asSpec
+                [ legendData []
+                , layer
+                    [ asSpec [ legendYearLabelEnc [], textMark [ maAlign haLeft, maFont "Roboto Condensed" ] ]
+                    , asSpec [ legendTrendLabelEnc [], textMark [ maAlign haLeft, maFont "Roboto Condensed" ] ]
+                    ]
+                ]
+
+        cfg =
+            configure
+                << configuration (coView [ vicoStroke Nothing ])
+    in
+    toVegaLite
+        [ cfg []
+        , width 1200
+        , height 600
+        , layer [ lineSpec2019, lineSpec, specTrend2019, specTrend, annotationSpec, legendSpec, legendLabelSpec ]
         ]
 ```
