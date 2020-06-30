@@ -1002,8 +1002,9 @@ hourlyCounts filename =
                     ]
                 << color
                     [ mName "count"
+                    , mAggregate opMean
                     , mQuant
-                    , mScale [ scScheme "browns" [], scDomain (doNums [ 0, 70 ]) ]
+                    , mScale [ scScheme "browns" [ -0.1, 1.4 ], scDomain (doNums [ 0, 70 ]) ]
                     , mLegend
                         [ leTitle "Average docking\nchanges per hour"
                         , leTitleFont "Roboto Condensed"
@@ -1019,17 +1020,103 @@ hourlyCounts filename =
     toVegaLite [ width 800, height 200, hourlyData, trans [], enc [], rect [ maStroke "white", maStrokeWidth 0.5 ] ]
 ```
 
+```elm {l=hidden}
+hourlyCounts2 : String -> Spec
+hourlyCounts2 filename =
+    let
+        hourlyData =
+            dataFromUrl filename [ parse [ ( "date", foDate "%Y-%m-%d %H" ) ] ]
+
+        trans =
+            transform
+                << filter (fiExpr "month(datum.date) < 6")
+                << calculateAs "month(datum.date)" "month"
+
+        enc =
+            encoding
+                << position X
+                    [ pName "date"
+                    , pTemporal
+                    , pTimeUnit hours
+                    , pAxis
+                        [ axFormat "%_I %p"
+                        , axLabelFont "Roboto Condensed"
+                        , axTitleFont "Roboto Condensed"
+                        , axLabelAngle 0
+                        , axTitle ""
+                        ]
+                    ]
+                << position Y
+                    [ pName "date"
+                    , pOrdinal
+                    , pTimeUnit day
+                    , pSort
+                        [ soCustom
+                            (dts
+                                [ [ dtDay Mon ]
+                                , [ dtDay Tue ]
+                                , [ dtDay Wed ]
+                                , [ dtDay Thu ]
+                                , [ dtDay Fri ]
+                                , [ dtDay Sat ]
+                                , [ dtDay Sun ]
+                                ]
+                            )
+                        ]
+                    , pAxis [ axFormat "%As", axLabelFont "Roboto Condensed", axTitle "" ]
+                    ]
+                << color
+                    [ mName "count"
+                    , mQuant
+                    , mAggregate opMean
+                    , mScale [ scScheme "browns" [ -0.1, 1.2 ], scDomain (doNums [ 0, 70 ]) ]
+                    , mLegend
+                        [ leTitle "Average docking\nchanges per hour"
+                        , leTitleFont "Roboto Condensed"
+                        , leLabelFont "Roboto Condensed"
+                        , leGradientLength 170
+                        , leTickCount 6
+                        ]
+                    ]
+
+        -- << tooltips
+        --     [ [ tName "count", tQuant, tFormat ".1f", tTitle "Changes per hour" ]
+        --     ]
+        calendarSpec =
+            asSpec
+                [ width 400
+                , height 100
+                , enc []
+                , rect
+                    [ maStroke "white"
+                    , maStrokeWidth 0.5
+                    , maTooltip ttEncoding
+                    ]
+                ]
+    in
+    toVegaLite
+        [ hourlyData
+        , trans []
+        , facet
+            [ rowBy
+                [ fName "month"
+                , fOrdinal
+                , fHeader [ hdLabelAngle 0, hdLabelExpr "monthAbbrevFormat(datum.value)", hdTitle "" ]
+                ]
+            ]
+        , specification calendarSpec
+        ]
+```
+
 ### 2019
 
-January to July 2019
-
-^^^elm{v=(hourlyCounts "https://jwolondon.github.io/mobv/data/london/LondonHourlyCount2019.csv") interactive}^^^
+^^^elm{v=(hourlyCounts2 "https://jwolondon.github.io/mobv/data/london/LondonHourlyCount2019.csv") interactive}^^^
 
 ### 2020
 
-Since Lockdown, 23rd March 2020
+Monthly breakdown.
 
-^^^elm{v=(hourlyCounts ("https://jwolondon.github.io/mobv/data/london/LondonHourlyCount.csv")) interactive}^^^
+^^^elm{v=(hourlyCounts2 ("https://jwolondon.github.io/mobv/data/london/LondonHourlyCount.csv")) interactive}^^^
 
 ### Comparison with 2019
 
