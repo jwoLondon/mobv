@@ -30,7 +30,7 @@ _1st January – 31st July 2019:_
 
 <div class="wide" id="visHourly2019"></div>
 
-_23rd March 2020 – present:_
+_Monthly patterns in 2020:_
 
 <div class="wide" id="visHourly2020"></div>
 

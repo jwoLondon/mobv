@@ -980,8 +980,6 @@ let vlHourly2019 = {
 
 let vlHourly2020 = {
   $schema: "https://vega.github.io/schema/vega-lite/v4.json",
-  width: 800,
-  height: 200,
   data: {
     url: "https://jwolondon.github.io/mobv/data/london/LondonHourlyCount.csv",
     format: {
@@ -992,88 +990,105 @@ let vlHourly2020 = {
   },
   transform: [
     {
-      filter:
-        "timeFormat(datum.date,'%Y-%m-%d') > '2020-03-23' || timeFormat(datum.date,'%Y-%m-%d') < '2020-01-01'",
+      filter: "month(datum.date) < 6",
+    },
+    {
+      calculate: "month(datum.date)",
+      as: "month",
     },
   ],
-  encoding: {
-    x: {
-      field: "date",
-      type: "temporal",
-      timeUnit: {
-        unit: "hours",
-      },
-      axis: {
-        format: "%_I %p",
-        labelFont: "Roboto Condensed",
-        titleFont: "Roboto Condensed",
-        labelAngle: 0,
-        title: "",
-      },
-    },
-    y: {
-      field: "date",
+  facet: {
+    row: {
+      field: "month",
       type: "ordinal",
-      timeUnit: {
-        unit: "day",
-      },
-      sort: [
-        {
-          day: "Mon",
-        },
-        {
-          day: "Tue",
-        },
-        {
-          day: "Wed",
-        },
-        {
-          day: "Thu",
-        },
-        {
-          day: "Fri",
-        },
-        {
-          day: "Sat",
-        },
-        {
-          day: "Sun",
-        },
-      ],
-      axis: {
-        format: "%As",
-        labelFont: "Roboto Condensed",
-        title: "",
+      header: {
+        labelAngle: 0,
+        labelExpr: "monthAbbrevFormat(datum.value)",
+        title: null,
       },
     },
-    color: {
-      field: "count",
-      type: "quantitative",
-      scale: {
-        scheme: "browns",
-        domain: [0, 70],
+  },
+  spec: {
+    width: 400,
+    height: 100,
+    encoding: {
+      x: {
+        field: "date",
+        type: "temporal",
+        timeUnit: {
+          unit: "hours",
+        },
+        axis: {
+          format: "%_I %p",
+          labelFont: "Roboto Condensed",
+          titleFont: "Roboto Condensed",
+          labelAngle: 0,
+          title: "",
+        },
       },
-      legend: {
-        title: ["Average docking", "changes per hour"],
-        titleFont: "Roboto Condensed",
-        labelFont: "Roboto Condensed",
-        gradientLength: 170,
-        tickCount: 6,
+      y: {
+        field: "date",
+        type: "ordinal",
+        timeUnit: {
+          unit: "day",
+        },
+        sort: [
+          {
+            day: "Mon",
+          },
+          {
+            day: "Tue",
+          },
+          {
+            day: "Wed",
+          },
+          {
+            day: "Thu",
+          },
+          {
+            day: "Fri",
+          },
+          {
+            day: "Sat",
+          },
+          {
+            day: "Sun",
+          },
+        ],
+        axis: {
+          format: "%As",
+          labelFont: "Roboto Condensed",
+          title: "",
+        },
       },
-    },
-    tooltip: [
-      {
+      color: {
         field: "count",
         type: "quantitative",
-        format: ".1f",
-        title: "Changes per hour",
+        aggregate: "mean",
+        scale: {
+          scheme: {
+            name: "browns",
+            extent: [-0.1, 1.2],
+          },
+          domain: [0, 70],
+        },
+        legend: {
+          title: ["Average docking", "changes per hour"],
+          titleFont: "Roboto Condensed",
+          labelFont: "Roboto Condensed",
+          gradientLength: 170,
+          tickCount: 6,
+        },
       },
-    ],
-  },
-  mark: {
-    type: "rect",
-    stroke: "white",
-    strokeWidth: 0.5,
+    },
+    mark: {
+      type: "rect",
+      stroke: "white",
+      strokeWidth: 0.5,
+      tooltip: {
+        content: "encoding",
+      },
+    },
   },
 };
 
