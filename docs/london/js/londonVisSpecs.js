@@ -990,7 +990,7 @@ let vlHourly2020 = {
   },
   transform: [
     {
-      filter: "month(datum.date) < 6",
+      filter: "month(datum.date) < 7",
     },
     {
       calculate: "month(datum.date)",
