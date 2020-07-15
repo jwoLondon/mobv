@@ -8,14 +8,14 @@ let bicycleReferenceData = path + "StationReference.csv";
 
 
 
-// let annotationsData = path + "annotations.csv";
+let annotationsData = path + "annotations.csv";
 
-// let blueLines = path + "geo/zurichRivers.json";
-// let blueLineFeature = "zurichLines";
-// let bluePolys = path + "geo/zurichLakes.json";
-// let bluePolyFeature = "zurichPolys";
-// let greenPolys = path + "geo/zurichGreen.json";
-// let greenPolyFeature = "zurichPolys";
+let blueLines = path + "geo/zurichRivers.json";
+let blueLineFeature = "zurichLines";
+let bluePolys = path + "geo/zurichLakes.json";
+let bluePolyFeature = "zurichPolys";
+let greenPolys = path + "geo/zurichGreen.json";
+let greenPolyFeature = "zurichPolys";
 
 // CHART SCALING
 
@@ -369,7 +369,7 @@ let vlSpecLinkedBicycle = {
           },
         },
       ],
-      /* layer: [
+      layer: [
         {
           layer: [
             {
@@ -408,7 +408,7 @@ let vlSpecLinkedBicycle = {
                 color: "rgb(226,237,246)",
               },
             },
-          ], */
+          ],
         },
         {
           selection: {
