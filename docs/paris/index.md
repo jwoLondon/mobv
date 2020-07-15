@@ -18,4 +18,4 @@ Konzeptiert und implementiert von:
 <div class="wide" id="visLinkedBicycle"></div>
 
 <!-- Script containing the vis specs used above. Must be at end of document. -->
-<script src="js/zurichVisSpecs.js"></script>
+<script src="js/parisVisSpecs.js"></script>
