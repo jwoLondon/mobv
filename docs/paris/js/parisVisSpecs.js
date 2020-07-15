@@ -10,19 +10,18 @@ let bicycleReferenceData = path + "StationReference_2.csv";
 
 let annotationsData = path + "annotations.csv";
 
-let blueLines = path + "geo/zurichRivers.json";
+let blueLines = path + "geo/parisRivers.json";
 let blueLineFeature = "zurichLines";
-let bluePolys = path + "geo/zurichLakes.json";
+let bluePolys = path + "geo/parisLakes.json";
 let bluePolyFeature = "zurichPolys";
-let greenPolys = path + "geo/zurichGreen.json";
+let greenPolys = path + "geo/parisGreen.json";
 let greenPolyFeature = "zurichPolys";
 
 // CHART SCALING
 
-let bicycleAnomalyMax = 120;
-let bicycleAnomalyMin = -120;
-let footAnomalyMax = 140;
-let footAnomalyMin = -140;
+let bicycleAnomalyMax = 90;
+let bicycleAnomalyMin = -60;
+
 
 // -----------------------------------------------------------------------------
 
