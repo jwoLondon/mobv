@@ -4,7 +4,7 @@ let path = "https://jwolondon.github.io/mobv/data/paris/";
 
 let bicycleStationData = path + "StationLocations.csv";
 let bicycleTimeSeriesData = path + "StationDailyTimeSeries.csv";
-let bicycleReferenceData = path + "StationReference.csv";
+let bicycleReferenceData = path + "StationReference_2.csv";
 
 
 
