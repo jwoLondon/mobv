@@ -1,4 +1,4 @@
-stationcode,name,quartier,latitude,longitude
+station_id,station_name,description,lat,lon
 17041,Guersant - Gouvion-Saint-Cyr,Ternes,48.882877751786,2.28766737081487
 20143,Ramponeau - Belleville,Belleville,48.871031137596,2.37905685211397
 17044,Porte de Saint-Ouen - Bessières,Epinettes,48.8979224085452,2.32851451022192
