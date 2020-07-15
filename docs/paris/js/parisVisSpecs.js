@@ -2,13 +2,11 @@
 
 let path = "https://jwolondon.github.io/mobv/data/paris/";
 
-let bicycleStationData = path + "StationLocations-Bicycle.csv";
-let bicycleTimeSeriesData = path + "StationDailyTimeSeries-Bicycle.csv";
-let bicycleReferenceData = path + "StationReference-Bicycle.csv";
+let bicycleStationData = path + "StationLocations.csv";
+let bicycleTimeSeriesData = path + "StationDailyTimeSeries.csv";
+let bicycleReferenceData = path + "StationReference.csv";
 
-let footStationData = path + "StationLocations-Foot.csv";
-let footTimeSeriesData = path + "StationDailyTimeSeries-Foot.csv";
-let footReferenceData = path + "StationReference-Foot.csv";
+
 
 // let annotationsData = path + "annotations.csv";
 
@@ -410,8 +408,8 @@ let vlSpecLinkedBicycle = {
                 color: "rgb(226,237,246)",
               },
             },
-          ],
-        }, */
+          ], */
+        },
         {
           selection: {
             brush: {
