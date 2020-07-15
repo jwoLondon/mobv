@@ -72,9 +72,9 @@ let vlSpecLinkedBicycle = {
     {
       vconcat: [
         {
-          width: 800,
+          width: 600,
           height: {
-            step: 12,
+            step: 6,
           },
           layer: [
             {
@@ -233,7 +233,7 @@ let vlSpecLinkedBicycle = {
           ],
         },
         {
-          width: 800,
+          width: 600,
           height: 400,
           layer: [
             {
@@ -346,8 +346,8 @@ let vlSpecLinkedBicycle = {
       ],
     },
     {
-      width: 400,
-      height: 650,
+      width: 600,
+      height: 600,
       transform: [
         {
           aggregate: [
