@@ -8,8 +8,8 @@ let bicycleReferenceData = path + "StationReference_2.csv";
 
 let annotationsData = path + "annotations.csv";
 
-let bluePolys = path + "geo/parisRivers.json";
-let bluePolyFeature = "seine";
+let blueLines = path + "geo/parisRivers.json";
+let blueLineFeature = "seine";
 let greenPolys = path + "geo/parisGreen.json";
 let greenPolyFeature = "parks";
 
@@ -368,15 +368,18 @@ let vlSpecLinkedBicycle = {
         },
       ],
       layer: [
-        {
-          data: {
-            url: `${bluePolys}`,
-            format: { type: "topojson", feature: `${bluePolyFeature}` },
-          },
-          mark: {
-            type: "geoshape",
-            color: "rgb(228,236,246)",
-          },
+		{
+		    data: {
+		    url: `${blueLines}`,
+		    	format: { type: "topojson", feature: `${blueLineFeature}` },
+		    },
+
+		    mark: {
+		    type: "geoshape",
+		    color: "rgb(226,237,246)",
+		    strokeWidth: 4,
+		    filled: false,
+		    },
         },
         {
           data: {
