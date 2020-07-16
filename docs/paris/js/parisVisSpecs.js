@@ -20,7 +20,7 @@ let greenPolyFeature = "zurichPolys";
 // CHART SCALING
 
 let bicycleAnomalyMax = 90;
-let bicycleAnomalyMin = -60;
+let bicycleAnomalyMin = -90;
 
 
 // -----------------------------------------------------------------------------
@@ -74,7 +74,7 @@ let vlSpecLinkedBicycle = {
         {
           width: 600,
           height: {
-            step: 6,
+            step: 8,
           },
           layer: [
             {
