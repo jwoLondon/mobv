@@ -10,9 +10,9 @@ let bicycleReferenceData = path + "StationReference_2.csv";
 
 let annotationsData = path + "annotations.csv";
 
-let blueLines = path + "geo/parisRivers.json";
+let blueLines = path + "geo/parisRiver.json";
 let blueLineFeature = "zurichLines";
-let bluePolys = path + "geo/parisRiver.json";
+let bluePolys = path + "geo/parisLakes.json";
 let bluePolyFeature = "zurichPolys";
 let greenPolys = path + "geo/parisGreen.json";
 let greenPolyFeature = "zurichPolys";
