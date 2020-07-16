@@ -1,16 +1,16 @@
 // DATA SOURCES
 
-let path = "https://jwolondon.github.io/mobv/data/london/";
+let path = "https://jwolondon.github.io/mobv/data/paris/";
 
-let bicycleStationData = path + "stationLocations-Bicycle.csv";
-let bicycleTimeSeriesData = path + "StationDailyTimeSeries-Bicycle.csv";
-let bicycleReferenceData = path + "StationReference-Bicycle.csv";
+let bicycleStationData = path + "stationLocations.csv";
+let bicycleTimeSeriesData = path + "StationDailyTimeSeries.csv";
+let bicycleReferenceData = path + "StationReference2.csv";
 
 let annotationsData = path + "annotations.csv";
 
-let bluePolys = path + "geo/thames.json";
-let bluePolyFeature = "thames";
-let greenPolys = path + "geo/parks.json";
+let bluePolys = path + "geo/parisRivers.json";
+let bluePolyFeature = "seine";
+let greenPolys = path + "geo/parisGreen.json";
 let greenPolyFeature = "parks";
 
 // CHART SCALING
@@ -24,7 +24,7 @@ let localityData = path + "geo/localities.json";
 let localityFeature = "localities";
 let localityCentroidData = path + "geo/localityCentroids.csv";
 let thamesData = path + "geo/thamesSimplified.json";
-let thamesFeature = "thames";
+let thamesFeature = "seine";
 let yesterday = Math.floor(Date.now() / 86400000 - 1) * 86400000;
 
 // -----------------------------------------------------------------------------
