@@ -59,4 +59,4 @@ Conceived and implemented by
 - _[Jo Wood](https://twitter.com/jwolondon) – [giCentre, City, University of London](https://www.gicentre.net/jwo)_
 
 <!-- Script containing the vis specs used above. Must be at end of document. -->
-<script src="js/londonVisSpecs.js"></script>
+<script src="js/parisVisSpecs.js"></script>
