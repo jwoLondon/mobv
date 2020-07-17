@@ -8,6 +8,7 @@ Explore the cities below.
 - Pedestrian traffic in city centres across [Germany](docs/germany/) (and in [English](docs/germany/index_en)).
 - Public bicycle hire use across [London](docs/london/).
 - Bicycle traffic in [New York City](docs/newyork/).
+- Public bicycle hire use across [Paris](docs/paris/).
 - Pedestrian and bicycle travel in [Zurich](docs/zurich/) (and in [English](docs/zurich/zurich_en)).
 
 #### We need your help
