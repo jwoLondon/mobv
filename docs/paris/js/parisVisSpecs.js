@@ -1073,7 +1073,7 @@ let vlHourly2020 = {
             name: "browns",
             extent: [-0.1, 1.2],
           },
-          domain: [0, 70],
+          domain: [0, 150],
         },
         legend: {
           title: ["Average docking", "changes per hour"],
