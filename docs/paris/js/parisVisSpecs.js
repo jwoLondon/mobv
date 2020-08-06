@@ -984,7 +984,7 @@ let vlHourly2019 = {
 let vlHourly2020 = {
   $schema: "https://vega.github.io/schema/vega-lite/v4.json",
   data: {
-    url: "https://jwolondon.github.io/mobv/data/london/LondonHourlyCount.csv",
+    url: "https://jwolondon.github.io/mobv/data/paris/ParisHourlyCount.csv",
     format: {
       parse: {
         date: "date:'%Y-%m-%d %H'",
