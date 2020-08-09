@@ -1122,7 +1122,7 @@ Monthly breakdown.
 
 What do the counts of docking station changes look like if we aggregate all localities?
 
-```elm {v interactive}
+```elm {j v interactive}
 aggregatedCounts : Spec
 aggregatedCounts =
     let
@@ -1154,7 +1154,7 @@ aggregatedCounts =
                     , pTemporal
                     , pAxis
                         [ axDataCondition (expr "day(datum.value) == 6 || day(datum.value) == 0") (cAxGridOpacity 1 0)
-                        , axDataCondition (expr "date(datum.value) == 1") (cAxTickSize 12 3)
+                        , axDataCondition (expr "date(datum.value) == 1") (cAxTickSize 8 0)
                         , axTickCount 366
                         , axGridWidth 4
                         , axGridColor "#f6f6f6"

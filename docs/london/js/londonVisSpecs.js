@@ -492,9 +492,9 @@ let vlTotalLineChart = {
             tickSize: {
               condition: {
                 test: "date(datum.value) == 1",
-                value: 12,
+                value: 8,
               },
-              value: 3,
+              value: 0,
             },
             tickCount: 366,
             gridWidth: 4,
@@ -548,9 +548,9 @@ let vlTotalLineChart = {
             tickSize: {
               condition: {
                 test: "date(datum.value) == 1",
-                value: 12,
+                value: 8,
               },
-              value: 3,
+              value: 0,
             },
             tickCount: 366,
             gridWidth: 4,
