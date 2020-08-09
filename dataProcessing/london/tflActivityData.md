@@ -863,7 +863,7 @@ localityDistribution =
                     seSingle
                     [ seFields [ "date" ]
                     , seInit [ ( "date", num 1577836800000 ) ]
-                    , seBind [ iRange "date" [ inName "date", inMin (dayToDate 1), inMax (dayToDate 151), inStep millisInDay ] ]
+                    , seBind [ iRange "date" [ inName "date", inMin (dayToDate 1), inMax (dayToDate 221), inStep millisInDay ] ]
                     ]
 
         trans =
@@ -1122,7 +1122,7 @@ Monthly breakdown.
 
 What do the counts of docking station changes look like if we aggregate all localities?
 
-```elm {v interactive}
+```elm {j v interactive}
 aggregatedCounts : Spec
 aggregatedCounts =
     let

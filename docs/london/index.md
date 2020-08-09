@@ -24,9 +24,9 @@ How has the total volume of cycle hire use changed through 2020 and how does it 
 
 <div class="wide" id="visTotal"></div>
 
-What about during the day? How do daily patterns vary between 2019 and 2020? Below we compare January-July 2019 with the time since the London lockdown. Darker squares represent a greater volume of cycle hire use within an hour long period.
+What about during the day? How do daily patterns vary between 2019 and 2020? Darker squares represent a greater volume of cycle hire use within an hour long period. The disruption caused by the peak of lockdown is clearly evident followed by a slow return to a more spread pattern of morning and evening peaks. Since lockdown, weekend use has remained much higher than previously.
 
-_1st January – 31st July 2019:_
+_Monthly patterns in 2019:_
 
 <div class="wide" id="visHourly2019"></div>
 
