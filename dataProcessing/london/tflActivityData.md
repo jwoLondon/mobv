@@ -1122,7 +1122,7 @@ Monthly breakdown.
 
 What do the counts of docking station changes look like if we aggregate all localities?
 
-```elm {j v interactive}
+```elm {v interactive}
 aggregatedCounts : Spec
 aggregatedCounts =
     let
@@ -1313,7 +1313,7 @@ aggregatedCounts =
     toVegaLite
         [ description "2019 to 2020 docking station chages"
         , cfg []
-        , width 1200
+        , width 1000
         , height 600
         , layer [ lineSpec2019, lineSpec, specTrend2019, specTrend, annotationSpec, legendSpec, legendLabelSpec ]
         ]

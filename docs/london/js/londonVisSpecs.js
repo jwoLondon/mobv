@@ -469,7 +469,7 @@ let vlTotalLineChart = {
       stroke: "",
     },
   },
-  width: 1200,
+  width: 1000,
   height: 600,
   layer: [
     {
