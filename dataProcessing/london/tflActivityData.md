@@ -1029,7 +1029,7 @@ hourlyCounts2 filename =
 
         trans =
             transform
-                << filter (fiExpr "month(datum.date) < 6")
+                << filter (fiExpr "month(datum.date) < 8")
                 << calculateAs "month(datum.date)" "month"
 
         enc =
@@ -1174,6 +1174,7 @@ aggregatedCounts =
                         [ axLabelFontSize 12
                         , axTitleFontSize 18
                         , axTitleFont "Roboto Condensed"
+                        , axLabelFont "Roboto Condensed"
                         , axTitleFontWeight Normal
                         ]
                     ]
@@ -1182,7 +1183,7 @@ aggregatedCounts =
             asSpec
                 [ timeSeriesData
                 , enc []
-                , line [ maInterpolate miMonotone, maClip True, maColor "rgb(177,36,24)", maStrokeWidth 1.1 ]
+                , line [ maInterpolate miMonotone, maClip True, maColor "rgb(177,36,24)", maStrokeWidth 0.8 ]
                 ]
 
         lineSpec2019 =
@@ -1310,7 +1311,8 @@ aggregatedCounts =
                 << configuration (coView [ vicoStroke Nothing ])
     in
     toVegaLite
-        [ cfg []
+        [ description "2019 to 2020 docking station chages"
+        , cfg []
         , width 1200
         , height 600
         , layer [ lineSpec2019, lineSpec, specTrend2019, specTrend, annotationSpec, legendSpec, legendLabelSpec ]

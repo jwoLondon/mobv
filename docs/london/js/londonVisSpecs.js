@@ -463,18 +463,19 @@ let vlSpecLinkedBicycle = {
 
 let vlTotalLineChart = {
   $schema: "https://vega.github.io/schema/vega-lite/v4.json",
+  description: "2019 to 2020 docking station chages",
   config: {
     view: {
       stroke: "",
     },
   },
-  width: 900,
-  height: 500,
+  width: 1200,
+  height: 600,
   layer: [
     {
       data: {
         url:
-          "https://jwolondon.github.io/mobv/data/london/StationDailyTimeSeries-Bicycle2019.csv",
+          "https://jwolondon.github.io/mobv/data/london/StationDailyTimeSeries-BicycleAll2019.csv",
       },
       encoding: {
         x: {
@@ -490,18 +491,20 @@ let vlTotalLineChart = {
             },
             tickSize: {
               condition: {
-                test: "day(datum.value) == 1",
-                value: 6,
+                test: "date(datum.value) == 1",
+                value: 12,
               },
               value: 3,
             },
-            tickCount: 200,
-            gridWidth: 8,
+            tickCount: 366,
+            gridWidth: 4,
             gridColor: "#f6f6f6",
             labelExpr:
-              "timeFormat(datum.value, '%a') == 'Mon' ? timeFormat(datum.value, '%e %b') : ''",
+              "timeFormat(datum.value, '%e') == 15 ? timeFormat(datum.value, '%b') : ''",
+            labelAlign: "center",
             title: "",
             labelFont: "Roboto Condensed",
+            labelFontSize: 18,
           },
         },
         y: {
@@ -509,6 +512,13 @@ let vlTotalLineChart = {
           type: "quantitative",
           aggregate: "sum",
           title: "Number of docking changes",
+          axis: {
+            labelFontSize: 12,
+            titleFontSize: 18,
+            titleFont: "Roboto Condensed",
+            labelFont: "Roboto Condensed",
+            titleFontWeight: "normal",
+          },
         },
       },
       mark: {
@@ -537,18 +547,20 @@ let vlTotalLineChart = {
             },
             tickSize: {
               condition: {
-                test: "day(datum.value) == 1",
-                value: 6,
+                test: "date(datum.value) == 1",
+                value: 12,
               },
               value: 3,
             },
-            tickCount: 200,
-            gridWidth: 8,
+            tickCount: 366,
+            gridWidth: 4,
             gridColor: "#f6f6f6",
             labelExpr:
-              "timeFormat(datum.value, '%a') == 'Mon' ? timeFormat(datum.value, '%e %b') : ''",
+              "timeFormat(datum.value, '%e') == 15 ? timeFormat(datum.value, '%b') : ''",
+            labelAlign: "center",
             title: "",
             labelFont: "Roboto Condensed",
+            labelFontSize: 18,
           },
         },
         y: {
@@ -556,6 +568,13 @@ let vlTotalLineChart = {
           type: "quantitative",
           aggregate: "sum",
           title: "Number of docking changes",
+          axis: {
+            labelFontSize: 12,
+            titleFontSize: 18,
+            titleFont: "Roboto Condensed",
+            labelFont: "Roboto Condensed",
+            titleFontWeight: "normal",
+          },
         },
       },
       mark: {
@@ -563,13 +582,13 @@ let vlTotalLineChart = {
         interpolate: "monotone",
         clip: true,
         color: "rgb(177,36,24)",
-        strokeWidth: 0.5,
+        strokeWidth: 0.8,
       },
     },
     {
       data: {
         url:
-          "https://jwolondon.github.io/mobv/data/london/StationDailyTimeSeries-Bicycle2019.csv",
+          "https://jwolondon.github.io/mobv/data/london/StationDailyTimeSeries-BicycleAll2019.csv",
       },
       transform: [
         {
@@ -606,8 +625,8 @@ let vlTotalLineChart = {
               },
               {
                 year: 2020,
-                month: "Aug",
-                date: 1,
+                month: "Dec",
+                date: 31,
               },
             ],
           },
@@ -665,8 +684,8 @@ let vlTotalLineChart = {
               },
               {
                 year: 2020,
-                month: "Aug",
-                date: 1,
+                month: "Dec",
+                date: 31,
               },
             ],
           },
