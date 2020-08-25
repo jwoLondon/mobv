@@ -119,7 +119,7 @@ stationMap stationFile showRegions =
 
 Groupings vary considerably in size and there is some inconsistency in geographic placement and in naming, so to reduce the number of localities, the following changes were made:
 
-#### Naming Consistency & Abbreviation
+**Naming Consistency & Abbreviation.**
 
 | Old name                     | New name       |
 | ---------------------------- | -------------- |
@@ -135,7 +135,7 @@ Groupings vary considerably in size and there is some inconsistency in geographi
 | The Borough                  | Borough        |
 | The Regent's Park            | Regent's Park  |
 
-#### Aggregation
+**Aggregation.**
 
 | id  | Station                     | Old village        | New locality      |
 | --- | --------------------------- | ------------------ | ----------------- |
@@ -481,7 +481,7 @@ londonExample =
                     , pAxis
                         [ axDataCondition (expr "day(datum.value) == 6 || day(datum.value) == 0") (cAxGridOpacity 1 0)
                         , axDataCondition (expr "day(datum.value) == 1") (cAxTickSize 6 3)
-                        , axTickCount 100
+                        , axTickCount (niTickCount 100)
                         , axGridWidth 8
                         , axGridColor "#f6f6f6"
                         , axLabelExpr "timeFormat(datum.value, '%a') == 'Mon' ? timeFormat(datum.value, '%e %b') : ''"
@@ -561,7 +561,7 @@ londonExample =
                     , pAxis
                         [ axDataCondition (expr "day(datum.value) == 6 || day(datum.value) == 0") (cAxGridOpacity 1 0)
                         , axDataCondition (expr "day(datum.value) == 1") (cAxTickSize 6 3)
-                        , axTickCount 100
+                        , axTickCount (niTickCount 100)
                         , axGridWidth 8
                         , axGridColor "#f6f6f6"
                         , axLabelExpr "timeFormat(datum.value, '%a') == 'Mon' ? timeFormat(datum.value, '%e %b') : ''"
@@ -703,7 +703,7 @@ localityAnomalyMap =
                     seSingle
                     [ seFields [ "date" ]
                     , seInit [ ( "date", num 1577836800000 ) ]
-                    , seBind [ iRange "date" [ inName "date", inMin (dayToDate 1), inMax (dayToDate 221), inStep millisInDay ] ]
+                    , seBind [ iRange "date" [ inName "date", inMin (dayToDate 1), inMax (dayToDate 237), inStep millisInDay ] ]
                     ]
 
         trans =
@@ -863,7 +863,7 @@ localityDistribution =
                     seSingle
                     [ seFields [ "date" ]
                     , seInit [ ( "date", num 1577836800000 ) ]
-                    , seBind [ iRange "date" [ inName "date", inMin (dayToDate 1), inMax (dayToDate 221), inStep millisInDay ] ]
+                    , seBind [ iRange "date" [ inName "date", inMin (dayToDate 1), inMax (dayToDate 237), inStep millisInDay ] ]
                     ]
 
         trans =
@@ -1155,7 +1155,7 @@ aggregatedCounts =
                     , pAxis
                         [ axDataCondition (expr "day(datum.value) == 6 || day(datum.value) == 0") (cAxGridOpacity 1 0)
                         , axDataCondition (expr "date(datum.value) == 1") (cAxTickSize 8 0)
-                        , axTickCount 366
+                        , axTickCount (niTickCount 366)
                         , axGridWidth 4
                         , axGridColor "#f6f6f6"
                         , axLabelExpr "timeFormat(datum.value, '%e') == 15 ? timeFormat(datum.value, '%b') : ''"
