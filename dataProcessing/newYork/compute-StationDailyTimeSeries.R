@@ -9,7 +9,7 @@ df <- read_csv("https://data.cityofnewyork.us/api/views/uczf-rk3c/rows.csv?acces
                                      "counts" = col_integer(),
                                      "status" = col_integer()))
 
-names(df) <- c("station", "date", "count", "status")
+names(df) <- c("station", "count", "date", "status")
 
 # Datetime format is: 01/27/2020 07:43:25 AM
 df$datetime <- parse_date_time2(df$date, "m!/*d!/Y! H!:M!:S! p!", tz = "America/New_York")
