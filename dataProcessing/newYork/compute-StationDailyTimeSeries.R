@@ -4,12 +4,12 @@ library(lubridate)
 
 # Read input data
 df <- read_csv("https://data.cityofnewyork.us/api/views/uczf-rk3c/rows.csv?accessType=DOWNLOAD",
-               col_types = cols_only("id" = col_character(),
-                                     "date" = col_character(),
-                                     "counts" = col_integer(),
+               col_types = cols_only("site" = col_character(),
+						 "counts" = col_integer(),                                     
+						 "date" = col_character(),
                                      "status" = col_integer()))
 
-names(df) <- c("station", "count", "date", "status")
+names(df) <- c("count", "date", "status", "station")
 
 # Datetime format is: 01/27/2020 07:43:25 AM
 df$datetime <- parse_date_time2(df$date, "m!/*d!/Y! H!:M!:S! p!", tz = "America/New_York")
@@ -63,12 +63,12 @@ df_daily %>%
 
 
 df_meta <- read_csv("https://data.cityofnewyork.us/api/views/smn3-rzf9/rows.csv?accessType=DOWNLOAD", 
-                    col_types = cols_only(id = col_character(),
+                    col_types = cols_only(site = col_character(),
                                           name = col_character(), 
                                           latitude = col_double(),
                                           longitude = col_double()))
 
-df_meta <- transmute(df_meta, station_id = id,
+df_meta <- transmute(df_meta, station_id = site,
                      station_name = name, 
                      description = "",
                      lat = latitude,
