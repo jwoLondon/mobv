@@ -23545,3 +23545,513 @@ date,station,id,count
 2020-10-06,"West Kensington","West Kensington_2",474
 2020-10-06,Westminster,Westminster_2,982
 2020-10-06,Whitechapel,Whitechapel_2,593
+2020-10-07,,,154
+2020-10-07,Aldgate,Aldgate_3,647
+2020-10-07,Angel,Angel_3,595
+2020-10-07,Avondale,Avondale_3,373
+2020-10-07,Bank,Bank_3,950
+2020-10-07,Bankside,Bankside_3,279
+2020-10-07,Barbican,Barbican_3,479
+2020-10-07,"Battersea Park","Battersea Park_3",1068
+2020-10-07,Battersea,Battersea_3,781
+2020-10-07,Bayswater,Bayswater_3,689
+2020-10-07,Bermondsey,Bermondsey_3,594
+2020-10-07,"Bethnal Green","Bethnal Green_3",828
+2020-10-07,Blackwall,Blackwall_3,114
+2020-10-07,Bloomsbury,Bloomsbury_3,816
+2020-10-07,Borough,Borough_3,953
+2020-10-07,Bow,Bow_3,442
+2020-10-07,Brixton,Brixton_3,231
+2020-10-07,"Camden Town","Camden Town_3",541
+2020-10-07,"Canary Wharf","Canary Wharf_3",326
+2020-10-07,Chelsea,Chelsea_3,742
+2020-10-07,Clapham,Clapham_3,528
+2020-10-07,Clerkenwell,Clerkenwell_3,512
+2020-10-07,"Covent Garden","Covent Garden_3",358
+2020-10-07,"Cubitt Town","Cubitt Town_3",223
+2020-10-07,"Earl's Court","Earl's Court_3",469
+2020-10-07,"Elephant & Castle","Elephant & Castle_3",532
+2020-10-07,Euston,Euston_3,452
+2020-10-07,Finsbury,Finsbury_3,272
+2020-10-07,Fitzrovia,Fitzrovia_3,453
+2020-10-07,Fulham,Fulham_3,698
+2020-10-07,Haggerston,Haggerston_3,788
+2020-10-07,Hammersmith,Hammersmith_3,756
+2020-10-07,Holborn,Holborn_3,1298
+2020-10-07,Hoxton,Hoxton_3,692
+2020-10-07,"Hyde Park","Hyde Park_3",1121
+2020-10-07,Kennington,Kennington_3,508
+2020-10-07,Kensington,Kensington_3,896
+2020-10-07,"King's Cross","King's Cross_3",687
+2020-10-07,Knightsbridge,Knightsbridge_3,1173
+2020-10-07,"Ladbroke Grove","Ladbroke Grove_3",181
+2020-10-07,Limehouse,Limehouse_3,249
+2020-10-07,"Liverpool Street","Liverpool Street_3",760
+2020-10-07,Marylebone,Marylebone_3,1644
+2020-10-07,Mayfair,Mayfair_3,1092
+2020-10-07,"Mile End","Mile End_3",572
+2020-10-07,Millwall,Millwall_3,157
+2020-10-07,"Notting Hill","Notting Hill_3",274
+2020-10-07,"Old Ford","Old Ford_3",167
+2020-10-07,Olympia,Olympia_3,252
+2020-10-07,"Olympic Park","Olympic Park_3",572
+2020-10-07,Paddington,Paddington_3,465
+2020-10-07,"Parson's Green","Parson's Green_3",276
+2020-10-07,Pimlico,Pimlico_3,906
+2020-10-07,Poplar,Poplar_3,310
+2020-10-07,Portobello,Portobello_3,378
+2020-10-07,Putney,Putney_3,287
+2020-10-07,"Regent's Park","Regent's Park_3",354
+2020-10-07,"Sands End","Sands End_3",421
+2020-10-07,Shadwell,Shadwell_3,284
+2020-10-07,"Shepherd's Bush","Shepherd's Bush_3",348
+2020-10-07,Shoreditch,Shoreditch_3,818
+2020-10-07,Soho,Soho_3,670
+2020-10-07,"South Bank","South Bank_3",601
+2020-10-07,"South Kensington","South Kensington_3",698
+2020-10-07,Southwark,Southwark_3,165
+2020-10-07,"St John's Wood","St John's Wood_3",668
+2020-10-07,"St Luke's","St Luke's_3",357
+2020-10-07,"St Paul's","St Paul's_3",392
+2020-10-07,Stepney,Stepney_3,647
+2020-10-07,Stockwell,Stockwell_3,735
+2020-10-07,Strand,Strand_3,893
+2020-10-07,Vauxhall,Vauxhall_3,959
+2020-10-07,"Victoria Park","Victoria Park_3",380
+2020-10-07,Victoria,Victoria_3,636
+2020-10-07,"Walham Green","Walham Green_3",285
+2020-10-07,Walworth,Walworth_3,289
+2020-10-07,"Wandsworth Road","Wandsworth Road_3",284
+2020-10-07,Wandsworth,Wandsworth_3,533
+2020-10-07,Wapping,Wapping_3,487
+2020-10-07,Waterloo,Waterloo_3,973
+2020-10-07,"West Chelsea","West Chelsea_3",572
+2020-10-07,"West End","West End_3",543
+2020-10-07,"West Kensington","West Kensington_3",440
+2020-10-07,Westminster,Westminster_3,1138
+2020-10-07,Whitechapel,Whitechapel_3,573
+2020-10-08,,,147
+2020-10-08,Aldgate,Aldgate_4,643
+2020-10-08,Angel,Angel_4,564
+2020-10-08,Avondale,Avondale_4,302
+2020-10-08,Bank,Bank_4,769
+2020-10-08,Bankside,Bankside_4,254
+2020-10-08,Barbican,Barbican_4,421
+2020-10-08,"Battersea Park","Battersea Park_4",979
+2020-10-08,Battersea,Battersea_4,697
+2020-10-08,Bayswater,Bayswater_4,589
+2020-10-08,Bermondsey,Bermondsey_4,515
+2020-10-08,"Bethnal Green","Bethnal Green_4",650
+2020-10-08,Blackwall,Blackwall_4,85
+2020-10-08,Bloomsbury,Bloomsbury_4,805
+2020-10-08,Borough,Borough_4,1026
+2020-10-08,Bow,Bow_4,401
+2020-10-08,Brixton,Brixton_4,196
+2020-10-08,"Camden Town","Camden Town_4",497
+2020-10-08,"Canary Wharf","Canary Wharf_4",287
+2020-10-08,Chelsea,Chelsea_4,714
+2020-10-08,Clapham,Clapham_4,496
+2020-10-08,Clerkenwell,Clerkenwell_4,485
+2020-10-08,"Covent Garden","Covent Garden_4",315
+2020-10-08,"Cubitt Town","Cubitt Town_4",140
+2020-10-08,"Earl's Court","Earl's Court_4",440
+2020-10-08,"Elephant & Castle","Elephant & Castle_4",481
+2020-10-08,Euston,Euston_4,463
+2020-10-08,Finsbury,Finsbury_4,230
+2020-10-08,Fitzrovia,Fitzrovia_4,452
+2020-10-08,Fulham,Fulham_4,576
+2020-10-08,Haggerston,Haggerston_4,705
+2020-10-08,Hammersmith,Hammersmith_4,713
+2020-10-08,Holborn,Holborn_4,1232
+2020-10-08,Hoxton,Hoxton_4,698
+2020-10-08,"Hyde Park","Hyde Park_4",749
+2020-10-08,Kennington,Kennington_4,501
+2020-10-08,Kensington,Kensington_4,767
+2020-10-08,"King's Cross","King's Cross_4",557
+2020-10-08,Knightsbridge,Knightsbridge_4,953
+2020-10-08,"Ladbroke Grove","Ladbroke Grove_4",145
+2020-10-08,Limehouse,Limehouse_4,222
+2020-10-08,"Liverpool Street","Liverpool Street_4",675
+2020-10-08,Marylebone,Marylebone_4,1447
+2020-10-08,Mayfair,Mayfair_4,938
+2020-10-08,"Mile End","Mile End_4",534
+2020-10-08,Millwall,Millwall_4,139
+2020-10-08,"Notting Hill","Notting Hill_4",268
+2020-10-08,"Old Ford","Old Ford_4",134
+2020-10-08,Olympia,Olympia_4,237
+2020-10-08,"Olympic Park","Olympic Park_4",451
+2020-10-08,Paddington,Paddington_4,472
+2020-10-08,"Parson's Green","Parson's Green_4",289
+2020-10-08,Pimlico,Pimlico_4,832
+2020-10-08,Poplar,Poplar_4,269
+2020-10-08,Portobello,Portobello_4,339
+2020-10-08,Putney,Putney_4,245
+2020-10-08,"Regent's Park","Regent's Park_4",272
+2020-10-08,"Sands End","Sands End_4",393
+2020-10-08,Shadwell,Shadwell_4,223
+2020-10-08,"Shepherd's Bush","Shepherd's Bush_4",356
+2020-10-08,Shoreditch,Shoreditch_4,775
+2020-10-08,Soho,Soho_4,655
+2020-10-08,"South Bank","South Bank_4",470
+2020-10-08,"South Kensington","South Kensington_4",580
+2020-10-08,Southwark,Southwark_4,199
+2020-10-08,"St John's Wood","St John's Wood_4",517
+2020-10-08,"St Luke's","St Luke's_4",359
+2020-10-08,"St Paul's","St Paul's_4",352
+2020-10-08,Stepney,Stepney_4,610
+2020-10-08,Stockwell,Stockwell_4,617
+2020-10-08,Strand,Strand_4,788
+2020-10-08,Vauxhall,Vauxhall_4,943
+2020-10-08,"Victoria Park","Victoria Park_4",296
+2020-10-08,Victoria,Victoria_4,554
+2020-10-08,"Walham Green","Walham Green_4",267
+2020-10-08,Walworth,Walworth_4,262
+2020-10-08,"Wandsworth Road","Wandsworth Road_4",194
+2020-10-08,Wandsworth,Wandsworth_4,555
+2020-10-08,Wapping,Wapping_4,373
+2020-10-08,Waterloo,Waterloo_4,1025
+2020-10-08,"West Chelsea","West Chelsea_4",492
+2020-10-08,"West End","West End_4",502
+2020-10-08,"West Kensington","West Kensington_4",407
+2020-10-08,Westminster,Westminster_4,1020
+2020-10-08,Whitechapel,Whitechapel_4,556
+2020-10-09,,,161
+2020-10-09,Aldgate,Aldgate_5,609
+2020-10-09,Angel,Angel_5,596
+2020-10-09,Avondale,Avondale_5,341
+2020-10-09,Bank,Bank_5,749
+2020-10-09,Bankside,Bankside_5,263
+2020-10-09,Barbican,Barbican_5,479
+2020-10-09,"Battersea Park","Battersea Park_5",974
+2020-10-09,Battersea,Battersea_5,726
+2020-10-09,Bayswater,Bayswater_5,613
+2020-10-09,Bermondsey,Bermondsey_5,565
+2020-10-09,"Bethnal Green","Bethnal Green_5",728
+2020-10-09,Blackwall,Blackwall_5,74
+2020-10-09,Bloomsbury,Bloomsbury_5,812
+2020-10-09,Borough,Borough_5,977
+2020-10-09,Bow,Bow_5,450
+2020-10-09,Brixton,Brixton_5,183
+2020-10-09,"Camden Town","Camden Town_5",516
+2020-10-09,"Canary Wharf","Canary Wharf_5",240
+2020-10-09,Chelsea,Chelsea_5,686
+2020-10-09,Clapham,Clapham_5,515
+2020-10-09,Clerkenwell,Clerkenwell_5,496
+2020-10-09,"Covent Garden","Covent Garden_5",310
+2020-10-09,"Cubitt Town","Cubitt Town_5",181
+2020-10-09,"Earl's Court","Earl's Court_5",486
+2020-10-09,"Elephant & Castle","Elephant & Castle_5",475
+2020-10-09,Euston,Euston_5,448
+2020-10-09,Finsbury,Finsbury_5,268
+2020-10-09,Fitzrovia,Fitzrovia_5,426
+2020-10-09,Fulham,Fulham_5,604
+2020-10-09,Haggerston,Haggerston_5,730
+2020-10-09,Hammersmith,Hammersmith_5,681
+2020-10-09,Holborn,Holborn_5,1162
+2020-10-09,Hoxton,Hoxton_5,680
+2020-10-09,"Hyde Park","Hyde Park_5",775
+2020-10-09,Kennington,Kennington_5,485
+2020-10-09,Kensington,Kensington_5,837
+2020-10-09,"King's Cross","King's Cross_5",730
+2020-10-09,Knightsbridge,Knightsbridge_5,1005
+2020-10-09,"Ladbroke Grove","Ladbroke Grove_5",165
+2020-10-09,Limehouse,Limehouse_5,220
+2020-10-09,"Liverpool Street","Liverpool Street_5",616
+2020-10-09,Marylebone,Marylebone_5,1563
+2020-10-09,Mayfair,Mayfair_5,901
+2020-10-09,"Mile End","Mile End_5",556
+2020-10-09,Millwall,Millwall_5,121
+2020-10-09,"Notting Hill","Notting Hill_5",299
+2020-10-09,"Old Ford","Old Ford_5",156
+2020-10-09,Olympia,Olympia_5,288
+2020-10-09,"Olympic Park","Olympic Park_5",433
+2020-10-09,Paddington,Paddington_5,462
+2020-10-09,"Parson's Green","Parson's Green_5",302
+2020-10-09,Pimlico,Pimlico_5,813
+2020-10-09,Poplar,Poplar_5,272
+2020-10-09,Portobello,Portobello_5,389
+2020-10-09,Putney,Putney_5,255
+2020-10-09,"Regent's Park","Regent's Park_5",298
+2020-10-09,"Sands End","Sands End_5",386
+2020-10-09,Shadwell,Shadwell_5,246
+2020-10-09,"Shepherd's Bush","Shepherd's Bush_5",339
+2020-10-09,Shoreditch,Shoreditch_5,850
+2020-10-09,Soho,Soho_5,770
+2020-10-09,"South Bank","South Bank_5",578
+2020-10-09,"South Kensington","South Kensington_5",657
+2020-10-09,Southwark,Southwark_5,196
+2020-10-09,"St John's Wood","St John's Wood_5",529
+2020-10-09,"St Luke's","St Luke's_5",361
+2020-10-09,"St Paul's","St Paul's_5",383
+2020-10-09,Stepney,Stepney_5,555
+2020-10-09,Stockwell,Stockwell_5,690
+2020-10-09,Strand,Strand_5,776
+2020-10-09,Vauxhall,Vauxhall_5,965
+2020-10-09,"Victoria Park","Victoria Park_5",300
+2020-10-09,Victoria,Victoria_5,552
+2020-10-09,"Walham Green","Walham Green_5",276
+2020-10-09,Walworth,Walworth_5,282
+2020-10-09,"Wandsworth Road","Wandsworth Road_5",203
+2020-10-09,Wandsworth,Wandsworth_5,532
+2020-10-09,Wapping,Wapping_5,404
+2020-10-09,Waterloo,Waterloo_5,952
+2020-10-09,"West Chelsea","West Chelsea_5",479
+2020-10-09,"West End","West End_5",430
+2020-10-09,"West Kensington","West Kensington_5",364
+2020-10-09,Westminster,Westminster_5,969
+2020-10-09,Whitechapel,Whitechapel_5,579
+2020-10-10,,,204
+2020-10-10,Aldgate,Aldgate_6,601
+2020-10-10,Angel,Angel_6,631
+2020-10-10,Avondale,Avondale_6,344
+2020-10-10,Bank,Bank_6,566
+2020-10-10,Bankside,Bankside_6,440
+2020-10-10,Barbican,Barbican_6,400
+2020-10-10,"Battersea Park","Battersea Park_6",1050
+2020-10-10,Battersea,Battersea_6,696
+2020-10-10,Bayswater,Bayswater_6,616
+2020-10-10,Bermondsey,Bermondsey_6,655
+2020-10-10,"Bethnal Green","Bethnal Green_6",783
+2020-10-10,Blackwall,Blackwall_6,134
+2020-10-10,Bloomsbury,Bloomsbury_6,709
+2020-10-10,Borough,Borough_6,950
+2020-10-10,Bow,Bow_6,516
+2020-10-10,Brixton,Brixton_6,222
+2020-10-10,"Camden Town","Camden Town_6",605
+2020-10-10,"Canary Wharf","Canary Wharf_6",381
+2020-10-10,Chelsea,Chelsea_6,711
+2020-10-10,Clapham,Clapham_6,598
+2020-10-10,Clerkenwell,Clerkenwell_6,508
+2020-10-10,"Covent Garden","Covent Garden_6",396
+2020-10-10,"Cubitt Town","Cubitt Town_6",223
+2020-10-10,"Earl's Court","Earl's Court_6",491
+2020-10-10,"Elephant & Castle","Elephant & Castle_6",574
+2020-10-10,Euston,Euston_6,431
+2020-10-10,Finsbury,Finsbury_6,246
+2020-10-10,Fitzrovia,Fitzrovia_6,481
+2020-10-10,Fulham,Fulham_6,619
+2020-10-10,Haggerston,Haggerston_6,890
+2020-10-10,Hammersmith,Hammersmith_6,728
+2020-10-10,Holborn,Holborn_6,869
+2020-10-10,Hoxton,Hoxton_6,748
+2020-10-10,"Hyde Park","Hyde Park_6",1475
+2020-10-10,Kennington,Kennington_6,494
+2020-10-10,Kensington,Kensington_6,846
+2020-10-10,"King's Cross","King's Cross_6",569
+2020-10-10,Knightsbridge,Knightsbridge_6,1050
+2020-10-10,"Ladbroke Grove","Ladbroke Grove_6",136
+2020-10-10,Limehouse,Limehouse_6,292
+2020-10-10,"Liverpool Street","Liverpool Street_6",677
+2020-10-10,Marylebone,Marylebone_6,1433
+2020-10-10,Mayfair,Mayfair_6,788
+2020-10-10,"Mile End","Mile End_6",639
+2020-10-10,Millwall,Millwall_6,164
+2020-10-10,"Notting Hill","Notting Hill_6",307
+2020-10-10,"Old Ford","Old Ford_6",140
+2020-10-10,Olympia,Olympia_6,215
+2020-10-10,"Olympic Park","Olympic Park_6",741
+2020-10-10,Paddington,Paddington_6,404
+2020-10-10,"Parson's Green","Parson's Green_6",336
+2020-10-10,Pimlico,Pimlico_6,888
+2020-10-10,Poplar,Poplar_6,295
+2020-10-10,Portobello,Portobello_6,429
+2020-10-10,Putney,Putney_6,334
+2020-10-10,"Regent's Park","Regent's Park_6",451
+2020-10-10,"Sands End","Sands End_6",372
+2020-10-10,Shadwell,Shadwell_6,283
+2020-10-10,"Shepherd's Bush","Shepherd's Bush_6",391
+2020-10-10,Shoreditch,Shoreditch_6,1004
+2020-10-10,Soho,Soho_6,912
+2020-10-10,"South Bank","South Bank_6",676
+2020-10-10,"South Kensington","South Kensington_6",666
+2020-10-10,Southwark,Southwark_6,168
+2020-10-10,"St John's Wood","St John's Wood_6",578
+2020-10-10,"St Luke's","St Luke's_6",336
+2020-10-10,"St Paul's","St Paul's_6",297
+2020-10-10,Stepney,Stepney_6,671
+2020-10-10,Stockwell,Stockwell_6,727
+2020-10-10,Strand,Strand_6,901
+2020-10-10,Vauxhall,Vauxhall_6,1052
+2020-10-10,"Victoria Park","Victoria Park_6",383
+2020-10-10,Victoria,Victoria_6,524
+2020-10-10,"Walham Green","Walham Green_6",303
+2020-10-10,Walworth,Walworth_6,307
+2020-10-10,"Wandsworth Road","Wandsworth Road_6",213
+2020-10-10,Wandsworth,Wandsworth_6,607
+2020-10-10,Wapping,Wapping_6,546
+2020-10-10,Waterloo,Waterloo_6,673
+2020-10-10,"West Chelsea","West Chelsea_6",499
+2020-10-10,"West End","West End_6",568
+2020-10-10,"West Kensington","West Kensington_6",391
+2020-10-10,Westminster,Westminster_6,939
+2020-10-10,Whitechapel,Whitechapel_6,681
+2020-10-11,,,222
+2020-10-11,Aldgate,Aldgate_0,641
+2020-10-11,Angel,Angel_0,592
+2020-10-11,Avondale,Avondale_0,321
+2020-10-11,Bank,Bank_0,486
+2020-10-11,Bankside,Bankside_0,369
+2020-10-11,Barbican,Barbican_0,357
+2020-10-11,"Battersea Park","Battersea Park_0",975
+2020-10-11,Battersea,Battersea_0,652
+2020-10-11,Bayswater,Bayswater_0,595
+2020-10-11,Bermondsey,Bermondsey_0,656
+2020-10-11,"Bethnal Green","Bethnal Green_0",800
+2020-10-11,Blackwall,Blackwall_0,143
+2020-10-11,Bloomsbury,Bloomsbury_0,600
+2020-10-11,Borough,Borough_0,877
+2020-10-11,Bow,Bow_0,564
+2020-10-11,Brixton,Brixton_0,193
+2020-10-11,"Camden Town","Camden Town_0",627
+2020-10-11,"Canary Wharf","Canary Wharf_0",336
+2020-10-11,Chelsea,Chelsea_0,668
+2020-10-11,Clapham,Clapham_0,588
+2020-10-11,Clerkenwell,Clerkenwell_0,508
+2020-10-11,"Covent Garden","Covent Garden_0",318
+2020-10-11,"Cubitt Town","Cubitt Town_0",307
+2020-10-11,"Earl's Court","Earl's Court_0",463
+2020-10-11,"Elephant & Castle","Elephant & Castle_0",521
+2020-10-11,Euston,Euston_0,399
+2020-10-11,Finsbury,Finsbury_0,227
+2020-10-11,Fitzrovia,Fitzrovia_0,411
+2020-10-11,Fulham,Fulham_0,634
+2020-10-11,Haggerston,Haggerston_0,815
+2020-10-11,Hammersmith,Hammersmith_0,772
+2020-10-11,Holborn,Holborn_0,711
+2020-10-11,Hoxton,Hoxton_0,676
+2020-10-11,"Hyde Park","Hyde Park_0",1449
+2020-10-11,Kennington,Kennington_0,433
+2020-10-11,Kensington,Kensington_0,898
+2020-10-11,"King's Cross","King's Cross_0",569
+2020-10-11,Knightsbridge,Knightsbridge_0,958
+2020-10-11,"Ladbroke Grove","Ladbroke Grove_0",171
+2020-10-11,Limehouse,Limehouse_0,271
+2020-10-11,"Liverpool Street","Liverpool Street_0",508
+2020-10-11,Marylebone,Marylebone_0,1442
+2020-10-11,Mayfair,Mayfair_0,792
+2020-10-11,"Mile End","Mile End_0",614
+2020-10-11,Millwall,Millwall_0,187
+2020-10-11,"Notting Hill","Notting Hill_0",319
+2020-10-11,"Old Ford","Old Ford_0",115
+2020-10-11,Olympia,Olympia_0,221
+2020-10-11,"Olympic Park","Olympic Park_0",788
+2020-10-11,Paddington,Paddington_0,437
+2020-10-11,"Parson's Green","Parson's Green_0",308
+2020-10-11,Pimlico,Pimlico_0,764
+2020-10-11,Poplar,Poplar_0,350
+2020-10-11,Portobello,Portobello_0,405
+2020-10-11,Putney,Putney_0,368
+2020-10-11,"Regent's Park","Regent's Park_0",513
+2020-10-11,"Sands End","Sands End_0",354
+2020-10-11,Shadwell,Shadwell_0,244
+2020-10-11,"Shepherd's Bush","Shepherd's Bush_0",322
+2020-10-11,Shoreditch,Shoreditch_0,847
+2020-10-11,Soho,Soho_0,745
+2020-10-11,"South Bank","South Bank_0",643
+2020-10-11,"South Kensington","South Kensington_0",617
+2020-10-11,Southwark,Southwark_0,151
+2020-10-11,"St John's Wood","St John's Wood_0",608
+2020-10-11,"St Luke's","St Luke's_0",327
+2020-10-11,"St Paul's","St Paul's_0",342
+2020-10-11,Stepney,Stepney_0,577
+2020-10-11,Stockwell,Stockwell_0,776
+2020-10-11,Strand,Strand_0,793
+2020-10-11,Vauxhall,Vauxhall_0,980
+2020-10-11,"Victoria Park","Victoria Park_0",434
+2020-10-11,Victoria,Victoria_0,513
+2020-10-11,"Walham Green","Walham Green_0",259
+2020-10-11,Walworth,Walworth_0,279
+2020-10-11,"Wandsworth Road","Wandsworth Road_0",235
+2020-10-11,Wandsworth,Wandsworth_0,595
+2020-10-11,Wapping,Wapping_0,463
+2020-10-11,Waterloo,Waterloo_0,526
+2020-10-11,"West Chelsea","West Chelsea_0",437
+2020-10-11,"West End","West End_0",528
+2020-10-11,"West Kensington","West Kensington_0",393
+2020-10-11,Westminster,Westminster_0,788
+2020-10-11,Whitechapel,Whitechapel_0,598
+2020-10-12,,,117
+2020-10-12,Aldgate,Aldgate_1,492
+2020-10-12,Angel,Angel_1,466
+2020-10-12,Avondale,Avondale_1,246
+2020-10-12,Bank,Bank_1,665
+2020-10-12,Bankside,Bankside_1,217
+2020-10-12,Barbican,Barbican_1,403
+2020-10-12,"Battersea Park","Battersea Park_1",883
+2020-10-12,Battersea,Battersea_1,630
+2020-10-12,Bayswater,Bayswater_1,448
+2020-10-12,Bermondsey,Bermondsey_1,391
+2020-10-12,"Bethnal Green","Bethnal Green_1",602
+2020-10-12,Blackwall,Blackwall_1,60
+2020-10-12,Bloomsbury,Bloomsbury_1,675
+2020-10-12,Borough,Borough_1,731
+2020-10-12,Bow,Bow_1,402
+2020-10-12,Brixton,Brixton_1,125
+2020-10-12,"Camden Town","Camden Town_1",420
+2020-10-12,"Canary Wharf","Canary Wharf_1",192
+2020-10-12,Chelsea,Chelsea_1,574
+2020-10-12,Clapham,Clapham_1,373
+2020-10-12,Clerkenwell,Clerkenwell_1,361
+2020-10-12,"Covent Garden","Covent Garden_1",265
+2020-10-12,"Cubitt Town","Cubitt Town_1",132
+2020-10-12,"Earl's Court","Earl's Court_1",387
+2020-10-12,"Elephant & Castle","Elephant & Castle_1",318
+2020-10-12,Euston,Euston_1,393
+2020-10-12,Finsbury,Finsbury_1,210
+2020-10-12,Fitzrovia,Fitzrovia_1,340
+2020-10-12,Fulham,Fulham_1,455
+2020-10-12,Haggerston,Haggerston_1,529
+2020-10-12,Hammersmith,Hammersmith_1,549
+2020-10-12,Holborn,Holborn_1,963
+2020-10-12,Hoxton,Hoxton_1,564
+2020-10-12,"Hyde Park","Hyde Park_1",610
+2020-10-12,Kennington,Kennington_1,360
+2020-10-12,Kensington,Kensington_1,586
+2020-10-12,"King's Cross","King's Cross_1",650
+2020-10-12,Knightsbridge,Knightsbridge_1,811
+2020-10-12,"Ladbroke Grove","Ladbroke Grove_1",116
+2020-10-12,Limehouse,Limehouse_1,152
+2020-10-12,"Liverpool Street","Liverpool Street_1",588
+2020-10-12,Marylebone,Marylebone_1,1196
+2020-10-12,Mayfair,Mayfair_1,804
+2020-10-12,"Mile End","Mile End_1",463
+2020-10-12,Millwall,Millwall_1,90
+2020-10-12,"Notting Hill","Notting Hill_1",178
+2020-10-12,"Old Ford","Old Ford_1",95
+2020-10-12,Olympia,Olympia_1,233
+2020-10-12,"Olympic Park","Olympic Park_1",300
+2020-10-12,Paddington,Paddington_1,398
+2020-10-12,"Parson's Green","Parson's Green_1",191
+2020-10-12,Pimlico,Pimlico_1,686
+2020-10-12,Poplar,Poplar_1,179
+2020-10-12,Portobello,Portobello_1,286
+2020-10-12,Putney,Putney_1,208
+2020-10-12,"Regent's Park","Regent's Park_1",221
+2020-10-12,"Sands End","Sands End_1",328
+2020-10-12,Shadwell,Shadwell_1,165
+2020-10-12,"Shepherd's Bush","Shepherd's Bush_1",267
+2020-10-12,Shoreditch,Shoreditch_1,563
+2020-10-12,Soho,Soho_1,537
+2020-10-12,"South Bank","South Bank_1",352
+2020-10-12,"South Kensington","South Kensington_1",472
+2020-10-12,Southwark,Southwark_1,107
+2020-10-12,"St John's Wood","St John's Wood_1",399
+2020-10-12,"St Luke's","St Luke's_1",243
+2020-10-12,"St Paul's","St Paul's_1",393
+2020-10-12,Stepney,Stepney_1,471
+2020-10-12,Stockwell,Stockwell_1,480
+2020-10-12,Strand,Strand_1,572
+2020-10-12,Vauxhall,Vauxhall_1,760
+2020-10-12,"Victoria Park","Victoria Park_1",254
+2020-10-12,Victoria,Victoria_1,413
+2020-10-12,"Walham Green","Walham Green_1",236
+2020-10-12,Walworth,Walworth_1,213
+2020-10-12,"Wandsworth Road","Wandsworth Road_1",217
+2020-10-12,Wandsworth,Wandsworth_1,435
+2020-10-12,Wapping,Wapping_1,321
+2020-10-12,Waterloo,Waterloo_1,816
+2020-10-12,"West Chelsea","West Chelsea_1",361
+2020-10-12,"West End","West End_1",369
+2020-10-12,"West Kensington","West Kensington_1",294
+2020-10-12,Westminster,Westminster_1,787
+2020-10-12,Whitechapel,Whitechapel_1,475
