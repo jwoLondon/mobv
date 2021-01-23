@@ -4,13 +4,22 @@ library(magrittr)
 
 
 # Read input data
-df <- read_csv("https://data.stadt-zuerich.ch/dataset/83ca481f-275c-417b-9598-3902c481e400/resource/b9308f85-9066-4f5b-8eab-344c790a6982/download/2020_verkehrszaehlungen_werte_fussgaenger_velo.csv", 
-               col_types = cols_only(FK_STANDORT = col_character(),
-                                     DATUM = col_character(),
-                                     VELO_IN = col_integer(),
-                                     VELO_OUT = col_integer(),
-                                     FUSS_IN = col_integer(),
-                                     FUSS_OUT = col_integer()))
+df2020 <- read_csv("https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2020_verkehrszaehlungen_werte_fussgaenger_velo.csv", 
+                   col_types = cols_only(FK_STANDORT = col_character(),
+                                         DATUM = col_character(),
+                                         VELO_IN = col_integer(),
+                                         VELO_OUT = col_integer(),
+                                         FUSS_IN = col_integer(),
+                                         FUSS_OUT = col_integer()))
+
+df2021 <- read_csv("https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2021_verkehrszaehlungen_werte_fussgaenger_velo.csv", 
+                   col_types = cols_only(FK_STANDORT = col_character(),
+                                         DATUM = col_character(),
+                                         VELO_IN = col_integer(),
+                                         VELO_OUT = col_integer(),
+                                         FUSS_IN = col_integer(),
+                                         FUSS_OUT = col_integer()))
+df <- rbind(df2020, df2021)
 
 names(df) <- c("fk_timelocation", "datetime", "velo_in", "velo_out", "foot_in", "foot_out")
 df$datetime <- parse_date_time2(df$datetime, "Y!-m!-*d! H!:M!", tz = "Europe/Berlin")
