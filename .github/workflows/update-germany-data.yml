@@ -1,9 +1,12 @@
-name: Update Basel data
+name: Update Germany data
 
 on:
   schedule:
-  - cron:  '30 0/6 * * *'
+  - cron:  '0 0/6 * * *'
 
+env:
+  HYSTREET_API_KEY: ${{ secrets.HYSTREET_API_KEY }}
+  
 jobs:
   update_data:
     runs-on: macos-latest
@@ -20,14 +23,15 @@ jobs:
         install.packages("tidyverse")
         install.packages("lubridate")
         install.packages("magrittr")
+        install.packages("hystReet")
       shell: Rscript {0}
       
     # Prepare data
-    - name: Prepare data with compute-StationDailyTimeSeries-StationLocations-GitHubAction.R
-      run: Rscript dataProcessing/basel/compute-StationDailyTimeSeries-StationLocations-GitHubAction.R
+    - name: Prepare data with compute-StationDailyTimeSeries-GitHubAction.R
+      run: Rscript dataProcessing/germany/compute-StationDailyTimeSeries-GitHubAction.R
 
     # Commit to repo with updated file
     - uses: stefanzweifel/git-auto-commit-action@v4.1.1
       with:
-        commit_message: Update time-series data, reference data and location data for Basel, Switzerland
+        commit_message: Update time-series data, reference data and location data for Germany
         branch: ${{ github.head_ref }}
