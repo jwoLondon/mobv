@@ -51,4 +51,4 @@ Data preparation by
 - _[Stefan Ivanovic](https://twitter.com/jwolondon) – [Department of Geography, University of Zurich](https://www.geo.uzh.ch/)_
 
 <!-- Script containing the vis specs used above. Must be at end of document. -->
-<script src="js/parisVisCounterSpecs.js"></script>
+<script src="js/parisVisSpecs.js"></script>
