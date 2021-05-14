@@ -2,9 +2,9 @@
 
 let path = "https://jwolondon.github.io/mobv/data/paris/";
 
-let bicycleStationData = path + "StationLocations.csv";
-let bicycleTimeSeriesData = path + "StationDailyTimeSeries2.csv";
-let bicycleReferenceData = path + "StationReference_2.csv";
+let bicycleStationData = path + "StationLocationsCounters.csv";
+let bicycleTimeSeriesData = path + "StationDailyTimeSeriesCounters.csv";
+let bicycleReferenceData = path + "StationReferenceCounters.csv";
 
 let annotationsData = path + "annotations.csv";
 
@@ -984,7 +984,7 @@ let vlHourly2019 = {
 let vlHourly2020 = {
   $schema: "https://vega.github.io/schema/vega-lite/v4.json",
   data: {
-    url: "https://jwolondon.github.io/mobv/data/paris/ParisHourlyCount.csv",
+    url: "https://jwolondon.github.io/mobv/data/paris/ParisHourlyCountCounters.csv",
     format: {
       parse: {
         date: "date:'%Y-%m-%d %H'",
