@@ -1175,7 +1175,7 @@ let vlSpecMap = {
             title: "Anomaly",
             direction: "horizontal",
             orient: "bottom-right",
-            offset: 40,
+            offset: 80,
             gradientThickness: 12,
           },
         },
